@@ -48,4 +48,14 @@ body {
     color: #1D7816; /* Warna ikon bisa disesuaikan */
 }
 
+.shadow:hover {
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.193) !important; /* Shadow properties for shadow-lg */
+    transition: box-shadow 0.3s ease; /* Optional: Add transition for smooth effect */
+}
+
+.shadow-sm:hover {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.074) !important; /* Shadow properties for shadow-lg */
+    transition: box-shadow 0.3s ease; /* Optional: Add transition for smooth effect */
+}
+
 
