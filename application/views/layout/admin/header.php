@@ -15,9 +15,26 @@
         <link rel="stylesheet" href="<?= base_url('assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/admin/compiled/css/table-datatable-jquery.css') ?>">
 
+        <!-- Place the first <script> tag in your HTML's <head> -->
+        <script src="https://cdn.tiny.cloud/1/2obp7gbxwuz79fd24bafjam688l4cn76aymkx3sa9py0j3xv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+        <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/filepond/filepond.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/toastify-js/src/toastify.css') ?>">
+
     </head>
 
     <body>
+        <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+        <script>
+        tinymce.init({
+            selector: '#deskripsiBuku',
+            plugins: 'link image lists',
+            toolbar: 'undo redo | bold italic underline | link image | bullist numlist | removeformat',
+        });
+        </script>
+
         <script src="<?= base_url('assets/static/js/initTheme.js') ?>"></script>
         <div id="app">
         <?php $this->load->view('layout/admin/sidebar'); ?>

@@ -48,11 +48,11 @@
 
         <!-- Publikasi Pangan -->
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h3 class="mb-0">Publikasi Pangan Terbaru</h3>
+            <h4 class="mb-0">Pangan Terbaru</h4>
             <a href="" class="text-black-50 link-underline-light">Tampilkan lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
         </div>
         <div class="row mb-2">
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -61,7 +61,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -70,7 +70,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -79,7 +79,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -88,7 +88,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -97,7 +97,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>

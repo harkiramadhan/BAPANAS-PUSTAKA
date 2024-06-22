@@ -12,8 +12,9 @@
 </header>
 
 <div class="row">
-    <div class="col-12 col-md-6 order-md-1 order-last mb-1">
-        <h3 class="mb-4">Tambah Katalog Buku</h3>
+    <div class="col-12 col-lg-6 order-md-1 order-last mb-1 text-center text-lg-start">
+        <h3 class="mb-2">Tambah Katalog Buku</h3>
+        <!-- <p class="text-subtitle text-muted">Kelola daftar buku yang tersedia di perpustakaan BAPANAS.</p> -->
     </div>
 </div>
 <div class="page-content"> 
@@ -28,12 +29,25 @@
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
+                                <label for="first-name-horizontal-icon">Cover Buku</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="file" class="image-preview-filepond">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-image"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="first-name-horizontal-icon">Judul Buku</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Name" id="first-name-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
                                         <div class="form-control-icon">
                                             <i class="bi bi-book"></i>
                                         </div>
@@ -41,25 +55,117 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="email-horizontal-icon">Email</label>
+                                <label for="email-horizontal-icon">Pengarang</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="email" class="form-control" placeholder="Email" id="email-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon">
                                         <div class="form-control-icon">
-                                            <i class="bi bi-envelope"></i>
+                                            <i class="bi bi-person-fill-check"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="contact-info-horizontal-icon">Mobile</label>
+                                <label for="contact-info-horizontal-icon">Kategori</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="number" class="form-control" placeholder="Mobile" id="contact-info-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-bookmark-check-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Edisi</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-layout-sidebar-inset-reverse"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Penerbit</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-journal-bookmark-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">ISBN</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-upc-scan"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Deskripsi Fisik</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-body-text"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Subjek</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-textarea-t"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Bahasa</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-translate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Call Number</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
                                         <div class="form-control-icon">
                                             <i class="bi bi-phone"></i>
                                         </div>
@@ -67,29 +173,20 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="password-horizontal-icon">Password</label>
+                                <label for="contact-info-horizontal-icon">Deskripsi</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="password" class="form-control" placeholder="Password" id="password-horizontal-icon">
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-lock"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-8 offset-md-4">
-                                <div class="form-check">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="checkbox2" class="form-check-input" checked="">
-                                        <label for="checkbox2">Remember Me</label>
+                                        <textarea id="deskripsiBuku">
+
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Batalkan</button>
+                                <button type="submit" class="btn btn-primary w-100 me-1 mb-1">Tambah Buku</button>
                             </div>
                         </div>
                     </div>
