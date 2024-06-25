@@ -1,19 +1,56 @@
-let jquery_datatable = $("#table1").DataTable({
-    responsive: true
-})
-let customized_datatable = $("#table2").DataTable({
+// let jquery_datatable = $("#daftarPeminjaman").DataTable({
+//     responsive: true
+// })
+let daftarpeminjaman_datatable = $("#daftarPeminjaman").DataTable({
     responsive: true,
-    pagingType: 'simple',
+    order: true,
+    
     dom:
 		"<'row'<'col-3'l><'col-9'f>>" +
 		"<'row dt-row'<'col-sm-12'tr>>" +
 		"<'row'<'col-4'i><'col-8'p>>",
     "language": {
-        "info": "Page _PAGE_ of _PAGES_",
+        "info": "Halaman ke _PAGE_ dari _PAGES_",
         "lengthMenu": "_MENU_ ",
         "search": "",
-        "searchPlaceholder": "Search.."
+        "searchPlaceholder": "Cari Peminjaman ..."
     }
+})
+
+let daftarbuku_datatable = $("#daftarBuku").DataTable({
+    responsive: true,
+    order: true,
+    
+    dom:
+		"<'row'<'col-3'l><'col-9'f>>" +
+		"<'row dt-row'<'col-sm-12'tr>>" +
+		"<'row'<'col-4'i><'col-8'p>>",
+    "language": {
+        "info": "Halaman ke _PAGE_ dari _PAGES_",
+        "lengthMenu": "_MENU_ ",
+        "search": "",
+        "searchPlaceholder": "Cari Buku ..."
+    }
+})
+
+let daftarkategori_datatable = $("#daftarKategori").DataTable({
+    responsive: true,
+    order: true,
+    
+    dom:
+		"<'row'<'col-3'l><'col-9'f>>" +
+		"<'row dt-row'<'col-sm-12'tr>>" +
+		"<'row'<'col-4'i><'col-8'p>>",
+    "language": {
+        "info": "Halaman ke _PAGE_ dari _PAGES_",
+        "lengthMenu": "_MENU_ ",
+        "search": "",
+        "searchPlaceholder": "Cari Kategori ...",
+        "paginate": {
+            "previous": "Sebelumnya",
+            "next": "Selanjutnya"
+        }
+    },
 })
 
 const setTableColor = () => {

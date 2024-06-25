@@ -14,7 +14,6 @@
 <div class="row">
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 text-center text-lg-start">
         <h3 class="mb-2">Tambah Katalog Buku</h3>
-        <!-- <p class="text-subtitle text-muted">Kelola daftar buku yang tersedia di perpustakaan BAPANAS.</p> -->
     </div>
 </div>
 <div class="page-content"> 
@@ -35,9 +34,6 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="file" class="image-preview-filepond">
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-image"></i>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

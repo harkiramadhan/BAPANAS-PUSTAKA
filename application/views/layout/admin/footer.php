@@ -40,11 +40,15 @@
         <script src="<?= base_url('assets/admin/extensions/toastify-js/src/toastify.js')?>"></script>
         <script src="<?= base_url('assets/admin/static/js/pages/filepond.js')?>"></script>
 
-        <script>
-            $(document).ready(function() {
-                $('#daftarBukuAdmin').DataTable();
-            });
-        </script>
+        <script src="<?= base_url('assets/admin/extensions/flatpickr/flatpickr.min.js')?>"></script>
+        <script src="<?= base_url('assets/admin/static/js/pages/date-picker.js') ?>"></script>
+    
+        <script src="<?= base_url('assets/admin/extensions/choices.js/public/assets/scripts/choices.js')?>"></script>
+        <script src="<?= base_url('assets/admin/static/js/pages/form-element-select.js')?>"></script>
+
+        <script src="<?= base_url('assets/admin/extensions/sweetalert2/sweetalert2.min.js')?>"></script>
+        <script src="<?= base_url('assets/admin/static/js/pages/sweetalert2.js')?>"></script>
+
     </body>
 
 </html>

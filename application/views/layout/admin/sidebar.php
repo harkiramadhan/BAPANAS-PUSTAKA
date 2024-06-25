@@ -20,47 +20,70 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'peminjaman') ? 'active' : '' ?>">
+                    <a href="<?= site_url('admin/peminjaman/daftar') ?>" class='sidebar-link'>
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        <span>Peminjaman</span>
+                    </a>
+                </li>
+
                 <!-- MENU KATEGORI BUKU -->
                 <li class="sidebar-item <?= ($this->uri->segment(2) == 'buku') ? 'active' : '' ?> has-sub">
-                    <a href="#" class="sidebar-link mb-3">
+                    <a href="#" class="sidebar-link">
                         <i class="bi bi-journal-check"></i>
                         <span>Katalog Buku</span>
                     </a>
-                    <ul class="submenu <?= ($this->uri->segment(2) == 'buku') ? 'submenu-open' : 'submenu-closed' ?> ps-3" style="--submenu-height: 43px;">
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'tambah') ? 'active' : '' ?>">
-                            <a href="<?= site_url('admin/buku/tambah') ?>" class="submenu-link">- Tambah Buku<i class="bi bi-plus-circle-fill float-end" style="margin-top: -2px;"></i></a>
+                    <ul class="submenu <?= ($this->uri->segment(2) == 'buku') ? 'submenu-open' : 'submenu-closed' ?>" style="--submenu-height: 43px;">
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'tambah') ? 'active' : '' ?> mt-2">
+                            <a href="<?= site_url('admin/buku/tambah') ?>" class="submenu-link px-2">- Tambah Buku<i class="bi bi-plus-circle-fill float-end" style="margin-top: -2px;"></i></a>
                         </li>
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'daftar') ? 'active' : '' ?> pl-2">
-                            <a href="<?= site_url('admin/buku/daftar') ?>" class="submenu-link">- Daftar Buku</a>
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'daftar') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/buku/daftar') ?>" class="submenu-link px-2">- Daftar Buku</a>
                         </li>
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'kategori') ? 'active' : '' ?> pl-2">
-                            <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link">- Kategori Buku</a>
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'kategori') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link px-2">- Kategori</a>
+                        </li>
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'jenis') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link px-2">- Jenis</a>
                         </li>
                     </ul>
                 </li>
                 <!-- MENU KATEGORI BUKU -->
+                
 
-
-                <!-- MENU PUSTAKAWAN -->
-                <li class="sidebar-item <?= ($this->uri->segment(2) == 'w') ? 'active' : '' ?> has-sub">
-                    <a href="#" class="sidebar-link mb-3">
-                        <i class="bi bi-journal-check"></i>
-                        <span>Katalog Buku</span>
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'pustakawan') ? 'active' : '' ?>">
+                    <a href="<?= site_url('admin/beranda') ?>" class='sidebar-link'>
+                        <i class="bi bi-people-fill"></i>
+                        <span>Pustakawan</span>
                     </a>
-                    <ul class="submenu <?= ($this->uri->segment(2) == 'buku') ? 'submenu-open' : 'submenu-closed' ?> ps-3" style="--submenu-height: 43px;">
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'tambah') ? 'active' : '' ?>">
-                            <a href="<?= site_url('admin/buku/tambah') ?>" class="submenu-link">- Tambah Buku<i class="bi bi-plus-circle-fill float-end" style="margin-top: -2px;"></i></a>
+                </li>
+
+                <!-- MENU LANDING PAGE -->
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'landing') ? 'active' : '' ?> has-sub">
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-file-break-fill"></i>
+                        <span>Landing Page</span>
+                    </a>
+                    <ul class="submenu <?= ($this->uri->segment(2) == 'landing') ? 'submenu-open' : 'submenu-closed' ?>" style="--submenu-height: 43px;">
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'banner') ? 'active' : '' ?> mt-2">
+                            <a href="<?= site_url('admin/landing/tambah') ?>" class="submenu-link px-2">- Banner</a>
                         </li>
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'daftar') ? 'active' : '' ?> pl-2">
-                            <a href="<?= site_url('admin/buku/daftar') ?>" class="submenu-link">- Daftar Buku</a>
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'header') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/landing/daftar') ?>" class="submenu-link px-2">- Header</a>
                         </li>
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'kategori') ? 'active' : '' ?> pl-2">
-                            <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link">- Kategori Buku</a>
+                        <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'footer') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/landing/kategori') ?>" class="submenu-link px-2">- Footer</a>
                         </li>
                     </ul>
                 </li>
-                <!-- MENU PUSTAKAWAN -->
+                <!-- MENU LANDING PAGE -->
 
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'pengaturan') ? 'active' : '' ?>">
+                    <a href="<?= site_url('admin/beranda') ?>" class='sidebar-link'>
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Pengaturan</span>
+                    </a>
+                </li>
                 
             </ul>
         </div>
