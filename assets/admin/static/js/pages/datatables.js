@@ -53,6 +53,47 @@ let daftarkategori_datatable = $("#daftarKategori").DataTable({
     },
 })
 
+
+let daftarjenis_datatable = $("#daftarJenis").DataTable({
+    responsive: true,
+    order: true,
+    
+    dom:
+		"<'row'<'col-3'l><'col-9'f>>" +
+		"<'row dt-row'<'col-sm-12'tr>>" +
+		"<'row'<'col-4'i><'col-8'p>>",
+    "language": {
+        "info": "Halaman ke _PAGE_ dari _PAGES_",
+        "lengthMenu": "_MENU_ ",
+        "search": "",
+        "searchPlaceholder": "Cari Jenis ...",
+        "paginate": {
+            "previous": "Sebelumnya",
+            "next": "Selanjutnya"
+        }
+    },
+})
+
+let daftarpustakawan_datatable = $("#daftarPustakawan").DataTable({
+    responsive: true,
+    order: true,
+    
+    dom:
+		"<'row'<'col-3'l><'col-9'f>>" +
+		"<'row dt-row'<'col-sm-12'tr>>" +
+		"<'row'<'col-4'i><'col-8'p>>",
+    "language": {
+        "info": "Halaman ke _PAGE_ dari _PAGES_",
+        "lengthMenu": "_MENU_ ",
+        "search": "",
+        "searchPlaceholder": "Cari Pustakawan ...",
+        "paginate": {
+            "previous": "Sebelumnya",
+            "next": "Selanjutnya"
+        }
+    },
+})
+
 const setTableColor = () => {
     document.querySelectorAll('.dataTables_paginate .pagination').forEach(dt => {
         dt.classList.add('pagination-primary')

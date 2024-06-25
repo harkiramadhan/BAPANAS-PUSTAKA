@@ -44,7 +44,7 @@
                             <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link px-2">- Kategori</a>
                         </li>
                         <li class="submenu-item <?= ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'jenis') ? 'active' : '' ?>">
-                            <a href="<?= site_url('admin/buku/kategori') ?>" class="submenu-link px-2">- Jenis</a>
+                            <a href="<?= site_url('admin/buku/jenis') ?>" class="submenu-link px-2">- Jenis</a>
                         </li>
                     </ul>
                 </li>
@@ -52,7 +52,7 @@
                 
 
                 <li class="sidebar-item <?= ($this->uri->segment(2) == 'pustakawan') ? 'active' : '' ?>">
-                    <a href="<?= site_url('admin/beranda') ?>" class='sidebar-link'>
+                    <a href="<?= site_url('admin/pustakawan') ?>" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>Pustakawan</span>
                     </a>

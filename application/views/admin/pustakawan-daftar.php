@@ -4,15 +4,15 @@
     </a>
     <nav aria-label="breadcrumb" class="breadcrumb-header">
         <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-houses-fill me-1"></i> Beranda</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Peminjaman</li>
+            <li class="breadcrumb-item"><a href="   .html"><i class="bi bi-houses-fill me-1"></i> Beranda</a></li>
+            <li class="breadcrumb-item">Pustakawan</li>
         </ol>
     </nav>
 </header>
 
 <div class="row mb-3">
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 text-center text-lg-start">
-        <h3 class="mb-2">Daftar Peminjaman</h3>
+        <h3 class="mb-2">Daftar Pustakawan</h3>
     </div>
 </div>
 <div class="page-content"> 
@@ -20,14 +20,14 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table" id="daftarPeminjaman">
+                    <table class="table" id="daftarPustakawan">
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
-                                <th class="text-center">Judul Buku</th>
-                                <th class="text-center">Peminjam</th>
-                                <th class="text-center">Tgl. Peminjaman</th>
-                                <th class="text-center">Tgl. Pengembalian</th>
+                                <th class="text-center">Nama</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Jml. Peminjaman</th>
+                                <th class="text-center">Tgl. Terdaftar</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
@@ -35,15 +35,14 @@
                         <tbody>
                             <tr>
                                 <td class="text-center">1.</td>
-                                <td>Mikrobiologi Pangan Edisi 5</td>
                                 <td>Alfian Rahmatullah</td>
+                                <td>alvianrht@gmail.com</td>
+                                <td class="text-center"><span class="badge text-bg-primary">2x</span></td>
                                 <td class="text-center">2023-06-01</td>
-                                <td class="text-center">2023-06-10</td>
-                                <td class="text-center"><span class="badge text-bg-primary">Dalam Peminjaman</span></td>
+                                <td class="text-center"><span class="badge text-bg-success">Aktif</span></td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>
-                                        <button  id="question" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>

@@ -69,10 +69,27 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-bookmark-check-fill"></i>
-                                        </div>
+                                        <select class="choices form-select multiple-remove" multiple="multiple">
+                                            <option value="1">Fiksi Inggris</option>
+                                            <option value="2" selected>Dongeng</option>
+                                            <option value="3">Pangan</option>
+                                            <option value="4">Internasional</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contact-info-horizontal-icon">Jenis</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <select class="choices form-select multiple-remove" multiple="multiple">
+                                            <option value="1" selected>Buku Bacaan</option>
+                                            <option value="2" >Rilis</option>
+                                            <option value="3">PDF</option>
+                                            <option value="4">E-Resource</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

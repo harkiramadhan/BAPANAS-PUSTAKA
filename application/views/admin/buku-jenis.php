@@ -6,17 +6,17 @@
         <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-houses-fill me-1"></i> Beranda</a></li>
             <li class="breadcrumb-item"><a href="index.html">Buku</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Daftar Kategori</li>
+            <li class="breadcrumb-item active" aria-current="page">Daftar Jenis Buku</li>
         </ol>
     </nav>
 </header>
 
 <div class="row mb-3">
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 text-center text-lg-start">
-        <h3 class="mb-0">Daftar Kategori Buku</h3>
+        <h3 class="mb-0">Daftar Jenis Buku</h3>
     </div>
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 d-flex align-items-center justify-content-center justify-content-lg-end mb-4 mb-lg-0">
-        <button class="btn icon btn-primary float-end"  data-bs-toggle="modal" data-bs-target="#tambahKategori">Tambah Kategori Buku <i class="bi bi-plus-circle-fill float-end ms-2" style="margin-top: -2px;"></i></button>
+        <button class="btn icon btn-primary float-end"  data-bs-toggle="modal" data-bs-target="#tambahJenis">Tambah Jenis Buku <i class="bi bi-plus-circle-fill float-end ms-2" style="margin-top: -2px;"></i></button>
     </div>
 </div>
 
@@ -25,21 +25,21 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table" id="daftarKategori">
+                    <table class="table" id="daftarJenis">
                         <thead>
                             <tr>
                                 <th class="text-center" width="1">No</th>
-                                <th class="text-center">Judul Katagori</th>
+                                <th class="text-center">Judul Jenis</th>
                                 <th class="text-center" width="1">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-center">1.</td>
-                                <td ><img src="<?= base_url('assets/admin/static/images/faces/2.jpg')?>" class="rounded-4" height="100px" alt="..."><span class="badge text-bg-primary ms-3">FIKSI INGGRIS</span></td>
+                                <td ><span class="badge text-bg-primary ms-3">BUKU BACAAN</span></td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#tambahKategori"><i class="fa-solid fa-pencil"></i></button>
+                                        <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#tambahJenis"><i class="fa-solid fa-pencil"></i></button>
                                         <button id="question" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                     </div>
                                 </td>
@@ -54,11 +54,11 @@
 </div>
 
 
-<div class="modal fade text-left" id="tambahKategori" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div class="modal fade text-left" id="tambahJenis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Kategori Buku</h5>
+                <h5 class="modal-title">Tambah Jenis Buku</h5>
                 <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                 </button>
@@ -68,17 +68,7 @@
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="mb-0" for="contact-info-horizontal-icon">Cover</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="file" class="image-preview-filepond">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="mb-0" for="first-name-horizontal-icon">Judul Kategori</label>
+                                <label class="mb-0" for="first-name-horizontal-icon">Judul Jenis</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
