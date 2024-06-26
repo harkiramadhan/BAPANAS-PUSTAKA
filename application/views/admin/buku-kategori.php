@@ -4,8 +4,8 @@
     </a>
     <nav aria-label="breadcrumb" class="breadcrumb-header">
         <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-houses-fill me-1"></i> Beranda</a></li>
-            <li class="breadcrumb-item"><a href="index.html">Buku</a></li>
+            <li class="breadcrumb-item"><a href="<?= site_url('admin/beranda') ?>"><i class="bi bi-houses-fill me-1"></i> Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?= site_url('admin/buku/daftar') ?>">Buku</a></li>
             <li class="breadcrumb-item active" aria-current="page">Daftar Kategori</li>
         </ol>
     </nav>

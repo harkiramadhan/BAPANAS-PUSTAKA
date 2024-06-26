@@ -79,11 +79,13 @@
                 <!-- MENU LANDING PAGE -->
 
                 <li class="sidebar-item <?= ($this->uri->segment(2) == 'pengaturan') ? 'active' : '' ?>">
-                    <a href="<?= site_url('admin/beranda') ?>" class='sidebar-link'>
+                    <a href="<?= site_url('admin/pengaturan') ?>" class='sidebar-link'>
                         <i class="bi bi-gear-fill"></i>
                         <span>Pengaturan</span>
                     </a>
                 </li>
+
+                <a href="#" class="btn btn-outline-danger rounded-pill w-100 shadow-sm py-2 mt-3"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Keluar Admin</a>
                 
             </ul>
         </div>
