@@ -66,13 +66,13 @@
                     </a>
                     <ul class="submenu <?= ($this->uri->segment(2) == 'landing') ? 'submenu-open' : 'submenu-closed' ?>" style="--submenu-height: 43px;">
                         <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'banner') ? 'active' : '' ?> mt-2">
-                            <a href="<?= site_url('admin/landing/tambah') ?>" class="submenu-link px-2">- Banner</a>
+                            <a href="<?= site_url('admin/landing/banner') ?>" class="submenu-link px-2">- Banner</a>
                         </li>
-                        <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'header') ? 'active' : '' ?>">
-                            <a href="<?= site_url('admin/landing/daftar') ?>" class="submenu-link px-2">- Header</a>
-                        </li>
+                        <!-- <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'header') ? 'active' : '' ?>">
+                            <a href="<?= site_url('admin/landing/header') ?>" class="submenu-link px-2">- Header</a>
+                        </li> -->
                         <li class="submenu-item <?= ($this->uri->segment(2) == 'landing' && $this->uri->segment(3) == 'footer') ? 'active' : '' ?>">
-                            <a href="<?= site_url('admin/landing/kategori') ?>" class="submenu-link px-2">- Footer</a>
+                            <a href="<?= site_url('admin/landing/footer') ?>" class="submenu-link px-2">- Footer</a>
                         </li>
                     </ul>
                 </li>
