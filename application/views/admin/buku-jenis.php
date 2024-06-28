@@ -34,17 +34,83 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td ><span class="badge text-bg-primary ms-3">BUKU BACAAN</span></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#tambahJenis"><i class="fa-solid fa-pencil"></i></button>
-                                        <button id="question" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                            <?php $no=1; foreach($jenis->result() as $row){ ?>
+                                <tr>
+                                    <td class="text-center"><?= $no ?>.</td>
+                                    <td ><span class="badge text-bg-primary ms-3"><?= $row->jenis ?></span></td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#edit-<?= md5($row->id) ?>"><i class="fa-solid fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#remove-<?= md5($row->id) ?>"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <div class="modal fade text-left" id="edit-<?= md5($row->id) ?>" tabindex="-1" role="dialog" aria-labelledby="edit-<?= md5($row->id) ?>" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit Jenis Buku</h5>
+                                                <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                </button>
+                                            </div>
+                                            <form action="<?= site_url('admin/buku/editJenis/' . md5($row->id)) ?>" method="POST" class="form form-horizontal">
+                                                <div class="modal-body">
+                                                    <div class="form-body">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="first-name-horizontal-icon">Judul Jenis</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="text" name="jenis" value="<?= $row->jenis ?>" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon" required>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-tag"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="d-flex">
+                                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
+                                                        <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                </td>
-                            </tr>
-                            
+                                </div>
+
+                                <div class="modal fade text-left" id="remove-<?= md5($row->id) ?>" tabindex="-1" aria-labelledby="remove-<?= md5($row->id) ?>" aria-modal="true" role="dialog">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-danger">
+                                                <h5 class="modal-title white" id="myModalLabel120">Hapus Jenis Buku
+                                                </h5>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                Hapus Jenis Buku <br>
+                                                <strong><?= $row->jenis ?></strong>
+                                            </div>
+                                            <form action="<?= site_url('admin/buku/removeJenis/' . md5($row->id)) ?>" method="post">
+                                                <input type="hidden" name="jenis" value="<?= $row->jenis ?>">
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
+                                                    <button type="submit" class="btn btn-sm btn-danger me-1 mb-1">Hapus</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php $no++; } ?>
                         </tbody>
                     </table>
                 </div>
@@ -63,8 +129,8 @@
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                <form class="form form-horizontal">
+            <form action="<?= site_url('admin/buku/createJenis') ?>" method="POST" class="form form-horizontal">
+                <div class="modal-body">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
@@ -73,7 +139,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
+                                        <input type="text" name="jenis" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon" required>
                                         <div class="form-control-icon">
                                             <i class="fa-solid fa-tag"></i>
                                         </div>
@@ -83,14 +149,14 @@
 
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="d-flex">
-                    <button type="reset" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
-                    <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
                 </div>
-            </div>
+                <div class="modal-footer">
+                    <div class="d-flex">
+                        <button type="reset" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
+                        <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

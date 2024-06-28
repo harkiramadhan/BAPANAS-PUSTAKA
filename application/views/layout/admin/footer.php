@@ -49,6 +49,13 @@
         <script src="<?= base_url('assets/admin/extensions/sweetalert2/sweetalert2.min.js')?>"></script>
         <script src="<?= base_url('assets/admin/static/js/pages/sweetalert2.js')?>"></script>
 
+        <?php 
+            if(@$ajax) {
+                foreach(@$ajax as $a){
+                    echo "<script src='".base_url('assets/admin/custom/js/' . $a).".js'></script>";
+                }
+            }      
+        ?>
     </body>
 
 </html>

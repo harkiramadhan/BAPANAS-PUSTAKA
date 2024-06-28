@@ -44,7 +44,7 @@
                                     <div class="btn-group">
                                         <a href="<?= site_url('admin/buku/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
                                         <button class="btn btn-secondary btn-sm mx-1"><i class="fa-solid fa-eye"></i></button>
-                                        <button id="question" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>
