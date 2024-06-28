@@ -39,17 +39,18 @@
                                     <td class="text-center"><?= $no ?>.</td>
                                     <td>
                                         <?php if($row->cover): ?>
-                                            <img src="<?= base_url('assets/img/kategori/' . $row->cover)?>" class="rounded-4" height="100px" alt="...">
+                                            <img src="<?= base_url('assets/img/kategori/' . $row->cover) ?>" class="rounded-4" height="100px" alt="...">
                                         <?php endif; ?>
                                         <span class="badge text-bg-primary ms-3"><?= $row->kategori ?></span>
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <button class="btn btn-primary btn-sm me-1 btn-edit" data-id="<?= md5($row->id) ?>" data-kategori="<?= $row->kategori ?>"><i class="fa-solid fa-pencil"></i></button>
+                                            <button class="btn btn-primary btn-sm me-1 btn-edit" data-id="<?= md5($row->id) ?>" data-kategori="<?= $row->kategori ?>" data-img="<?= base_url('assets/img/kategori/' . $row->cover) ?>"><i class="fa-solid fa-pencil"></i></button>
                                             <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#remove-<?= md5($row->id) ?>"><i class="fa-solid fa-trash"></i></button>
                                         </div>
                                     </td>
                                 </tr>
+
                                 <div class="modal fade text-left" id="remove-<?= md5($row->id) ?>" tabindex="-1" aria-labelledby="remove-<?= md5($row->id) ?>" aria-modal="true" role="dialog">
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                                         <div class="modal-content">
@@ -148,6 +149,8 @@
                 <div class="modal-body">
                     <div class="form-body">
                         <div class="row">
+                            <img src="" id="img-before" class="rounded-4 mb-3" alt="...">
+
                             <div class="col-md-4">
                                 <label class="mb-0" for="contact-info-horizontal-icon">Cover</label>
                             </div>

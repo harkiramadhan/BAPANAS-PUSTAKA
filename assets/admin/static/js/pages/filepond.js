@@ -117,8 +117,8 @@ FilePond.create(document.querySelector(".image-preview-filepond"), {
   acceptedFileTypes: ["image/png", "image/jpg", "image/jpeg"],
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
-      $('#img-before').addClass('d-none')
       // Do custom type detection here and return with promise
+      $('#img-before').addClass('d-none')
       resolve(type)
     }),
   storeAsFile: true,
@@ -134,6 +134,7 @@ FilePond.create(document.querySelector(".image-preview-filepond-for-edit"), {
   fileValidateTypeDetectType: (source, type) =>
     new Promise((resolve, reject) => {
       // Do custom type detection here and return with promise
+      $('#img-before').addClass('d-none')
       resolve(type)
     }),
   storeAsFile: true,
