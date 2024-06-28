@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php } ?>
+                            <?php $no++; } ?>
                         </tbody>
                     </table>
                 </div>
