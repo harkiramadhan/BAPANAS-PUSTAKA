@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'bapanas-pustaka',
+	'hostname' => '193.168.194.207',
+	'username' => 'u9021961_dev',
+	'password' => 'dukxiV-4pacxy-nipkyj',
+	'database' => 'u9021961_bapanas_pustaka',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
