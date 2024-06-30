@@ -20,7 +20,12 @@
         <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/choices.js/public/assets/styles/choices.css')?>">
 
         <!-- Place the first <script> tag in your HTML's <head> -->
-        <script src="https://cdn.tiny.cloud/1/2obp7gbxwuz79fd24bafjam688l4cn76aymkx3sa9py0j3xv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+        <?php if(
+            ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'tambah') ||
+            ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'edit')
+        ): ?>
+            <script src="https://cdn.tiny.cloud/1/2obp7gbxwuz79fd24bafjam688l4cn76aymkx3sa9py0j3xv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+        <?php endif; ?>
 
 
         <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/filepond/filepond.css') ?>">
@@ -28,8 +33,6 @@
         <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/toastify-js/src/toastify.css') ?>">
 
         <link rel="stylesheet" href="<?= base_url('assets/fontawesome-free-6.5.2-web/css/all.min.css') ?>">
-
-        <link rel="stylesheet" href="<?= base_url('assets/admin/extensions/sweetalert2/sweetalert2.min.css')?>">
 
     </head>
 

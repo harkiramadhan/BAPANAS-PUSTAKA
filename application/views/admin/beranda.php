@@ -26,7 +26,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-muted font-semibold">Peminjam</h5>
-                            <h6 class="font-extrabold mb-0">1000</h6>
+                            <h6 class="font-extrabold mb-0"><?= $peminjam ?></h6>
                         </div>
                     </div> 
                 </div>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-muted font-semibold">Anggota</h5>
-                            <h6 class="font-extrabold mb-0">1000</h6>
+                            <h6 class="font-extrabold mb-0"><?= $anggota ?></h6>
                         </div>
                     </div> 
                 </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-muted font-semibold">Jumlah Buku</h5>
-                            <h6 class="font-extrabold mb-0">1000</h6>
+                            <h6 class="font-extrabold mb-0"><?= $buku ?></h6>
                         </div>
                     </div> 
                 </div>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-muted font-semibold">Kategori</h5>
-                            <h6 class="font-extrabold mb-0">1000</h6>
+                            <h6 class="font-extrabold mb-0"><?= $kategori ?></h6>
                         </div>
                     </div> 
                 </div>

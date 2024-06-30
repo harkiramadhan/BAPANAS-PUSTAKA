@@ -46,9 +46,6 @@
         <script src="<?= base_url('assets/admin/extensions/choices.js/public/assets/scripts/choices.js')?>"></script>
         <script src="<?= base_url('assets/admin/static/js/pages/form-element-select.js')?>"></script>
 
-        <script src="<?= base_url('assets/admin/extensions/sweetalert2/sweetalert2.min.js')?>"></script>
-        <script src="<?= base_url('assets/admin/static/js/pages/sweetalert2.js')?>"></script>
-
         <?php 
             if(@$ajax) {
                 foreach(@$ajax as $a){

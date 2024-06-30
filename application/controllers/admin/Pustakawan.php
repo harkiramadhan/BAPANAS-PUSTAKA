@@ -2,9 +2,13 @@
 class Pustakawan extends CI_Controller{
     
     function index(){
-        $this->load->view('layout/admin/header',);
-        $this->load->view('admin/pustakawan-daftar');
-        $this->load->view('layout/admin/footer');
+        $var = [
+            'pustakawan' => $this->db->get('pustakawan')
+        ];
+
+        $this->load->view('layout/admin/header', $var);
+        $this->load->view('admin/pustakawan-daftar', $var);
+        $this->load->view('layout/admin/footer', $var);
 
     }
 

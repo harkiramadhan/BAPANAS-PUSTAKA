@@ -33,19 +33,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td>Alfian Rahmatullah</td>
-                                <td>alvianrht@gmail.com</td>
-                                <td class="text-center"><span class="badge text-bg-primary">2x</span></td>
-                                <td class="text-center">2023-06-01</td>
-                                <td class="text-center"><span class="badge text-bg-success">Aktif</span></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php $no=1; foreach($pustakawan->result() as $row){ ?>
+                                <tr>
+                                    <td class="text-center"><?= $no ?>.</td>
+                                    <td><?= $row->nama ?></td>
+                                    <td><?= $row->email ?></td>
+                                    <td class="text-center"><span class="badge text-bg-primary">2x</span></td>
+                                    <td class="text-center"><?= $row->created_at ?></td>
+                                    <td class="text-center"><span class="badge <?= ($row->status == 1) ? 'text-bg-success' : 'text-bg-danger' ?>"><?= ($row->status == 1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php $no++; } ?>
                             <!-- Tambahkan lebih banyak peminjaman sesuai kebutuhan -->
                         </tbody>
                     </table>
