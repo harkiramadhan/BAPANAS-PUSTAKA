@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="<?= base_url('assets/user/bootstrap/css/bootstrap.css') ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+        <link rel="stylesheet" href="<?= base_url('assets/fontawesome-free-6.5.2-web/css/all.min.css') ?>">
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="<?= base_url('assets/user/css/custom.css') ?>">
 
@@ -48,8 +50,8 @@
                         </div>
                         <img class="rounded border d-none d-lg-block" src="<?= base_url('assets/user/image/flag-id.svg') ?>" alt="">
                         <div class="gap-2 d-flex">
-                            <a href="" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
-                            <a href="" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
+                            <a href="<?= site_url('user/auth/login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
+                            <a href="<?= site_url('user/auth/register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +60,7 @@
         <!-- Main Nav -->
 
         <!-- Sub Nav -->
-        <section id="subnav" class="d-none d-lg-block">
+        <section id="subnav" class="d-none d-lg-block sticky-top">
             <nav class="navbar navbar-expand-lg bg-success">
                 <div class="container-xl">
                     <div class="navbar-nav gap-4">

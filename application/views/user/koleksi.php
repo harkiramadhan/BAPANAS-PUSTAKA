@@ -21,7 +21,7 @@
         </div>
         <div class="row mb-2">
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <div class="position-relative">
                         <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                         <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span>
@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
@@ -48,7 +48,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
@@ -56,7 +56,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <div class="position-relative">
                         <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                         <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span>
@@ -67,7 +67,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
@@ -75,7 +75,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
@@ -83,7 +83,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
+                <a href="<?= site_url('user/koleksi/detail') ?>" style="text-decoration: none;">
                     <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                     <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
                     <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>

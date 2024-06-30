@@ -1,17 +1,17 @@
 <?php
-class Koleksi extends CI_Controller{
+class Auth extends CI_Controller{
     
-    function index(){
+    function login(){
 
         $this->load->view('layout/user/header',);
-        $this->load->view('user/koleksi');
+        $this->load->view('user/auth-login');
         $this->load->view('layout/user/footer');
     }
 
-    function detail(){
+    function register(){
 
         $this->load->view('layout/user/header',);
-        $this->load->view('user/koleksi-detail');
+        $this->load->view('user/auth-register');
         $this->load->view('layout/user/footer');
     }
 }
