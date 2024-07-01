@@ -55,7 +55,7 @@
 
             <p class="my-4 text-center">Sudah memiliki akun?</p>
             <div class="gap-2 d-flex">
-                <a href="<?= site_url('user/auth/login') ?>" class="btn btn-light w-100 px-5 py-3 text-black">Masuk</a>
+                <a href="<?= site_url('login') ?>" class="btn btn-light w-100 px-5 py-3 text-black">Masuk</a>
             </div>
         </form>
 

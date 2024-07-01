@@ -34,12 +34,12 @@
                     <div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
                         <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-2 mb-lg-0 px-3 py-2 bg-success rounded">
                             <li class="nav-item">
-                                <a href="<?= site_url('user/beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
-                                <a href="<?= site_url('user/koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
-                                <a href="<?= site_url('user/kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
-                                <a href="<?= site_url('user/pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
-                                <a href="<?= site_url('user/lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
-                                <a href="<?= site_url('user/ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
+                                <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
+                                <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
+                                <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
+                                <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
+                                <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
+                                <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                             </li>
                         </ul>
                         <div class="input-group d-none d-lg-flex">
@@ -50,8 +50,8 @@
                         </div>
                         <img class="rounded border d-none d-lg-block" src="<?= base_url('assets/user/image/flag-id.svg') ?>" alt="">
                         <div class="gap-2 d-flex">
-                            <a href="<?= site_url('user/auth/login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
-                            <a href="<?= site_url('user/auth/register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
+                            <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
+                            <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
                         </div>
                     </div>
                 </div>
@@ -64,12 +64,12 @@
             <nav class="navbar navbar-expand-lg bg-success">
                 <div class="container-xl">
                     <div class="navbar-nav gap-4">
-                        <a href="<?= site_url('user/beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
-                        <a href="<?= site_url('user/koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
-                        <a href="<?= site_url('user/kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
-                        <a href="<?= site_url('user/pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
-                        <a href="<?= site_url('user/lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
-                        <a href="<?= site_url('user/ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(2) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
+                        <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
+                        <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
+                        <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
+                        <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
+                        <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
+                        <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                     </div>
                 </div>
             </nav>

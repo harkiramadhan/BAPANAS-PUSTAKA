@@ -27,7 +27,7 @@
                 </div>
                 <div class="col">
                     <div class="mb-3 form-check text-end">
-                        <a href="<?= site_url('user/auth/password') ?>" class="link-underline-light text-black text-end">Lupa Kata Sandi?</a>
+                        <a href="<?= site_url('reset-password') ?>" class="link-underline-light text-black text-end">Lupa Kata Sandi?</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
 
             <p class="my-4 text-center">Belum memiliki akun?</p>
             <div class="gap-2 d-flex">
-                <a href="<?= site_url('user/auth/register') ?>" class="btn btn-light w-100 px-5 py-3 text-black">Daftar Sekarang</a>
+                <a href="<?= site_url('register') ?>" class="btn btn-light w-100 px-5 py-3 text-black">Daftar Sekarang</a>
             </div>
         </form>
 
