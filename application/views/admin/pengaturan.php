@@ -46,6 +46,23 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-4">
+                                <label for="first-name-horizontal-icon">Email Recovery Password</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative mb-1">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-book"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-muted">
+                                        <i>** Link recovery akan di kirim melalui email yang tertaut.</i>
+                                    </p>
+                                </div>
+                            </div>
                             <hr class="mt-2 mb-3" style="border-style: dashed;">
                             <h5 class="card-title mb-4">Kata Sandi admin</h5>
                             <div class="col-md-4">
