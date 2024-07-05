@@ -14,4 +14,11 @@ class Auth extends CI_Controller{
         $this->load->view('user/auth-register');
         $this->load->view('layout/user/footer');
     }
+
+    function forgot(){
+
+        $this->load->view('layout/user/header',);
+        $this->load->view('user/auth-forgotpass');
+        $this->load->view('layout/user/footer');
+    }
 }

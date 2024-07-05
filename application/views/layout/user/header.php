@@ -42,9 +42,9 @@
                                 <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                             </li>
                         </ul>
-                        <div class="input-group d-none d-lg-flex">
+                        <div class="input-group d-none d-lg-flex z-0">
                             <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
-                            <button class="btn" type="button" style="background-color: #F3F3F3; border: none;">
+                            <button class="btn z-0" type="button" style="background-color: #F3F3F3; border: none;">
                                 <i class="bi bi-search" style="color: #A4A4A4;"></i>
                             </button>
                         </div>
@@ -53,6 +53,35 @@
                             <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
                             <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
                         </div>
+
+                        <!-- Header Ketika Login -->
+                        <div class="dropdown ms-4 d-none d-lg-block z-1">
+                            <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                <div class="ms-2">
+                                    <span class="fw-bold text-black">Hai, Alfian</span>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="<?= site_url('profil') ?>">Profil</a></li>
+                                <li><a class="dropdown-item" href="<?= site_url('peminjaman') ?>">Peminjaman</a></li>
+                                <li><a class="dropdown-item text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
+                            </ul>
+                        </div>
+                        <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-0 mb-lg-0 px-3 py-2 border rounded">
+                            <div class="d-flex align-items-center mb-3">
+                                <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                <div class="ms-2">
+                                    <span class="fw-bold text-black">Hai, Alfian</span>
+                                </div>
+                            </div>
+                            <li class="nav-item">
+                                <a href="<?= site_url('beranda') ?>" class="nav-link">Profil</a>
+                                <a href="<?= site_url('koleksi') ?>" class="nav-link">Peminjaman</a>
+                                <a href="<?= site_url('kategori') ?>" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                            </li>
+                        </ul>
+                        <!-- Header Ketika Login -->
                     </div>
                 </div>
             </nav>
@@ -60,7 +89,7 @@
         <!-- Main Nav -->
 
         <!-- Sub Nav -->
-        <section id="subnav" class="d-none d-lg-block sticky-top">
+        <section id="subnav" class="d-none d-lg-block sticky-top z-0">
             <nav class="navbar navbar-expand-lg bg-success">
                 <div class="container-xl">
                     <div class="navbar-nav gap-4">
@@ -75,7 +104,7 @@
             </nav>
         </section>
 
-        <div class="input-group d-flex d-lg-none">
+        <div class="input-group d-flex d-lg-none p-3 pt-0">
             <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
             <button class="btn" type="button" style="background-color: #F3F3F3; border: none;">
                 <i class="bi bi-search" style="color: #A4A4A4;"></i>

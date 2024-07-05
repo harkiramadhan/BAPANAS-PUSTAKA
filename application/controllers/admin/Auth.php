@@ -12,7 +12,7 @@ class Auth extends CI_Controller{
 
     function password(){
 
-        $this->load->view('admin/auth-forpasword');
+        $this->load->view('admin/auth-forgotpass');
     }
 
 }
