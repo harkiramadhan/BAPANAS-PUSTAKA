@@ -42,20 +42,21 @@
                                 <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                             </li>
                         </ul>
-                        <div class="input-group d-none d-lg-flex z-0">
+                        <div class="input-group d-none d-lg-flex z-1">
                             <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
                             <button class="btn z-0" type="button" style="background-color: #F3F3F3; border: none;">
                                 <i class="bi bi-search" style="color: #A4A4A4;"></i>
                             </button>
                         </div>
                         <img class="rounded border d-none d-lg-block" src="<?= base_url('assets/user/image/flag-id.svg') ?>" alt="">
-                        <div class="gap-2 d-flex">
+                        <!-- <div class="gap-2 d-flex">
                             <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
                             <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
-                        </div>
+                        </div> -->
 
                         <!-- Header Ketika Login -->
-                        <div class="dropdown ms-4 d-none d-lg-block z-1">
+                        <button class="btn btn-light ms-4 px-3 py-1"><i class="bi bi-journal-arrow-down" style="font-size: 1.5rem;"></i></button>
+                        <div class="dropdown ms-2 d-none d-lg-block z-2">
                             <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
                                 <div class="ms-2">
@@ -63,8 +64,8 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= site_url('profil') ?>">Profil</a></li>
-                                <li><a class="dropdown-item" href="<?= site_url('peminjaman') ?>">Peminjaman</a></li>
+                                <li><a class="dropdown-item" href="<?= site_url('user/akun/') ?>">Profil</a></li>
+                                <li><a class="dropdown-item" href="<?= site_url('user/peminjaman/') ?>">Peminjaman</a></li>
                                 <li><a class="dropdown-item text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
                             </ul>
                         </div>
@@ -76,8 +77,8 @@
                                 </div>
                             </div>
                             <li class="nav-item">
-                                <a href="<?= site_url('beranda') ?>" class="nav-link">Profil</a>
-                                <a href="<?= site_url('koleksi') ?>" class="nav-link">Peminjaman</a>
+                                <a href="<?= site_url('user/akun/rofil') ?>" class="nav-link">Profil</a>
+                                <a href="<?= site_url('user/peminjaman/') ?>" class="nav-link">Peminjaman</a>
                                 <a href="<?= site_url('kategori') ?>" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
                             </li>
                         </ul>
@@ -89,7 +90,7 @@
         <!-- Main Nav -->
 
         <!-- Sub Nav -->
-        <section id="subnav" class="d-none d-lg-block sticky-top z-0">
+        <section id="subnav" class="d-none d-lg-block sticky-top z-1">
             <nav class="navbar navbar-expand-lg bg-success">
                 <div class="container-xl">
                     <div class="navbar-nav gap-4">
