@@ -7,14 +7,18 @@
             <p class="text-black-50 link-underline-light">Masuk ke akun Perpustakaan BAPANAS Anda untuk mengakses koleksi buku digital, <br> melihat riwayat peminjaman, dan menikmati berbagai layanan perpustakaan yang tersedia. </p>
         </div>
         
-        <form>
+        <form method="POST" action="<?= site_url('user/auth/userLogin') ?>">
+            <?php if($this->session->flashdata('error')): ?>
+                <h5 class="text-danger mb-3"><strong><?= $this->session->flashdata('error') ?></strong></h5>
+            <?php endif; ?>
+
             <div class="mb-3">
-                <label for="" class="form-label">Username/NIK</label>
-                <input type="email" class="form-control focus-ring focus-ring-success" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp">
+                <label for="" class="form-label">Username / NIK / Email</label>
+                <input name="username" value="<?= @$this->session->flashdata('username') ?>" type="text" class="form-control focus-ring focus-ring-success <?= ($this->session->flashdata('error_username') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3 password-container">
                 <label for="password" class="form-label">Kata Sandi</label>
-                <input type="password" class="form-control focus-ring focus-ring-success" style="background-color: #F3F3F3; padding: 12px 20px;" id="password">
+                <input name="password" type="password" class="form-control focus-ring focus-ring-success <?= ($this->session->flashdata('error_password') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="password" required>
                 <i class="fa-solid fa-eye-slash fa-lg toggle-password mt-3 me-2"></i>
             </div>
             
@@ -32,7 +36,7 @@
                 </div>
             </div>
 
-            <a href="" class="btn btn-success w-100 px-5 py-3 fw-bold mt-4">Masuk</a>
+            <button type="submit" class="btn btn-success w-100 px-5 py-3 fw-bold mt-4">Masuk</button>
 
             <p class="my-4 text-center">Belum memiliki akun?</p>
             <div class="gap-2 d-flex">
