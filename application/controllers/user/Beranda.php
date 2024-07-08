@@ -10,11 +10,13 @@ class Beranda extends CI_Controller{
             $userid = $this->session->userdata('userid');
             $var = [
                 'user' => $this->M_Pustakawan->getById($userid),
-                'banner' => $this->db->get_where('banner', ['status' => 1])
+                'banner' => $this->db->get_where('banner', ['status' => 1]),
+                'kategori' => $this->db->get('kategori')
             ];
         }else{
             $var = [
-                'banner' => $this->db->get_where('banner', ['status' => 1])
+                'banner' => $this->db->get_where('banner', ['status' => 1]),
+                'kategori' => $this->db->get('kategori')
             ];
         }
         

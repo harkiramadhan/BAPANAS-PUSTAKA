@@ -224,57 +224,19 @@
         <!-- Rekomendasi Buku Lainnya -->
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h3 class="mb-0">Kategori</h3>
-            <a href="" class="text-black-50 link-underline-light">Tampilkan lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="<?= site_url('kategori') ?>" class="text-black-50 link-underline-light">Tampilkan lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
         </div>
         <div class="row mb-2">
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>'); background-size: cover; background-position: center;">
-                        <h5 class="fw-semibold mt-auto mb-1 text-white">Arts & Photohraphy</h5>
-                        <p class="text-white mb-0 fw-light">214+ Buku</p>
-                    </div>
-                </a>
-            </div>
+            <?php foreach($kategori->result() as $kt){ ?>
+                <div class="col-12 col-md-3 col-lg-2 mb-3">
+                    <a href="" style="text-decoration: none;">
+                        <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -30.79%, #DCA703 68.82%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
+                            <h5 class="fw-semibold mt-auto mb-1 text-white"><?= $kt->kategori ?></h5>
+                            <p class="text-white mb-0 fw-light">214+ Buku</p>
+                        </div>
+                    </a>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </section>
