@@ -14,7 +14,7 @@
 <section class="pt-4 pb-5" style="background: #FFF;">
     <div class="container-xl mb-5">
         <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-lg-3 mb-4 mb-lg-0">
                 <div class="position-relative">
                     <?php if($buku->cover): ?>
                         <img src="<?= base_url('assets/img/cover/' . $buku->cover)?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
@@ -28,7 +28,7 @@
                 <?php endif; ?>
 
             </div>
-            <div class="col-9">
+            <div class="col-12 col-lg-9">
 
                 <?php if (in_array("2", json_decode($buku->jenis))) : ?>
                     <p class="text-success mb-2 fw-light">
