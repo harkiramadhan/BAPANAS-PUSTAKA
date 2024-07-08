@@ -19,77 +19,41 @@
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h4 class="mb-0 fw-normal">Semua Publikasi Pangan, Halaman <span class="fw-bold text-success fst-italic">' 1 '</span> dari 10</h4>
         </div>
+        
         <div class="row mb-2">
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="position-relative">
-                        <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                        <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span>
-                    </div>
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <div class="position-relative">
-                        <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                        <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span>
-                    </div>
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
-                    <p class="text-success mb-2 fw-light"><i class="bi bi-check-circle-fill me-2"></i>Tersedia Offline</p>
-                    <h5 class="fw-semibold mb-1 text-black">Mikrobiologi Pangan Edisi 5</h5>
-                    <p class="text-secondary mb-2 fw-light">Bibek Ray, Arun Bhunia</p>
-                </a>
-            </div>
+            <?php 
+                    foreach($bukupangan->result() as $bp){ 
+                ?>
+                <div class="col-12 col-md-3 col-lg-3 mb-3">
+                    <a href="<?= site_url('user/koleksi/detail/' . md5($bp->id)) ?>" style="text-decoration: none;">
+                        <div class="position-relative">
+                            <?php if($bp->cover): ?>
+                            <img src="<?= base_url('assets/img/cover/' . $bp->cover) ?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
+                            <?php endif; ?>
+                            <!-- <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span> -->
+                        </div>
+                        
+                        <?php if (in_array("2", json_decode($bp->jenis))) : ?>
+                            <p class="text-success mb-2 fw-light">
+                                <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
+                            </p>
+                        <?php elseif (in_array("1", json_decode($bp->jenis))) : ?>
+                            <p class="text-success mb-2 fw-light">
+                                <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
+                            </p>
+                        <?php endif; ?>
+
+                        
+                        <h5 class="fw-semibold mb-1 text-black">
+                            <?php 
+                                $judul = $bp->judul;
+                                echo strlen($judul) > 25 ? substr($judul, 0, 25) . '..' : $judul;
+                            ?>
+                        </h5>                    
+                        <p class="text-secondary mb-2 fw-light"><?= $bp->pengarang ?></p>
+                    </a>
+                </div>
+            <?php } ?>
         </div>
     </div>
     

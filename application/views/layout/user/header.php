@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="<?= base_url('assets/fontawesome-free-6.5.2-web/css/all.min.css') ?>">
 
         <!-- Custom CSS -->
+        <link rel="stylesheet" href="<?= base_url('assets/user/css/bootstrap-primary-green.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('assets/user/css/bootstrap-primary-green.css.map') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/user/css/custom.css') ?>">
 
     </head>
@@ -32,7 +34,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
-                        <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-2 mb-lg-0 px-3 py-2 bg-success rounded">
+                        <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-2 mb-lg-0 px-3 py-2 bg-primary rounded">
                             <li class="nav-item">
                                 <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
                                 <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
@@ -42,7 +44,7 @@
                                 <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                             </li>
                         </ul>
-                        <div class="input-group d-none d-lg-flex z-1">
+                        <div class="input-group d-none d-lg-flex z-2">
                             <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
                             <button class="btn z-0" type="button" style="background-color: #F3F3F3; border: none;">
                                 <i class="bi bi-search" style="color: #A4A4A4;"></i>
@@ -52,15 +54,15 @@
 
                         <?php if($this->session->userdata('is_loggedin')): ?>
                             <!-- Header Ketika Login -->
-                            <button class="btn btn-light ms-4 px-3 py-1"><i class="bi bi-journal-arrow-down" style="font-size: 1.5rem;"></i></button>
-                            <div class="dropdown ms-2 d-none d-lg-block z-2">
+                            <a href="<?= site_url('peminjaman') ?>" class="btn btn-light ms-4 px-2 py-1 d-none d-lg-block"><i class="bi bi-bookmark-plus-fill" style="font-size: 1.5rem;"></i></a>
+                            <div class="dropdown ms-2 d-none d-lg-block z-3">
                                 <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
                                     <div class="ms-2">
-                                        <span class="fw-bold text-black">Hai, <?= $user->nama ?></span>
+                                        <span class="fw-bold text-black">Hai, <?= @$user->nama ?></span>
                                     </div>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <ul class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="dropdownMenuLink">
                                     <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('akun') ?>">Profil</a></li>
                                     <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('peminjaman') ?>">Peminjaman</a></li>
                                     <li><a class="dropdown-item text-bg-light py-2 text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
@@ -70,20 +72,20 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
                                     <div class="ms-2">
-                                        <span class="fw-bold text-black">Hai, <?= $user->nama ?></span>
+                                        <span class="fw-bold text-black">Hai, <?= @$user->nama ?></span>
                                     </div>
                                 </div>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('akun') ?>" class="nav-link bg-light">Profil</a>
-                                    <a href="<?= site_url('peminjaman') ?>" class="nav-link bg-light">Peminjaman</a>
-                                    <a href="<?= site_url('kategori') ?>" class="nav-link bg-light text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                                    <a href="<?= site_url('akun') ?>" class="nav-link">Profil</a>
+                                    <a href="<?= site_url('peminjaman') ?>" class="nav-link">Peminjaman</a>
+                                    <a href="<?= site_url('kategori') ?>" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
                                 </li>
                             </ul>
                             <!-- Header Ketika Login -->
                         <?php else: ?>
                             <div class="gap-2 d-flex">
                                 <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
-                                <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
+                                <a href="<?= site_url('register') ?>" class="btn btn-warning flex-fill px-5 py-3 fw-bold">Daftar</a>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -93,16 +95,16 @@
         <!-- Main Nav -->
 
         <!-- Sub Nav -->
-        <section id="subnav" class="d-none d-lg-block sticky-top z-1">
-            <nav class="navbar navbar-expand-lg bg-success">
+        <section id="subnav" class="d-none d-lg-block sticky-top z-2">
+            <nav class="navbar navbar-expand-lg bg-primary">
                 <div class="container-xl">
                     <div class="navbar-nav gap-4">
-                        <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
-                        <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
-                        <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
-                        <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
-                        <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
-                        <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
+                        <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda' || $this->uri->segment(2) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
+                        <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi' || $this->uri->segment(2) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
+                        <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori' || $this->uri->segment(2) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
+                        <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan' || $this->uri->segment(2) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
+                        <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi' || $this->uri->segment(2) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
+                        <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid' || $this->uri->segment(2) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                     </div>
                 </div>
             </nav>

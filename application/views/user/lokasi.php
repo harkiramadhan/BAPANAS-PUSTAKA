@@ -4,7 +4,7 @@
     <div class="container-xl">
         <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\' fill=\'%236c757d\' class=\'bi bi-circle-fill\' viewBox=\'0 0 16 16\'%3E%3Ccircle cx=\'8\' cy=\'8\' r=\'8\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" class="text-success fw-bold text-decoration-none"><i class="bi bi-house-door-fill me-2"></i>Beranda</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-primary fw-bold text-decoration-none"><i class="bi bi-house-door-fill me-2"></i>Beranda</a></li>
             <li class="breadcrumb-item active" aria-current="page">Publikasi Pangan</li>
           </ol>
         </nav>
@@ -19,8 +19,8 @@
                 <h3 class="display-6 fw-bold">Temukan Dunia Pengetahuan Pangan di Perpustakaan Kami!</h3>
                 <p class="lead">Perpustakaan Pangan kami adalah tempat yang sempurna bagi Anda untuk menemukan dan mengeksplorasi dunia pengetahuan pangan yang tak terbatas. Dengan koleksi buku dan publikasi terkini, kami menyediakan sumber daya yang Anda butuhkan untuk mengembangkan pengetahuan dan keahlian Anda di bidang pangan.</p>
                 <div class="gap-2 d-flex justify-content-center justify-content-lg-start">
-                    <a href="" class="btn btn-outline-success px-5 py-3 fw-bold">Hubungi Kami</a>
-                    <a href="" class="btn btn-success px-5 py-3 fw-bold">Lihat Lokasi</a>
+                    <a href="" class="btn btn-outline-warning px-5 py-3 fw-bold">Hubungi Kami</a>
+                    <a href="" class="btn btn-warning px-5 py-3 fw-bold text-white">Lihat Lokasi</a>
                 </div>
             </div>
             <div class="col-md-6">

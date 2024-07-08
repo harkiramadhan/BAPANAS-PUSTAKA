@@ -5,18 +5,22 @@ class Beranda extends CI_Controller{
         $this->load->model('M_Pustakawan');
     }
 
-    function index(){
-        if($this->session->userdata('is_loggedin')){
+    function index() {
+        if ($this->session->userdata('is_loggedin')) {
             $userid = $this->session->userdata('userid');
             $var = [
                 'user' => $this->M_Pustakawan->getById($userid),
                 'banner' => $this->db->get_where('banner', ['status' => 1]),
-                'kategori' => $this->db->get('kategori')
+                'kategori' => $this->db->get('kategori'),
+                'buku' => $this->db->order_by('id', 'DESC')->limit(8)->get_where('buku', ['status' => 1]),
+                'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', 'kategori LIKE \'%"7"%\''),
             ];
-        }else{
+        } else {
             $var = [
                 'banner' => $this->db->get_where('banner', ['status' => 1]),
-                'kategori' => $this->db->get('kategori')
+                'kategori' => $this->db->get('kategori'),
+                'buku' => $this->db->order_by('id', 'DESC')->limit(8)->get_where('buku', ['status' => 1]),
+                'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', ['kategori LIKE' => '%"Pangan"%']),
             ];
         }
         
@@ -24,4 +28,5 @@ class Beranda extends CI_Controller{
         $this->load->view('user/beranda', $var);
         $this->load->view('layout/user/footer', $var);
     }
+    
 }

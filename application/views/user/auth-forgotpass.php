@@ -10,10 +10,10 @@
         <form>
             <div class="mb-0">
                 <label for="" class="form-label">Masukan email akun anda</label>
-                <input type="text" class="form-control focus-ring focus-ring-success" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp">
+                <input type="text" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp">
             </div>
 
-            <a href="" class="btn btn-success w-100 px-5 py-3 fw-bold mt-4">Reset Password</a>
+            <a href="" class="btn btn-primary w-100 px-5 py-3 fw-bold mt-4">Reset Password</a>
 
             <p class="my-4 text-center">Sudah memiliki akun?</p>
 

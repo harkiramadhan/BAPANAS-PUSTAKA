@@ -14,11 +14,11 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">Username / NIK / Email</label>
-                <input name="username" value="<?= @$this->session->flashdata('username') ?>" type="text" class="form-control focus-ring focus-ring-success <?= ($this->session->flashdata('error_username') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
+                <input name="username" value="<?= @$this->session->flashdata('username') ?>" type="text" class="form-control focus-ring focus-ring-primary <?= ($this->session->flashdata('error_username') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3 password-container">
                 <label for="password" class="form-label">Kata Sandi</label>
-                <input name="password" type="password" class="form-control focus-ring focus-ring-success <?= ($this->session->flashdata('error_password') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="password" required>
+                <input name="password" type="password" class="form-control focus-ring focus-ring-primary <?= ($this->session->flashdata('error_password') == TRUE) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" id="password" required>
                 <i class="fa-solid fa-eye-slash fa-lg toggle-password mt-3 me-2"></i>
             </div>
             
@@ -26,7 +26,7 @@
                 <div class="col">
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label btn-success" for="exampleCheck1">Ingat Saya</label>
+                        <label class="form-check-label btn-primary" for="exampleCheck1">Ingat Saya</label>
                     </div>
                 </div>
                 <div class="col">
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success w-100 px-5 py-3 fw-bold mt-4">Masuk</button>
+            <button type="submit" class="btn btn-warning w-100 px-5 py-3 fw-bold mt-4">Masuk</button>
 
             <p class="my-4 text-center">Belum memiliki akun?</p>
             <div class="gap-2 d-flex">

@@ -10,3 +10,10 @@ document.getElementById('confirm-password').addEventListener('input', function (
         $('.btn-register').attr('disabled', false)
     }
 });
+
+tinymce.init({
+    selector: 'textarea',
+    valid_elements: 'p[style],strong/b,em/i,br',
+    extended_valid_elements: 'div[align|class],span[align|class]',
+    // Opsi tambahan sesuai kebutuhan
+});

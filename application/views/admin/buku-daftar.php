@@ -42,7 +42,13 @@
                             ?>
                                 <tr>
                                     <td class="text-center"><?= $no ?>.</td>
-                                    <td><?= $row->judul ?></td>
+                                    <td>
+
+                                        <?php if($row->cover): ?>
+                                            <img src="<?= base_url('assets/img/cover/' . $row->cover) ?>" class="rounded-2 me-2" height="100px" alt="...">
+                                        <?php endif; ?>
+                                        <strong><?= $row->judul ?></strong>
+                                    </td>
                                     <td><?= $row->pengarang ?></td>
                                     <td class="text-center">
                                         <?php foreach($kategoriBuku as $ktgb){ 
@@ -88,19 +94,6 @@
                             <!-- Tambahkan lebih banyak peminjaman sesuai kebutuhan -->
                              <?php $no++; } ?>
 
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td>Mikrobiologi Pangan Edisi 5</td>
-                                <td>Alfian Rahmatullah</td>
-                                <td class="text-center"><span class="badge text-bg-primary">FIKSI INGGRIS</span></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <a href="<?= site_url('admin/buku/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
-                                        <button class="btn btn-secondary btn-sm mx-1"><i class="fa-solid fa-eye"></i></button>
-                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -32,9 +32,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
-                                    <div class="position-relative">
+                                    <div class="position-relative text-center">
                                         <?php if($buku->cover): ?>
-                                            <img src="<?= base_url('assets/img/cover/' . $buku->cover)?>" class="rounded-4" height="100px" id="img-before" alt="...">
+                                            <img src="<?= base_url('assets/img/cover/' . $buku->cover)?>" class="rounded-2 mb-3" height="200px" id="img-before" alt="...">
                                         <?php endif; ?>
                                         <input type="file" name="cover" class="image-preview-filepond">
                                     </div>

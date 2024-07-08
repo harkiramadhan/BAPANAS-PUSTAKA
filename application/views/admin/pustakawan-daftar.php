@@ -39,8 +39,8 @@
                                     <td><?= $row->nama ?></td>
                                     <td><?= $row->email ?></td>
                                     <td class="text-center"><span class="badge text-bg-primary">2x</span></td>
-                                    <td class="text-center"><?= $row->created_at ?></td>
-                                    <td class="text-center"><span class="badge <?= ($row->status == 1) ? 'text-bg-success' : 'text-bg-danger' ?>"><?= ($row->status == 1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
+                                    <td class="text-center"><?= @$row->created_at ?></td>
+                                    <td class="text-center"><span class="badge <?= (@$row->status == 1) ? 'text-bg-success' : 'text-bg-danger' ?>"><?= (@$row->status == 1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>

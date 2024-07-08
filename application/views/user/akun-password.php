@@ -7,13 +7,13 @@
         </div>
         <ul class="nav nav-underline nav-fill">
             <li class="nav-item">
-                <a class="nav-link text-success" href="<?= site_url('akun') ?>">Biodata</a>
+                <a class="nav-link text-primary" href="<?= site_url('akun') ?>">Biodata</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active"  aria-current="page" href="<?= site_url('user/akun/password') ?>">Password</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-success" href="<?= site_url('peminjaman') ?>">Peminjaman</a>
+                <a class="nav-link text-primary" href="<?= site_url('peminjaman') ?>">Peminjaman</a>
             </li>
         </ul>
     </div>
@@ -24,17 +24,17 @@
         <form>
             <div class="mb-3 password-container">
                 <label for="password" class="form-label">Kata Sandi Lama</label>
-                <input type="password" class="form-control focus-ring focus-ring-success" style="background-color: #F3F3F3; padding: 12px 20px;" id="password">
+                <input type="password" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="password">
                 <i class="fa-solid fa-eye-slash fa-lg toggle-password mt-3 me-2"></i>
             </div>
             
             <div class="mb-3 password-container">
                 <label for="password" class="form-label">Kata Sandi Baru</label>
-                <input type="password" class="form-control focus-ring focus-ring-success" style="background-color: #F3F3F3; padding: 12px 20px;" id="password">
+                <input type="password" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="password">
                 <i class="fa-solid fa-eye-slash fa-lg toggle-password mt-3 me-2"></i>
             </div>
 
-            <a href="" class="btn btn-success w-100 px-5 py-3 fw-bold mt-4">Ubah dan Simpan</a>
+            <a href="" class="btn btn-warning w-100 px-5 py-3 fw-bold mt-4">Ubah dan Simpan</a>
 
         </form>
 
