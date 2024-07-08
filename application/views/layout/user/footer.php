@@ -93,7 +93,9 @@
             </div>
         </section>
 
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
         <script src="<?= base_url('assets/user/bootstrap/js/bootstrap.bundle.js') ?>"></script>
+        <script src="<?= base_url('assets/user/js/custom.js') ?>"></script>
 
     </body>
 
