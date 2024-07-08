@@ -6,11 +6,15 @@ class Beranda extends CI_Controller{
     }
 
     function index(){
-        $var = [];
         if($this->session->userdata('is_loggedin')){
             $userid = $this->session->userdata('userid');
             $var = [
-                'user' => $this->M_Pustakawan->getById($userid)
+                'user' => $this->M_Pustakawan->getById($userid),
+                'banner' => $this->db->get_where('banner', ['status' => 1])
+            ];
+        }else{
+            $var = [
+                'banner' => $this->db->get_where('banner', ['status' => 1])
             ];
         }
         
