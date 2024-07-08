@@ -7,13 +7,13 @@
         </div>
         <ul class="nav nav-underline nav-fill">
             <li class="nav-item">
-                <a class="nav-link text-success" href="<?= site_url('user/akun/') ?>">Biodata</a>
+                <a class="nav-link text-success" href="<?= site_url('akun') ?>">Biodata</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-success" href="<?= site_url('user/akun/password') ?>">Password</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= site_url('user/peminjaman') ?>">Peminjaman</a>
+                <a class="nav-link active" aria-current="page" href="<?= site_url('peminjaman') ?>">Peminjaman</a>
             </li>
         </ul>
     </div>

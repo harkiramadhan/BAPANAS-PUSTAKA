@@ -3,7 +3,7 @@ class Auth extends CI_Controller{
 
     function __construct(){
         parent::__construct();
-        $this->load->model('M_Peminjam');
+        $this->load->model('M_Pustakawan');
     }
     
     function login(){
@@ -35,7 +35,7 @@ class Auth extends CI_Controller{
         $password = $this->input->post('password', TRUE);
         $ok = $this->input->post('ok', TRUE);
 
-        $cekPeminjam = $this->M_Peminjam->checkUser($username, $nik, $whatsapp, $email);
+        $cekPeminjam = $this->M_Pustakawan->checkUser($username, $nik, $whatsapp, $email);
         if(@$cekPeminjam->id){
             $this->session->set_flashdata('error', "Terjadi Kendala Saat Registrasi");
             if(@$cekPeminjam->nik == $nik){
@@ -64,7 +64,7 @@ class Auth extends CI_Controller{
 
             redirect($_SERVER['HTTP_REFERER']);
         }else{
-            $this->db->insert('peminjam', [
+            $this->db->insert('pustakawan', [
                 'nik' => $nik,
                 'nama' => $nama,
                 'whatsapp' => $whatsapp,
@@ -73,9 +73,13 @@ class Auth extends CI_Controller{
                 'password' => md5($password)
             ]);
             if($this->db->affected_rows() > 0){
-
+                $this->session->set_flashdata('success', "Berhasil Registrasi!");
+                $this->session->set_userdata('is_loggedin', TRUE);
+                $this->session->set_userdata('userid', $this->db->insert_id());
+                redirect('');
             }else{
-
+                $this->session->set_flashdata('error', "Terjadi Kendala Saat Registrasi");
+                redirect($_SERVER['HTTP_REFERER']);
             }
         }
     }

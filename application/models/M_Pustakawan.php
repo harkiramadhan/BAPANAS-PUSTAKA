@@ -1,7 +1,7 @@
 <?php 
-class M_Peminjam extends CI_Model{
+class M_Pustakawan extends CI_Model{
     function checkUser($username, $nik, $whatsapp, $email){
-        return $this->db->from('peminjam')
+        return $this->db->from('pustakawan')
         ->where([
             'username' => $username
         ])->or_where([
@@ -9,5 +9,9 @@ class M_Peminjam extends CI_Model{
             'whatsapp' => $whatsapp,
             'email' => $email
         ])->get()->row();
+    }
+
+    function getById($id){
+        return $this->db->get_where('pustakawan', ['id' => $id])->row();
     }
 }

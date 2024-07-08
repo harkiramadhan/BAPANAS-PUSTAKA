@@ -49,40 +49,43 @@
                             </button>
                         </div>
                         <img class="rounded border d-none d-lg-block" src="<?= base_url('assets/user/image/flag-id.svg') ?>" alt="">
-                        <!-- <div class="gap-2 d-flex">
-                            <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
-                            <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
-                        </div> -->
 
-                        <!-- Header Ketika Login -->
-                        <button class="btn btn-light ms-4 px-3 py-1"><i class="bi bi-journal-arrow-down" style="font-size: 1.5rem;"></i></button>
-                        <div class="dropdown ms-2 d-none d-lg-block z-2">
-                            <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
-                                <div class="ms-2">
-                                    <span class="fw-bold text-black">Hai, Alfian</span>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('user/akun/') ?>">Profil</a></li>
-                                <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('user/peminjaman/') ?>">Peminjaman</a></li>
-                                <li><a class="dropdown-item text-bg-light py-2 text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
-                            </ul>
-                        </div>
-                        <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-0 mb-lg-0 px-3 py-2 border rounded">
-                            <div class="d-flex align-items-center mb-3">
-                                <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
-                                <div class="ms-2">
-                                    <span class="fw-bold text-black">Hai, Alfian</span>
-                                </div>
+                        <?php if($this->session->userdata('is_loggedin')): ?>
+                            <!-- Header Ketika Login -->
+                            <button class="btn btn-light ms-4 px-3 py-1"><i class="bi bi-journal-arrow-down" style="font-size: 1.5rem;"></i></button>
+                            <div class="dropdown ms-2 d-none d-lg-block z-2">
+                                <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <div class="ms-2">
+                                        <span class="fw-bold text-black">Hai, <?= $user->nama ?></span>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('akun') ?>">Profil</a></li>
+                                    <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('peminjaman') ?>">Peminjaman</a></li>
+                                    <li><a class="dropdown-item text-bg-light py-2 text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
+                                </ul>
                             </div>
-                            <li class="nav-item">
-                                <a href="<?= site_url('user/akun/rofil') ?>" class="nav-link bg-light">Profil</a>
-                                <a href="<?= site_url('user/peminjaman/') ?>" class="nav-link bg-light">Peminjaman</a>
-                                <a href="<?= site_url('kategori') ?>" class="nav-link bg-light text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
-                            </li>
-                        </ul>
-                        <!-- Header Ketika Login -->
+                            <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-0 mb-lg-0 px-3 py-2 border rounded">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <div class="ms-2">
+                                        <span class="fw-bold text-black">Hai, <?= $user->nama ?></span>
+                                    </div>
+                                </div>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('akun') ?>" class="nav-link bg-light">Profil</a>
+                                    <a href="<?= site_url('peminjaman') ?>" class="nav-link bg-light">Peminjaman</a>
+                                    <a href="<?= site_url('kategori') ?>" class="nav-link bg-light text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                                </li>
+                            </ul>
+                            <!-- Header Ketika Login -->
+                        <?php else: ?>
+                            <div class="gap-2 d-flex">
+                                <a href="<?= site_url('login') ?>" class="btn btn-transparent border-0 flex-fill px-5 py-3 fw-bold text-black-50">Masuk</a>
+                                <a href="<?= site_url('register') ?>" class="btn btn-success flex-fill px-5 py-3 fw-bold">Daftar</a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </nav>
