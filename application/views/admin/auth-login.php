@@ -44,16 +44,20 @@
                         <h1 class="text-black mb-4">Halaman Masuk Admin</h1>
 
 
-                        <form action="index.html">
+                        <form action="<?= site_url('admin/auth/actionLogin') ?>" method="POST">
+                            <?php if($this->session->flashdata('error')): ?>
+                                <h5 class="text-danger mb-3"><strong><?= $this->session->flashdata('error') ?></strong></h5>
+                            <?php endif; ?>
+
                             <div class="form-group position-relative has-icon-left mb-4">
-                                <input type="text" class="form-control form-control-xl focus-ring focus-ring-success" placeholder="Username/NIK">
+                                <input type="text" name="username" class="form-control form-control-xl focus-ring focus-ring-success <?= ($this->session->flashdata('error_username') == TRUE) ? 'is-invalid' : '' ?>" value="<?= @$this->session->flashdata('username') ?>" placeholder="Username / Email">
                                 <div class="form-control-icon">
                                     <i class="bi bi-person"></i>
                                 </div>
                             </div>
                             <div class="form-group position-relative has-icon-left mb-4">
                                 <div class="password-wrapper">
-                                    <input type="password" class="form-control form-control-xl focus-ring focus-ring-success" id="password" placeholder="Password">
+                                    <input type="password" name="password" class="form-control form-control-xl focus-ring focus-ring-success <?= ($this->session->flashdata('error_password') == TRUE) ? 'is-invalid' : '' ?>" id="password" placeholder="Password">
                                     <div class="form-control-icon">
                                         <i class="bi bi-shield-lock"></i>
                                     </div>
@@ -66,7 +70,7 @@
                                     Ingat saya
                                 </label>
                             </div>
-                            <button class="btn btn-success btn-block btn-lg shadow-lg mt-5">Log in</button>
+                            <button type="submit" class="btn btn-success btn-block btn-lg shadow-lg mt-5">Log in</button>
                         </form>
                         <div class="text-center mt-5 text-lg fs-4">
                             <p><a class="font-bold" href="auth-forgot-password.html">Lupa password?</a></p>

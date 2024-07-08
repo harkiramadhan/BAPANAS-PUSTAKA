@@ -5,6 +5,10 @@ class Buku extends CI_Controller{
         parent::__construct();
 
         $this->load->library('image_lib');
+        if(!$this->session->userdata('is_admin') == TRUE){
+            $this->session->set_flashdata('error', "Silahkan Login Terlebih Dahulu");
+            redirect('admin/login');
+        }
     }
 
     private function resizeImage($path, $filename){

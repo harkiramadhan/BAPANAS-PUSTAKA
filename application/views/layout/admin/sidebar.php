@@ -85,7 +85,7 @@
                     </a>
                 </li>
 
-                <a href="#" class="btn btn-outline-danger rounded-pill w-100 shadow-sm py-2 mt-3"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Keluar Admin</a>
+                <a href="<?= site_url('admin/auth/logout') ?>" class="btn btn-outline-danger rounded-pill w-100 shadow-sm py-2 mt-3"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Keluar Admin</a>
                 
             </ul>
         </div>
