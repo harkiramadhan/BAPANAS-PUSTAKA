@@ -26,7 +26,7 @@
                 <div class="table-responsive">
                     <table class="table mb-0" id="daftarPeminjaman">
                         <thead>
-                            <tr class="py-3">
+                            <tr>
                                 <th class="text-center">No</th>
                                 <th class="text-center">Judul Buku</th>
                                 <th class="text-center">Tgl. Peminjaman</th>
@@ -39,14 +39,21 @@
                             <tr>
                                 <td valign="middle" class="text-center">1.</td>
                                 <td valign="middle">Mikrobiologi Pangan Edisi 5</td>
+                                <td valign="middle" class="text-center">-</td>
+                                <td valign="middle" class="text-center">-</td>
+                                <td valign="middle" class="text-center"><span class="badge text-bg-secondary">Telah dibatalkan</span></td>
+                                <td valign="middle" class="text-center">
+                                    <button class="btn btn-secondary disabled btn-sm">Dibatalkan</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" class="text-center">2.</td>
+                                <td valign="middle">Mikrobiologi Pangan Edisi 5</td>
                                 <td valign="middle" class="text-center">2023-06-01</td>
                                 <td valign="middle" class="text-center">2023-06-10</td>
-                                <td valign="middle" class="text-center"><span class="badge text-bg-primary">Dalam Peminjaman</span></td>
+                                <td valign="middle" class="text-center"><span class="badge text-bg-primary">Sedang diajukan</span></td>
                                 <td valign="middle" class="text-center">
-                                    <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                                    </div>
+                                    <button class="btn btn-danger btn-sm">Batalkan</button>
                                 </td>
                             </tr>
                             <!-- Tambahkan lebih banyak peminjaman sesuai kebutuhan -->

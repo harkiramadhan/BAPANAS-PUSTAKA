@@ -64,9 +64,9 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= site_url('user/akun/') ?>">Profil</a></li>
-                                <li><a class="dropdown-item" href="<?= site_url('user/peminjaman/') ?>">Peminjaman</a></li>
-                                <li><a class="dropdown-item text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
+                                <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('user/akun/') ?>">Profil</a></li>
+                                <li><a class="dropdown-item text-bg-light py-2" href="<?= site_url('user/peminjaman/') ?>">Peminjaman</a></li>
+                                <li><a class="dropdown-item text-bg-light py-2 text-danger" href="<?= site_url('logout') ?>"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a></li>
                             </ul>
                         </div>
                         <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-0 mb-lg-0 px-3 py-2 border rounded">
@@ -77,9 +77,9 @@
                                 </div>
                             </div>
                             <li class="nav-item">
-                                <a href="<?= site_url('user/akun/rofil') ?>" class="nav-link">Profil</a>
-                                <a href="<?= site_url('user/peminjaman/') ?>" class="nav-link">Peminjaman</a>
-                                <a href="<?= site_url('kategori') ?>" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                                <a href="<?= site_url('user/akun/rofil') ?>" class="nav-link bg-light">Profil</a>
+                                <a href="<?= site_url('user/peminjaman/') ?>" class="nav-link bg-light">Peminjaman</a>
+                                <a href="<?= site_url('kategori') ?>" class="nav-link bg-light text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
                             </li>
                         </ul>
                         <!-- Header Ketika Login -->
