@@ -48,7 +48,7 @@
                                         <?php if($row->status == 1): ?>
                                             <span class="badge text-bg-primary">Sedang diajukan</span>
                                         <?php elseif($row->status == 2): ?>
-                                            <span class="badge text-bg-default">Sedang dipinjam</span>
+                                            <span class="badge text-bg-info">Sedang dipinjam</span>
                                         <?php elseif($row->status == 3): ?>
                                             <span class="badge text-bg-success">Selesai dipinjam</span>
                                         <?php elseif($row->status == 4): ?>
