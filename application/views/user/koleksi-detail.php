@@ -22,7 +22,11 @@
                     <!-- <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span> -->
                 </div>
                 <?php if (in_array("2", json_decode($buku->jenis))) : ?>
-                    <a href="" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Pinjam Buku</a>
+                    <?php if($this->session->userdata('is_loggedin')): ?>
+                        <a href="<?= site_url('user/peminjaman/pinjam/' . md5($buku->id)) ?>" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Pinjam Buku</a>
+                    <?php else: ?>
+                        <a href="<?= site_url('login') ?>" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Pinjam Buku</a>
+                    <?php endif; ?>
                 <?php elseif (in_array("1", json_decode($buku->jenis))) : ?>
                     <a href="" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Baca Online</a>
                 <?php endif; ?>

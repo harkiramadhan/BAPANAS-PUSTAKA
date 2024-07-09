@@ -29,6 +29,7 @@
                             <tr>
                                 <th class="text-center">No</th>
                                 <th class="text-center">Judul Buku</th>
+                                <th class="text-center">Tgl. Pengajuan</th>
                                 <th class="text-center">Tgl. Peminjaman</th>
                                 <th class="text-center">Tgl. Pengembalian</th>
                                 <th class="text-center">Status</th>
@@ -36,26 +37,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td valign="middle" class="text-center">1.</td>
-                                <td valign="middle">Mikrobiologi Pangan Edisi 5</td>
-                                <td valign="middle" class="text-center">-</td>
-                                <td valign="middle" class="text-center">-</td>
-                                <td valign="middle" class="text-center"><span class="badge text-bg-secondary">Telah dibatalkan</span></td>
-                                <td valign="middle" class="text-center">
-                                    <button class="btn btn-secondary disabled btn-sm">Dibatalkan</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="middle" class="text-center">2.</td>
-                                <td valign="middle">Mikrobiologi Pangan Edisi 5</td>
-                                <td valign="middle" class="text-center">2023-06-01</td>
-                                <td valign="middle" class="text-center">2023-06-10</td>
-                                <td valign="middle" class="text-center"><span class="badge text-bg-primary">Sedang diajukan</span></td>
-                                <td valign="middle" class="text-center">
-                                    <button class="btn btn-danger btn-sm">Batalkan</button>
-                                </td>
-                            </tr>
+                            <?php $no=1; foreach($pinjaman->result() as $row){ ?>
+                                <tr>
+                                    <td valign="middle" class="text-center"><?= $no ?>.</td>
+                                    <td valign="middle"><?= $row->judul ?></td>
+                                    <td valign="middle" class="text-center"><?= date('d/m/Y H:i:s', strtotime($row->pengajuan)) ?></td>
+                                    <td valign="middle" class="text-center"><?= ($row->tanggal) ? date('d/m/Y H:i:s', strtotime($row->tanggal)) : ' - ' ?></td>
+                                    <td valign="middle" class="text-center"><?= ($row->pengembalian) ? date('d/m/Y H:i:s', strtotime($row->pengembalian)) : ' - ' ?></td>
+                                    <td valign="middle" class="text-center">
+                                        <?php if($row->status == 1): ?>
+                                            <span class="badge text-bg-primary">Sedang diajukan</span>
+                                        <?php elseif($row->status == 2): ?>
+                                            <span class="badge text-bg-default">Sedang dipinjam</span>
+                                        <?php elseif($row->status == 3): ?>
+                                            <span class="badge text-bg-success">Selesai dipinjam</span>
+                                        <?php elseif($row->status == 4): ?>
+                                            <span class="badge text-bg-secondary">Telah dibatalkan</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td valign="middle" class="text-center">
+                                        <?php if($row->status == 1): ?>
+                                            <button class="btn btn-danger btn-sm">Batalkan</button>
+                                        <?php elseif($row->status == 2): ?>
+                                        <?php elseif($row->status == 3): ?>
+                                            
+                                        <?php elseif($row->status == 4): ?>
+                                            <button class="btn btn-secondary disabled btn-sm">Dibatalkan</button>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php $no++; } ?>
                             <!-- Tambahkan lebih banyak peminjaman sesuai kebutuhan -->
                         </tbody>
                     </table>
