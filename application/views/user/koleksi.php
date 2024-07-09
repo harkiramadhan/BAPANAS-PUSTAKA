@@ -23,6 +23,7 @@
         <div class="row mb-2">
             <?php 
                 foreach($buku->result() as $bu){ 
+                    $kategoriBuku = json_decode($bu->kategori);
             ?>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
                 <a href="<?= site_url('user/koleksi/detail/' . md5($bu->id)) ?>" style="text-decoration: none;">
@@ -43,7 +44,14 @@
                         </p>
                     <?php endif; ?>
 
-                    <h5 class="fw-semibold mb-1 text-black">
+                    <?php foreach($kategoriBuku as $ktgb){ 
+                        $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
+                    ?>
+                        <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                    <?php } ?>
+                        
+
+                    <h5 class="fw-semibold mb-1 mt-2 text-black">
                         <?php 
                             $judul = $bu->judul;
                             echo strlen($judul) > 25 ? substr($judul, 0, 25) . '..' : $judul;

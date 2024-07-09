@@ -124,6 +124,23 @@ FilePond.create(document.querySelector(".image-preview-filepond"), {
   storeAsFile: true,
 })
 
+// Filepond: Image Preview
+FilePond.create(document.querySelector(".file-buku-preview"), {
+  credits: null,
+  allowImagePreview: true,
+  allowImageFilter: false,
+  allowImageExifOrientation: false,
+  allowImageCrop: false,
+  acceptedFileTypes: ["application/pdf"],
+  fileValidateTypeDetectType: (source, type) =>
+    new Promise((resolve, reject) => {
+      // Do custom type detection here and return with promise
+      $('#img-before').addClass('d-none')
+      resolve(type)
+    }),
+  storeAsFile: true,
+})
+
 FilePond.create(document.querySelector(".image-preview-filepond-for-edit"), {
   credits: null,
   allowImagePreview: true,

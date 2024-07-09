@@ -125,7 +125,8 @@ body {
 .carousel-foreground {
     position: relative;
     z-index: 1;
-    max-height: 400px;
+    min-height: 500px;
+    max-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -41,7 +41,7 @@
             <a href="" class="text-black-50 link-underline-light">Tampilkan lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
         </div>
         <div class="row mb-2">
-            <div class="col-12 col-md-3 col-lg-2 z-0 z-0">
+            <div class="col-12 col-md-3 col-lg-3 z-0 z-0">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -50,7 +50,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 z-0">
+            <div class="col-12 col-md-3 col-lg-3 z-0">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -59,7 +59,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 z-0">
+            <div class="col-12 col-md-3 col-lg-3 z-0">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -68,25 +68,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 z-0">
-                <a href="" style="text-decoration: none;">
-                    <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
-                        <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
-                        <h6 class="fw-semibold text-black mb-3">Indeks Ketahanan Pangan Tahun 2022</h6>
-                        <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-top-3" alt="" width="90%" style="height: 200px; object-fit: cover; object-position: top;">
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 z-0">
-                <a href="" style="text-decoration: none;">
-                    <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
-                        <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
-                        <h6 class="fw-semibold text-black mb-3">Indeks Ketahanan Pangan Tahun 2022</h6>
-                        <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-top-3" alt="" width="90%" style="height: 200px; object-fit: cover; object-position: top;">
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 z-0">
+            <div class="col-12 col-md-3 col-lg-3 z-0">
                 <a href="" style="text-decoration: none;">
                     <div class="position-relative p-3 pb-0 rounded-4 text-center shadow-sm mb-4 z-1" style="background: #F4F4F4;">
                         <div class="position-absolute w-100 start-0 bottom-0 rounded-4 z-n1" style="background: #CFCFCF; height: 180px;"></div>
@@ -314,81 +296,6 @@
         </div>
     </div>
 </section>
-
-
-<!-- Beritas Terbaru Bapans -->
-<section class="py-5" style="background: #FFF;">
-    <div class="container-xl">
-        <!-- Beritas Terbaru Bapans -->
-        <div class="text-center mb-5">
-            <h3 class="mb-3">Berita Terbaru BAPANAS</h3>
-            <p class="text-black-50 link-underline-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit,ed do eiusmod <br> tempor incididunt ut labore et dolore magna aliqua</p>
-        </div>
-        <div class="row mb-2">
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 216px; object-fit: cover; object-position: top;">
-                    <h5 class="fw-semibold mb-2 text-black">NFA Perkuat Indikator Peta Ketahanan dan Kerentanan Pangan Secara ...</h5>
-                    <p class="text-secondary mb-2 fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
-                    <a href="" class="text-success nav-link mb-3" style="text-decoration: none;">Lanjutkan membaca</a>
-                    <div class="d-flex align-items-center gap-2">
-                        <img src="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" class="border rounded-circle p-1" alt="Bootstrap" width="40" height="40">
-                        <d class="d-flex flex-column">
-                            <p class="fw-semibold mb-0">BAPANAS</p>
-                            <span class="mb-0 text-black-50">31 Januari 2024</span>
-                        </d>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 216px; object-fit: cover; object-position: top;">
-                    <h5 class="fw-semibold mb-2 text-black">NFA Perkuat Indikator Peta Ketahanan dan Kerentanan Pangan Secara ...</h5>
-                    <p class="text-secondary mb-2 fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
-                    <a href="" class="text-success nav-link mb-3" style="text-decoration: none;">Lanjutkan membaca</a>
-                    <div class="d-flex align-items-center gap-2">
-                        <img src="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" class="border rounded-circle p-1" alt="Bootstrap" width="40" height="40">
-                        <d class="d-flex flex-column">
-                            <p class="fw-semibold mb-0">BAPANAS</p>
-                            <span class="mb-0 text-black-50">31 Januari 2024</span>
-                        </d>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 216px; object-fit: cover; object-position: top;">
-                    <h5 class="fw-semibold mb-2 text-black">NFA Perkuat Indikator Peta Ketahanan dan Kerentanan Pangan Secara ...</h5>
-                    <p class="text-secondary mb-2 fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
-                    <a href="" class="text-success nav-link mb-3" style="text-decoration: none;">Lanjutkan membaca</a>
-                    <div class="d-flex align-items-center gap-2">
-                        <img src="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" class="border rounded-circle p-1" alt="Bootstrap" width="40" height="40">
-                        <d class="d-flex flex-column">
-                            <p class="fw-semibold mb-0">BAPANAS</p>
-                            <span class="mb-0 text-black-50">31 Januari 2024</span>
-                        </d>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="" style="text-decoration: none;">
-                    <img src="<?= base_url('assets/user/image/Indeks Ketahanan Pangan Tahun 2023.png')?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 216px; object-fit: cover; object-position: top;">
-                    <h5 class="fw-semibold mb-2 text-black">NFA Perkuat Indikator Peta Ketahanan dan Kerentanan Pangan Secara ...</h5>
-                    <p class="text-secondary mb-2 fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
-                    <a href="" class="text-success nav-link mb-3" style="text-decoration: none;">Lanjutkan membaca</a>
-                    <div class="d-flex align-items-center gap-2">
-                        <img src="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" class="border rounded-circle p-1" alt="Bootstrap" width="40" height="40">
-                        <d class="d-flex flex-column">
-                            <p class="fw-semibold mb-0">BAPANAS</p>
-                            <span class="mb-0 text-black-50">31 Januari 2024</span>
-                        </d>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <section class="py-5 bg-primary">
     <div class="container-xl">

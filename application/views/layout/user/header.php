@@ -44,12 +44,16 @@
                                 <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
                             </li>
                         </ul>
-                        <div class="input-group d-none d-lg-flex z-2">
-                            <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
-                            <button class="btn z-0" type="button" style="background-color: #F3F3F3; border: none;">
-                                <i class="bi bi-search" style="color: #A4A4A4;"></i>
-                            </button>
-                        </div>
+
+                        <form method="get" class=" " action="<?= site_url('user/cari') ?>" style="width: -webkit-fill-available;">
+                            <div class="input-group z-1 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-none d-lg-flex' ?>" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
+                                <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
+                                <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
+                                    <i class="bi bi-search" style="color: #A4A4A4;"></i>
+                                </button>
+                            </div>
+                        </form>
+                        
                         <img class="rounded border d-none d-lg-block" src="<?= base_url('assets/user/image/flag-id.svg') ?>" alt="">
 
                         <?php if($this->session->userdata('is_loggedin')): ?>
@@ -110,9 +114,11 @@
             </nav>
         </section>
 
-        <div class="input-group d-flex d-lg-none p-3 pt-0">
-            <input type="text" class="form-control border-0" placeholder="Cari buku" aria-label="Cari buku" style="background-color: #F3F3F3; padding: 12px 20px;">
-            <button class="btn" type="button" style="background-color: #F3F3F3; border: none;">
-                <i class="bi bi-search" style="color: #A4A4A4;"></i>
-            </button>
-        </div>
+        <form method="get" class="p-3 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-flex d-lg-none' ?>" action="<?= site_url('user/cari') ?>" style="width: -webkit-fill-available;">
+            <div class="input-group d-flex d-lg-none z-1" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
+                <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
+                <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
+                    <i class="bi bi-search" style="color: #A4A4A4;"></i>
+                </button>
+            </div>
+        </form>

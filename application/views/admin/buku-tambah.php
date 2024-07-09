@@ -92,6 +92,16 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="first-name-horizontal-icon">File Buku</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="file" name="filebuku" class="file-buku-preview">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="contact-info-horizontal-icon">Edisi</label>
                             </div>
                             <div class="col-md-8">
