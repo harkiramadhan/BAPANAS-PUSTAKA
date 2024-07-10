@@ -71,3 +71,4 @@ $route['pangan'] = 'user/pangan';
 $route['akun'] = 'user/akun';
 $route['peminjaman'] = 'user/peminjaman';
 $route['logout'] = 'user/auth/logout';
+$route['cari'] = 'user/cari';

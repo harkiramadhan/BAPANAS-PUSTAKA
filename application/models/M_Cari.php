@@ -1,20 +1,13 @@
 <?php
 class M_Cari extends CI_Model{
-    
-    public function search_books($keyword) {
+    public function search_books($keyword, $category_id = FALSE) {
         $this->db->select('*');
         $this->db->from('buku');
         
-        // Filter berdasarkan keyword jika tidak kosong
-        if (!empty($keyword)) {
-            $this->db->like('judul', $keyword);
-        }
+        (@$keyword) ? $this->db->like('judul', $keyword) : NULL;
+        (@$category_id) ? $this->db->where('JSON_CONTAINS(kategori, \'["' . $category_id . '"]\')', NULL, FALSE) : NULL;
         
         $query = $this->db->get();
         return $query;
     }
-
-
-    
 }
-?>

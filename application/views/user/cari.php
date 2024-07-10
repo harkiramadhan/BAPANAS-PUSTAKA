@@ -5,7 +5,14 @@
         <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\' fill=\'%236c757d\' class=\'bi bi-circle-fill\' viewBox=\'0 0 16 16\'%3E%3Ccircle cx=\'8\' cy=\'8\' r=\'8\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#" class="text-primary fw-bold text-decoration-none"><i class="bi bi-house-door-fill me-2"></i>Beranda</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Pencarian Buku <i>'<?= isset($keyword) ? $keyword : '' ?>'</i></li>
+
+            <?php if(@$keyword && !@$category_id): ?>
+                <li class="breadcrumb-item active" aria-current="page">Pencarian Buku <i>'<?= isset($keyword) ? $keyword : '' ?>'</i></li>
+            <?php elseif(@$keyword && @$category_id): ?>
+                <li class="breadcrumb-item active" aria-current="page">Pencarian Buku '<?= isset($keyword) ? $keyword : '' ?>' Kategori <i> '<?= $kategori->kategori ?>'</i></li>
+            <?php elseif(!@$keyword && @$category_id): ?>
+                <li class="breadcrumb-item active" aria-current="page">Pencarian Buku Kategori <i> '<?= $kategori->kategori ?>'</i></li>
+            <?php endif; ?>
           </ol>
         </nav>
     </div>
@@ -17,7 +24,7 @@
 
         <div class="mb-4">
 
-            <form method="get" action="<?= site_url('user/cari') ?>">
+            <form method="get" action="<?= site_url('cari') ?>">
                 <div class="input-group z-1" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                     <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
                     <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">

@@ -45,7 +45,7 @@
                             </li>
                         </ul>
 
-                        <form method="get" class=" " action="<?= site_url('user/cari') ?>" style="width: -webkit-fill-available;">
+                        <form method="get" class=" " action="<?= site_url('cari') ?>" style="width: -webkit-fill-available;">
                             <div class="input-group z-1 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-none d-lg-flex' ?>" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
                                 <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
@@ -114,7 +114,7 @@
             </nav>
         </section>
 
-        <form method="get" class="p-3 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-flex d-lg-none' ?>" action="<?= site_url('user/cari') ?>" style="width: -webkit-fill-available;">
+        <form method="get" class="p-3 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-flex d-lg-none' ?>" action="<?= site_url('cari') ?>" style="width: -webkit-fill-available;">
             <div class="input-group d-flex d-lg-none z-1" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
                 <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">

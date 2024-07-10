@@ -7,34 +7,36 @@ class Cari extends CI_Controller{
     }
     
     function index() {
-        // Ambil data dari URL
         $keyword = $this->input->get('keyword');
         $category_id = $this->input->get('category');
     
+        $kategori = NULL;
+        if(@$category_id){
+            $kategori = $this->db->get_where('kategori', ['id' => $category_id])->row();
+        }
+
         if ($this->session->userdata('is_loggedin')) {
             $userid = $this->session->userdata('userid');
-            // Query database berdasarkan keyword dan ID kategori
             $var = [
                 'user' => $this->M_Pustakawan->getById($userid),
-                'buku' => $this->M_Cari->search_books($keyword, $category_id),
-                'kategori' => $this->db->get('kategori')->result(),
+                'buku' => $this->M_Cari->search_books($keyword, @$category_id),
+                'kategori' => $kategori,
                 'keyword' => $keyword,
                 'category_id' => $category_id
             ];
         } else {
             $var = [
-                'buku' => $this->M_Cari->search_books($keyword, $category_id),
-                'kategori' => $this->db->get('kategori')->result(),
+                'buku' => $this->M_Cari->search_books($keyword, @$category_id),
+                'kategori' => $kategori,
                 'keyword' => $keyword,
                 'category_id' => $category_id
             ];
         }
     
-        // Load view dengan var hasil pencarian
+        
         $this->load->view('layout/user/header', $var);
         $this->load->view('user/cari', $var);
         $this->load->view('layout/user/footer', $var);
     }
     
 }
-?>
