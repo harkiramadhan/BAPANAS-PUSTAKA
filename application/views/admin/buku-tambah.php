@@ -83,7 +83,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class="choices form-select multiple-remove" multiple="multiple" name="id_jenis[]">
+                                        <select class=" form-select name="id_jenis[]">
                                             <?php foreach($jenis->result() as $jns){ ?>
                                                 <option value="<?= $jns->id ?>"> <?= $jns->jenis ?></option>
                                             <?php } ?>

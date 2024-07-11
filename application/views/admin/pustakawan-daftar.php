@@ -23,13 +23,13 @@
                     <table class="table" id="daftarPustakawan">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
+                                <th class="text-center" width="1">No</th>
                                 <th class="text-center">Nama</th>
                                 <th class="text-center">Email</th>
                                 <th class="text-center">Jml. Peminjaman</th>
                                 <th class="text-center">Tgl. Terdaftar</th>
                                 <th class="text-center">Status</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center" width="1">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

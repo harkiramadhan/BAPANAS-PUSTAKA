@@ -23,14 +23,14 @@
                     <table class="table" id="daftarPeminjaman">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
+                                <th class="text-center" width="1">No</th>
                                 <th class="text-center">Judul Buku</th>
                                 <th class="text-center">Peminjam</th>
                                 <th class="text-center">Tgl. Pengajuan</th>
                                 <th class="text-center">Tgl. Peminjaman</th>
                                 <th class="text-center">Tgl. Pengembalian</th>
                                 <th class="text-center">Status</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center" width="1">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

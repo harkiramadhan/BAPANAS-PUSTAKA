@@ -27,11 +27,11 @@
                     <table class="table" id="daftarBuku">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
+                                <th class="text-center" width="1">No</th>
                                 <th class="text-center">Judul Buku</th>
                                 <th class="text-center">Pengarang</th>
                                 <th class="text-center">Katagori</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center" width="1">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

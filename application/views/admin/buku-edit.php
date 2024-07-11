@@ -89,7 +89,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class="choices form-select multiple-remove" multiple="multiple" name="id_jenis[]">
+                                        <select class="form-select" name="id_jenis[]">
                                             <?php 
                                                 foreach($jenis->result() as $jns){ 
                                                     $selectedJenis = in_array($jns->id, json_decode($buku->jenis)) ? 'selected' : '';
@@ -97,6 +97,16 @@
                                                 <option value="<?= $jns->id ?>" <?= $selectedJenis ?>> <?= $jns->jenis ?></option>
                                             <?php } ?>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="first-name-horizontal-icon">File Buku</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="file" name="filebuku" class="file-buku-preview">
                                     </div>
                                 </div>
                             </div>
