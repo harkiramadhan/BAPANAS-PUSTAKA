@@ -80,4 +80,37 @@ class Publikasi extends CI_Controller{
 
         redirect('admin/publikasi');
     }
+
+    function editPublikasi($id){
+        $publikasi = $this->db->get_where('publikasi', ['md5(id)' => $id])->row();
+        $cover = $publikasi->cover;
+        $configCover = [
+            'upload_path'   => './assets/img/cover',
+            'allowed_types' => 'jpg|jpeg|png',
+            'encrypt_name'  => TRUE
+        ];
+
+        $this->load->library('upload', $configCover);
+        if ($this->upload->do_upload('cover')) {
+            (@$publikasi->cover) ? @unlink('./assets/img/cover/' . @$publikasi->cover) : NULL;
+            $img = $this->upload->data();
+            $this->resizeImage('cover', $img['file_name']);
+            $cover = $img['file_name'];
+        }
+
+        $this->db->where('md5(id)', $id)->update('publikasi', [
+            'cover' => $cover,
+            'judul' => $this->input->post('judul', TRUE),
+            'kategori' => $this->input->post('kategori', TRUE),
+            'desc' => $this->input->post('desc', TRUE)
+        ]);
+
+        if ($this->db->affected_rows() > 0) {
+            $this->session->set_flashdata('success', "Publikasi " . $this->input->post('judul', TRUE) . " berhasil Di Simpan");
+        } else {
+            $this->session->set_flashdata('error', "Publikasi " . $this->input->post('judul', TRUE) . " gagal Di Simpan");
+        }
+
+        redirect('admin/publikasi');
+    }
 }

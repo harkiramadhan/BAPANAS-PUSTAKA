@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="mt-2 mb-3" style="border-style: dashed;">
+                            <!-- <hr class="mt-2 mb-3" style="border-style: dashed;">
                             <h5 class="card-title mb-4">Informasi</h5>
                             <div class="col-md-4">
                                 <label for="contact-info-horizontal-icon">Menu 1</label>
@@ -204,8 +204,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <hr class="mt-2 mb-3" style="border-style: dashed;">
+                            </div> -->
+                            <!-- <hr class="mt-2 mb-3" style="border-style: dashed;">
                             <h5 class="card-title mb-4">Pintasan</h5>
                             <div class="col-md-4">
                                 <label for="contact-info-horizontal-icon">Menu 1</label>
@@ -321,7 +321,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <hr class="mt-2 mb-3" style="border-style: dashed;">
                             <h5 class="card-title mb-4">Social Media</h5>
                             <div class="col-md-4">
