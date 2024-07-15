@@ -40,30 +40,16 @@
             <div class="col-md-4 mb-3">
                 <h6 class="mb-3 fw-bolder">Publikasi Pers</h6>
                 <div class="slider slider-1 mb-2">
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
+                    <?php foreach($publikasi_pers->result() as $pr){ ?>
+                        <div class="slider-item position-relative">
+                            <h4 class="text-left fw-bolder w-75"><?= $pr->judul ?></h4>
+                            <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
+                            <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
+                                <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
+                            </a>
+                            <img src="<?= base_url('assets/img/cover/' . $pr->cover) ?>" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="text-center">
                     <a href="#" class="mb-3 text-muted link-underline-light text-center mt-3">lihat semua</a>
@@ -72,30 +58,16 @@
             <div class="col-md-4 mb-3">
                 <h6 class="mb-3 fw-bolder">Media NFA</h6>
                 <div class="slider slider-2 mb-2">
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
+                    <?php foreach($media_nva->result() as $nv){ ?>
+                        <div class="slider-item position-relative">
+                            <h4 class="text-left fw-bolder w-75"><?= $nv->judul ?></h4>
+                            <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
+                            <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
+                                <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
+                            </a>
+                            <img src="<?= base_url('assets/img/cover/' . $nv->cover) ?>" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="text-center">
                     <a href="#" class="mb-3 text-muted link-underline-light text-center mt-3">lihat semua</a>
@@ -104,33 +76,19 @@
             <div class="col-md-4 mb-3">
                 <h6 class="mb-3 fw-bolder">Koleksi Terbaru</h6>
                 <div class="slider slider-3 mb-2">
+                    <?php foreach($bukuBuku->result() as $b){ ?>
                     <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
+                        <h4 class="text-left fw-bolder w-75"><?= $b->judul ?></h4>
                         <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
+                        <a href="<?= site_url('user/koleksi/detail/' . md5($b->id)) ?>" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
                             <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
                         </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
+                        <img src="<?= base_url('assets/img/cover/' . $b->cover) ?>" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
                     </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75">Indeks Ketahanan Pangan Tahun 2022</h4>
-                        <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
-                            <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
-                        </a>
-                        <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="mb-3 text-muted link-underline-light text-center mt-3">lihat semua</a>
+                    <a href="<?= site_url('koleksi') ?>" class="mb-3 text-muted link-underline-light text-center mt-3">lihat semua</a>
                 </div>
             </div>
         </div>
@@ -285,21 +243,21 @@
         <div class="row mb-5">
             <div class="col-12 col-md-3 col-lg-4 mb-3">
                 <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white">1000</h1>
+                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_buku->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">BUKU</p>
                     <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-4 mb-3">
                 <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white">1000</h1>
+                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_kategori->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">KATEGORI BUKU</p>
                     <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-4 mb-3">
                 <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white">1000</h1>
+                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_publikasi->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">PUBLIKASI</p>
                     <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                 </div>
