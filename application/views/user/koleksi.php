@@ -27,37 +27,40 @@
             ?>
             <div class="col-12 col-md-3 col-lg-3 mb-3">
                 <a href="<?= site_url('user/koleksi/detail/' . md5($bu->id)) ?>" style="text-decoration: none;">
-                    <div class="position-relative">
+                    <div class="position-relative px-2">
                         <?php if($bu->cover): ?>
-                        <img src="<?= base_url('assets/img/cover/' . $bu->cover) ?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
+                        <img src="<?= base_url('assets/img/cover/' . $bu->cover) ?>" class="rounded-4 shadow mb-2" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                         <?php endif; ?>
                         <!-- <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span> -->
                     </div>
 
-                    <?php if (in_array("2", json_decode($bu->jenis))) : ?>
-                        <p class="text-success mb-2 fw-light">
-                            <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
-                        </p>
-                    <?php elseif (in_array("1", json_decode($bu->jenis))) : ?>
-                        <p class="text-success mb-2 fw-light">
-                            <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
-                        </p>
-                    <?php endif; ?>
-
-                    <?php foreach($kategoriBuku as $ktgb){ 
-                        $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
-                    ?>
-                        <span class="badge text-bg-primary"><?= @$kategori ?></span>
-                    <?php } ?>
-                        
-
-                    <h5 class="fw-semibold mb-1 mt-2 text-black">
-                        <?php 
-                            $judul = $bu->judul;
-                            echo strlen($judul) > 25 ? substr($judul, 0, 25) . '..' : $judul;
+                    <div class="px-2">
+                        <?php if (in_array("2", json_decode($bu->jenis))) : ?>
+                            <p class="text-success mb-2 fw-light">
+                                <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
+                            </p>
+                        <?php elseif (in_array("1", json_decode($bu->jenis))) : ?>
+                            <p class="text-success mb-2 fw-light">
+                                <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
+                            </p>
+                        <?php endif; ?>
+    
+                        <?php foreach($kategoriBuku as $ktgb){ 
+                            $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
                         ?>
-                    </h5>                    
-                    <p class="text-secondary mb-2 fw-light"><?= $bu->pengarang ?></p>
+                            <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                        <?php } ?>
+                            
+    
+                        <h5 class="fw-semibold mb-1 mt-2 text-black">
+                            <?php 
+                                $judul = $bu->judul;
+                                echo strlen($judul) > 25 ? substr($judul, 0, 25) . '..' : $judul;
+                            ?>
+                        </h5>                    
+                        <p class="text-secondary mb-2 fw-light"><?= $bu->pengarang ?></p>
+                    </div>
+
                 </a>
             </div>
             <?php } ?>

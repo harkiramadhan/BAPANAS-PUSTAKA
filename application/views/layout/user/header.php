@@ -20,6 +20,39 @@
         <link rel="stylesheet" href="<?= base_url('assets/user/css/bootstrap-primary-green.css.map') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/user/css/custom.css') ?>">
 
+        <link rel="stylesheet" href="<?= base_url('node_modules/aos/dist/aos.css') ?>">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <style>
+            .slick-prev:before, .slick-next:before {
+                color: black;
+            }
+            .slick-prev {
+                top: -23px;
+                right: 20px !important;
+                left: auto;
+            }
+            .slick-next {
+                top: -23px;
+                right: 0px;
+            }
+            .slider-item {
+                padding: 20px;
+                background-color: #1d7816;
+                color: white;
+                border-radius: 10px;
+                height: 320px;
+                /* margin: 10px; */
+            }
+            .slider-item img {
+                transition: transform 0.5s ease;
+                transform: rotate(8.239deg);
+                right: 30px;
+                position: absolute;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -38,16 +71,24 @@
                             <li class="nav-item">
                                 <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
                                 <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
+                                <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi Pangan</a>
+                                <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pers</a>
                                 <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
-                                <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
                                 <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
-                                <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
+                                <a href="https://badanpangan.go.id/wiki/layanan-dan-akses-informasi-publik" target="_BLANK" class="nav-link text-white fw-medium text-opacity-75">PPID</a>
                             </li>
                         </ul>
 
                         <form method="get" class=" " action="<?= site_url('cari') ?>" style="width: -webkit-fill-available;">
                             <div class="input-group z-1 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-none d-lg-flex' ?>" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
+                                <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;">
+                                    <option selected>Pilih Kategori</option>
+                                    <option value="1">Fiksi</option>
+                                    <option value="2">Non-Fiksi</option>
+                                    <option value="3">Sains</option>
+                                    <option value="4">Sejarah</option>
+                                </select>
                                 <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
                                     <i class="bi bi-search" style="color: #A4A4A4;"></i>
                                 </button>
@@ -105,10 +146,11 @@
                     <div class="navbar-nav gap-4">
                         <a href="<?= site_url('beranda') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'beranda' || $this->uri->segment(2) == 'beranda') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Beranda</a>
                         <a href="<?= site_url('koleksi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'koleksi' || $this->uri->segment(2) == 'koleksi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi</a>
+                        <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan' || $this->uri->segment(2) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Koleksi Pangan</a>
+                        <a href="<?= site_url('publikasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'publikasi' || $this->uri->segment(2) == 'publikasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pers</a>
                         <a href="<?= site_url('kategori') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'kategori' || $this->uri->segment(2) == 'kategori') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Kategori</a>
-                        <a href="<?= site_url('pangan') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'pangan' || $this->uri->segment(2) == 'pangan') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Publikasi Pangan</a>
                         <a href="<?= site_url('lokasi') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'lokasi' || $this->uri->segment(2) == 'lokasi') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">Lokasi Perpustakaan</a>
-                        <a href="<?= site_url('ppid') ?>" class="nav-link text-white <?= ($this->uri->segment(1) == 'ppid' || $this->uri->segment(2) == 'ppid') ? 'fw-semibold active' : 'fw-medium text-opacity-75' ?>">PPID</a>
+                        <a href="https://badanpangan.go.id/wiki/layanan-dan-akses-informasi-publik" target="_BLANK" class="nav-link text-white fw-medium text-opacity-75">PPID</a>
                     </div>
                 </div>
             </nav>
@@ -117,6 +159,13 @@
         <form method="get" class="p-3 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-flex d-lg-none' ?>" action="<?= site_url('cari') ?>" style="width: -webkit-fill-available;">
             <div class="input-group d-flex d-lg-none z-1" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
+                <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 150px;">
+                    <option selected>Kategori</option>
+                    <option value="1">Fiksi</option>
+                    <option value="2">Non-Fiksi</option>
+                    <option value="3">Sains</option>
+                    <option value="4">Sejarah</option>
+                </select>
                 <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
                     <i class="bi bi-search" style="color: #A4A4A4;"></i>
                 </button>

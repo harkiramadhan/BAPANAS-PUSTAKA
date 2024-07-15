@@ -97,6 +97,27 @@
         <script src="<?= base_url('assets/user/bootstrap/js/bootstrap.bundle.js') ?>"></script>
         <script src="<?= base_url('assets/user/js/custom.js') ?>"></script>
 
+        <script type="text/javascript" src="<?= base_url('node_modules/aos/dist/aos.js') ?>"></script>
+        
+        <script>
+            AOS.init();
+        </script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.slider-1, .slider-2, .slider-3').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                prevArrow: '<button type="button" class="slick-prev btn"><i class="bi bi-arrow-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="bi bi-arrow-right"></i></button>'
+                });
+            });
+        </script>
+
     </body>
 
 </html>

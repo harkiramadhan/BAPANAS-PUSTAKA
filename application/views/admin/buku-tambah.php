@@ -160,10 +160,18 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" name="subjek" placeholder="Tulis disini ........." id="contact-info-horizontal-icon">
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-textarea-t"></i>
-                                        </div>
+                                        <select class=" form-select" name="">
+                                            <option value="">000: Ilmu Komputer, Informasi, dan Karya Umum</option>
+                                            <option value="">100: Filsafat dan Psikologi</option>
+                                            <option value="">200: Agama</option>
+                                            <option value="">300: Ilmu-ilmu Sosial</option>
+                                            <option value="">400: Bahasa</option>
+                                            <option value="">500: Ilmu-ilmu Alam dan Matematika</option>
+                                            <option value="">600: Teknologi dan Ilmu-ilmuTerapan</option>
+                                            <option value="">700: Kesenian, Hiburan, dan Olahraga</option>
+                                            <option value="">800: Kesusastraan</option>
+                                            <option value="">900: Sejarah dan Geografi</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

@@ -3,10 +3,12 @@
     <div class="container-xl">
         <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\' fill=\'%236c757d\' class=\'bi bi-circle-fill\' viewBox=\'0 0 16 16\'%3E%3Ccircle cx=\'8\' cy=\'8\' r=\'8\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="<?= site_url('user/beranda') ?>" class="text-primary fw-bold link-underline-light"><i class="bi bi-house-door-fill me-2"></i>Beranda</a></li>
-            <li class="breadcrumb-item"><a href="<?= site_url('user/koleksi/') ?>" class="text-primary fw-bold link-underline-light"></i>Koleksi Buku</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?= $buku->judul; ?></li>
-          </ol>
+            <li class="breadcrumb-item"><a href="<?= site_url('user/beranda') ?>" class="text-primary fw-bold link-underline-light"><i class="bi bi-house-door-fill me-0 me-md-2"></i><span class="d-none d-md-inline">Beranda</span></a></li>
+            <li class="breadcrumb-item d-none d-md-inline"><a href="<?= site_url('user/koleksi/') ?>" class="text-primary fw-bold link-underline-light"></i>Koleksi Buku</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <?= (strlen($buku->judul) > 20) ? substr($buku->judul, 0, 20) . ' . . . ' : $buku->judul; ?>
+            </li>
+          </ol> 
         </nav>
     </div>
 </section>
@@ -30,7 +32,6 @@
                 <?php elseif (in_array("1", json_decode($buku->jenis))) : ?>
                     <a href="" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Baca Online</a>
                 <?php endif; ?>
-
             </div>
             <div class="col-12 col-lg-9">
 
@@ -43,89 +44,96 @@
                         <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
                     </p>
                 <?php endif; ?>
-                <h3 class="fw-semibold mb-1 text-black"><?= $buku->judul; ?></h3>
-                <p class="text-secondary mb-3 fw-light"><?= $buku->pengarang; ?></p>
+
+                <?php foreach(json_decode($buku->kategori) as $ktgb){ 
+                    $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
+                ?>
+                    <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                <?php } ?>
+
+                <h3 class="fw-semibold mb-1 mt-2 text-black"><?= $buku->judul; ?></h3>
+                <p class="text-secondary mb-3 fw-light"><i class="fa-solid fa-id-badge me-2 text-warning"></i><?= $buku->pengarang; ?></p>
                 <div class="row">
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3" style="border-radius: 8px 0px 0px 0px;">
+                        <div class="bg-secondary h-100 p-2 ps-3" style="border-radius: 8px 0px 0px 0px;">
                             <p class="mb-0 text-white fw-medium">Edisi</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3" style="border-radius: 0px 8px 0px 0px;">
+                        <div class="bg-light h-100 p-2 ps-3" style="border-radius: 0px 8px 0px 0px;">
                             <p class="mb-0 fw-normal"><?= $buku->edisi; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3">
+                        <div class="bg-secondary h-100 p-2 ps-3">
                             <p class="mb-0 text-white fw-medium">Penerbit</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3">
+                        <div class="bg-light h-100 p-2 ps-3">
                             <p class="mb-0 fw-normal"><?= $buku->penerbit; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3">
+                        <div class="bg-secondary h-100 p-2 ps-3">
                             <p class="mb-0 text-white fw-medium">ISBN</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3">
+                        <div class="bg-light h-100 p-2 ps-3">
                             <p class="mb-0 fw-normal"><?= $buku->isbn; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3">
+                        <div class="bg-secondary h-100 p-2 ps-3">
                             <p class="mb-0 text-white fw-medium">Deskripsi Fisik</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3">
+                        <div class="bg-light h-100 p-2 ps-3">
                             <p class="mb-0 fw-normal"><?= $buku->desc_fisik; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3">
+                        <div class="bg-secondary h-100 p-2 ps-3">
                             <p class="mb-0 text-white fw-medium">Subjek</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3">
+                        <div class="bg-light h-100 p-2 ps-3">
                             <p class="mb-0 fw-normal"><?= $buku->subjek; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3">
+                        <div class="bg-secondary h-100 p-2 ps-3">
                             <p class="mb-0 text-white fw-medium">Bahasa</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3">
+                        <div class="bg-light h-100 p-2 ps-3">
                             <p class="mb-0 fw-normal"><?= $buku->bahasa; ?></p>
                         </div>
                     </div>
 
                     <div class="col-4 pe-0">
-                        <div class="bg-secondary p-2 ps-3" style="border-radius: 0px 0px 0px 8px;">
+                        <div class="bg-secondary h-100 p-2 ps-3" style="border-radius: 0px 0px 0px 8px;">
                             <p class="mb-0 text-white fw-medium">Call Number</p>
                         </div>
                     </div>
                     <div class="col-8 ps-0">
-                        <div class="bg-light p-2 ps-3" style="border-radius: 0px 0px 8px 0px;">
+                        <div class="bg-light h-100 p-2 ps-3" style="border-radius: 0px 0px 8px 0px;">
                             <p class="mb-0 fw-normal"><?= $buku->call_number; ?></p>
                         </div>
                     </div>
                 </div>
                 <div class="bg-light rounded mt-3">
-                    <p class="mb-2 fw-bold p-3">Deskripsi</p>
-                    <p class="mb-0 fw-normal p-0"><?= $buku->desc; ?></p>
+                    <p class="mb-2 fw-bold px-3 pt-3">Deskripsi</p>
+                    <div class="mb-0 fw-normal px-3 pb-3" style="text-align: justify;"><?= $buku->desc; ?></div>
                 </div>
             </div>
         </div>
