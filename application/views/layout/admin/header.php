@@ -22,7 +22,9 @@
         <!-- Place the first <script> tag in your HTML's <head> -->
         <?php if(
             ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'tambah') ||
-            ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'edit')
+            ($this->uri->segment(2) == 'buku' && $this->uri->segment(3) == 'edit') ||
+            ($this->uri->segment(2) == 'publikasi' && $this->uri->segment(3) == 'tambah') ||
+            ($this->uri->segment(2) == 'publikasi' && $this->uri->segment(3) == 'edit')
         ): ?>
             <script src="https://cdn.tiny.cloud/1/2obp7gbxwuz79fd24bafjam688l4cn76aymkx3sa9py0j3xv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
         <?php endif; ?>

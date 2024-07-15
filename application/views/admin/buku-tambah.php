@@ -24,7 +24,7 @@
         <hr class="my-0">
         <div class="card-content">
             <div class="card-body">
-                <form method="POST" action="<?= site_url('admin/buku/createBuku') ?>" class="form form-horizontal" enctype="multipart/form-data">
+                <form method="POST" action="<?= site_url('admin/publikasi/createPublikasi') ?>" class="form form-horizontal" enctype="multipart/form-data">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
@@ -83,7 +83,8 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class=" form-select name="id_jenis[]">
+                                        <select class=" form-select" id="select-jenis" name="id_jenis[]">
+                                            <option value="" disabled selected> - PILIH JENIS BUKU -</option>
                                             <?php foreach($jenis->result() as $jns){ ?>
                                                 <option value="<?= $jns->id ?>"> <?= $jns->jenis ?></option>
                                             <?php } ?>
@@ -91,16 +92,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+
+                            <div class="col-md-4 file-buku d-none">
                                 <label for="first-name-horizontal-icon">File Buku</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 file-buku d-none">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="file" name="filebuku" class="file-buku-preview">
+                                        <input type="file" name="pdf" class="file-buku-preview">
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col-md-4">
                                 <label for="contact-info-horizontal-icon">Edisi</label>
                             </div>
@@ -160,17 +163,10 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class=" form-select" name="">
-                                            <option value="">000: Ilmu Komputer, Informasi, dan Karya Umum</option>
-                                            <option value="">100: Filsafat dan Psikologi</option>
-                                            <option value="">200: Agama</option>
-                                            <option value="">300: Ilmu-ilmu Sosial</option>
-                                            <option value="">400: Bahasa</option>
-                                            <option value="">500: Ilmu-ilmu Alam dan Matematika</option>
-                                            <option value="">600: Teknologi dan Ilmu-ilmuTerapan</option>
-                                            <option value="">700: Kesenian, Hiburan, dan Olahraga</option>
-                                            <option value="">800: Kesusastraan</option>
-                                            <option value="">900: Sejarah dan Geografi</option>
+                                        <select class=" form-select" name="id_subjek" required>
+                                            <?php foreach($subjek->result() as $s){ ?>
+                                                <option value="<?= $s->id ?>"><?= $s->kode . ': ' . $s->subjek ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>

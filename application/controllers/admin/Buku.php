@@ -35,7 +35,11 @@ class Buku extends CI_Controller{
     function tambah(){
         $var = [
             'kategori' => $this->db->get('kategori'),
-            'jenis' => $this->db->get('jenis')
+            'jenis' => $this->db->get('jenis'),
+            'subjek' => $this->db->get('subjek'),
+            'ajax' => [
+                'buku'
+            ]
         ];
 
         $this->load->view('layout/admin/header', $var);
@@ -56,7 +60,11 @@ class Buku extends CI_Controller{
         $var = [
             'buku' => $this->db->get_where('buku', ['md5(id)' => $id])->row(),
             'kategori' => $this->db->get('kategori'),
-            'jenis' => $this->db->get('jenis')
+            'jenis' => $this->db->get('jenis'),
+            'subjek' => $this->db->get('subjek'),
+            'ajax' => [
+                'buku'
+            ]
         ];
         $this->load->view('layout/admin/header', $var);
         $this->load->view('admin/buku-edit', $var);
@@ -89,18 +97,34 @@ class Buku extends CI_Controller{
     /* Action Here! */
     function createBuku(){
         $cover = NULL;
-        $config['upload_path']      = './assets/img/cover';  
-        $config['allowed_types']    = 'jpg|jpeg|png'; 
-        $config['encrypt_name']    = TRUE;
-        
-        $this->load->library('upload', $config);
-        if($this->upload->do_upload('cover')){
+        $configCover = [
+            'upload_path'   => './assets/img/cover',
+            'allowed_types' => 'jpg|jpeg|png',
+            'encrypt_name'  => TRUE
+        ];
+
+        $this->load->library('upload', $configCover);
+        if ($this->upload->do_upload('cover')) {
             $img = $this->upload->data();
-            $this->resizeImage('cover', $img['file_name']); 
+            $this->resizeImage('cover', $img['file_name']);
             $cover = $img['file_name'];
         }
 
+        $pdf = NULL;
+        $configPdf = [
+            'upload_path'   => './assets/pdf',
+            'allowed_types' => 'pdf|PDF',
+            'encrypt_name'  => TRUE
+        ];
+
+        $this->upload->initialize($configPdf);
+        if ($this->upload->do_upload('pdf')) {
+            $file = $this->upload->data();
+            $pdf = $file['file_name'];
+        }
+
         $this->db->insert('buku', [
+            'id_subjek' => $this->input->post('id_subjek', TRUE),
             'judul' => $this->input->post('judul', TRUE),
             'pengarang' => $this->input->post('pengarang', TRUE),
             'kategori' => json_encode($this->input->post('id_kategori', TRUE)),
@@ -113,12 +137,13 @@ class Buku extends CI_Controller{
             'bahasa' => $this->input->post('bahasa', TRUE),
             'call_number' => $this->input->post('call_number', TRUE),
             'desc' => $this->input->post('desc', TRUE),
-            'cover' => $cover
+            'cover' => $cover,
+            'pdf' => $pdf
         ]);
-        if($this->db->affected_rows() > 0){
-            $this->session->set_flashdata('success', "Buku " . $this->input->post('judul', TRUE) . " Berhasil Di Tambahkan");
-        }else{
-            $this->session->set_flashdata('error', "Buku " . $this->input->post('judul', TRUE) . " Gagal Di Tambahkan");
+        if ($this->db->affected_rows() > 0) {
+            $this->session->set_flashdata('success', "Buku " . $this->input->post('judul', TRUE) . " berhasil ditambahkan");
+        } else {
+            $this->session->set_flashdata('error', "Buku " . $this->input->post('judul', TRUE) . " gagal ditambahkan");
         }
 
         redirect('admin/buku/daftar');
@@ -128,19 +153,35 @@ class Buku extends CI_Controller{
         $buku = $this->db->get_where('buku', ['md5(id)' => $id])->row();
         $cover = $buku->cover;
 
-        $config['upload_path']      = './assets/img/cover';  
-        $config['allowed_types']    = 'jpg|jpeg|png'; 
-        $config['encrypt_name']    = TRUE;
-        
-        $this->load->library('upload', $config);
-        if($this->upload->do_upload('cover')){
+        $configCover = [
+            'upload_path'   => './assets/img/cover',
+            'allowed_types' => 'jpg|jpeg|png',
+            'encrypt_name'  => TRUE
+        ];
+        $this->load->library('upload', $configCover);
+        if ($this->upload->do_upload('cover')) {
             (@$buku->cover) ? @unlink('./assets/img/cover/' . @$buku->cover) : NULL;
             $img = $this->upload->data();
-            $this->resizeImage('cover', $img['file_name']); 
+            $this->resizeImage('cover', $img['file_name']);
             $cover = $img['file_name'];
         }
 
+        $pdf = $buku->pdf;
+        
+        $configPdf = [
+            'upload_path'   => './assets/pdf',
+            'allowed_types' => 'pdf|PDF',
+            'encrypt_name'  => TRUE
+        ];
+        $this->upload->initialize($configPdf);
+        if ($this->upload->do_upload('pdf')) {
+            (@$buku->pdf) ? @unlink('./assets/pdf/' . @$buku->pdf) : NULL;
+            $file = $this->upload->data();
+            $pdf = $file['file_name'];
+        }
+
         $this->db->where('md5(id)', $id)->update('buku', [
+            'id_subjek' => $this->input->post('id_subjek', TRUE),
             'judul' => $this->input->post('judul', TRUE),
             'pengarang' => $this->input->post('pengarang', TRUE),
             'kategori' => json_encode($this->input->post('id_kategori', TRUE)),
@@ -153,7 +194,8 @@ class Buku extends CI_Controller{
             'bahasa' => $this->input->post('bahasa', TRUE),
             'call_number' => $this->input->post('call_number', TRUE),
             'desc' => $this->input->post('desc', TRUE),
-            'cover' => $cover
+            'cover' => $cover,
+            'pdf' => $pdf
         ]);
         if($this->db->affected_rows() > 0){
             $this->session->set_flashdata('success', "Buku " . $this->input->post('judul', TRUE) . " Berhasil Di Simpan");

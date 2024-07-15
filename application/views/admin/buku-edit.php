@@ -36,7 +36,7 @@
                                         <?php if($buku->cover): ?>
                                             <img src="<?= base_url('assets/img/cover/' . $buku->cover)?>" class="rounded-2 mb-3" height="200px" id="img-before" alt="...">
                                         <?php endif; ?>
-                                        <input type="file" name="cover" class="image-preview-filepond">
+                                        <input type="file" name="cover" class="image-preview-filepond-for-edit">
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class="form-select" name="id_jenis[]">
+                                        <select class="form-select" id="select-jenis" name="id_jenis[]">
                                             <?php 
                                                 foreach($jenis->result() as $jns){ 
                                                     $selectedJenis = in_array($jns->id, json_decode($buku->jenis)) ? 'selected' : '';
@@ -100,13 +100,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <input type="hidden" id="idjenis" value="<?= str_replace(['["', '"]'], '', $buku->jenis) ?>">
+                            <div class="col-md-4 file-buku d-none">
                                 <label for="first-name-horizontal-icon">File Buku</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 file-buku d-none">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="file" name="filebuku" class="file-buku-preview">
+                                        <?php if($buku->pdf): ?>
+                                            <embed src="<?= base_url('assets/pdf/' . $buku->pdf) ?>" id="pdf-before" width="100%" height="510px" />
+                                        <?php endif; ?>
+                                        <input type="file" name="pdf" class="file-buku-preview-for-edit">
                                     </div>
                                 </div>
                             </div>
@@ -169,17 +173,10 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <select class=" form-select" name="">
-                                            <option value="">000: Ilmu Komputer, Informasi, dan Karya Umum</option>
-                                            <option value="">100: Filsafat dan Psikologi</option>
-                                            <option value="">200: Agama</option>
-                                            <option value="">300: Ilmu-ilmu Sosial</option>
-                                            <option value="">400: Bahasa</option>
-                                            <option value="">500: Ilmu-ilmu Alam dan Matematika</option>
-                                            <option value="">600: Teknologi dan Ilmu-ilmuTerapan</option>
-                                            <option value="">700: Kesenian, Hiburan, dan Olahraga</option>
-                                            <option value="">800: Kesusastraan</option>
-                                            <option value="">900: Sejarah dan Geografi</option>
+                                        <select class=" form-select" name="id_subjek" required>
+                                            <?php foreach($subjek->result() as $s){ ?>
+                                                <option <?= ($buku->id_subjek == $s->id) ? 'selected' : '' ?> value="<?= $s->id ?>"><?= $s->kode . ': ' . $s->subjek ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -222,7 +219,7 @@
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="reset" class="btn btn-light-secondary me-1 mb-1">Batalkan</button>
-                                <button type="submit" class="btn btn-primary w-100 me-1 mb-1">Tambah Buku</button>
+                                <button type="submit" class="btn btn-primary w-100 me-1 mb-1">Simpan Buku</button>
                             </div>
                         </div>
                     </div>
