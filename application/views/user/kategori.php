@@ -17,8 +17,7 @@
     <div class="container-xl mb-5">
         <!-- Rekomendasi Buku Lainnya -->
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h4 class="mb-0 fw-normal">Semua Kategori <span class="fw-bold text-primary fst-italic">' 1 '</span> dari 10</h4>
-            <!-- <a href="" class="text-black-50 link-underline-light">Tampilkan lebih banyak<i class="bi bi-arrow-right ms-2"></i></a> -->
+            <h4 class="mb-0 fw-normal">Semua Kategori <span class="fw-bold text-primary fst-italic">' <?= ($page / 12) + 1 ?> '</span> dari <?= ceil($this->db->select('id')->get('kategori')->num_rows() / 12) ?></h4>
         </div>
         <div class="row mb-2">
             <?php foreach($kategori->result() as $kt){ ?>
@@ -35,16 +34,6 @@
     </div>
     
     <nav aria-label="Page navigation example pt-3">
-      <ul class="pagination justify-content-center">
-        <li class="page-item pill disabled">
-          <a class="page-link text-primary">Sebelumnya</a>
-        </li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">1</a></li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">2</a></li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">3</a></li>
-        <li class="page-item pill">
-          <a class="page-link text-primary" href="#">Selanjutnya</a>
-        </li>
-      </ul>
+      <?= $pagination ?>
     </nav>
 </section>

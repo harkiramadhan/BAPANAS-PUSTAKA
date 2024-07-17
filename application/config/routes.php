@@ -64,12 +64,14 @@ $route['reset-password'] = 'user/auth/password';
 
 $route['beranda'] = 'user/beranda';
 $route['kategori'] = 'user/kategori';
+$route['kategori/(:num)'] = 'user/kategori/index/$1';
 $route['koleksi'] = 'user/koleksi';
 $route['koleksi/(:num)'] = 'user/koleksi/index/$1';
 $route['lokasi'] = 'user/lokasi';
 $route['pangan'] = 'user/pangan';
 $route['pangan/(:num)'] = 'user/pangan/index/$1';
 $route['publikasi'] = 'user/publikasi';
+$route['publikasi/(:num)'] = 'user/publikasi/index/$1';
 
 $route['akun'] = 'user/akun';
 $route['peminjaman'] = 'user/peminjaman';
