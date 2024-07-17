@@ -214,16 +214,17 @@
         <?php 
             $delayKat = 0; // Initial delay
             foreach($kategori->result() as $kt){ 
-            ?>
+               $count = $this->db->select('id')->from('buku')->where('JSON_CONTAINS(kategori, \'["' . $kt->id . '"]\')')->get()->num_rows();
+        ?>
                 <div class="col-12 col-md-3 col-lg-2 mb-3"
                     data-aos="fade-up"
                     data-aos-offset="200"
                     data-aos-delay="<?= $delayKat ?>"
                     data-aos-duration="800">
-                    <a href="" style="text-decoration: none;">
+                    <a href="<?= site_url('cari?category=' . $kt->id) ?>" style="text-decoration: none;">
                         <div class="d-flex flex-column rounded-3 p-3 shadow-sm position-relative" style="height: 200px; background: linear-gradient(180deg, rgba(220, 167, 3, 0.4) -0.79%, #DCA703 88.82%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
                             <h5 class="fw-semibold mt-auto mb-1 text-white"><?= $kt->kategori ?></h5>
-                            <p class="text-white mb-0 fw-light">214+ Buku</p>
+                            <p class="text-white mb-0 fw-light"><?= $count ?>+ Buku</p>
                         </div>
                     </a>
                 </div>
