@@ -35,28 +35,28 @@
                     </div>
 
                     <div class="px-2">
-                        <?php if (in_array("2", json_decode($bu->jenis))) : ?>
-                            <p class="text-success mb-2 fw-light">
-                                <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
-                            </p>
-                        <?php elseif (in_array("1", json_decode($bu->jenis))) : ?>
-                            <p class="text-success mb-2 fw-light">
-                                <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
-                            </p>
+                        <?php if(is_array($bu->jenis)): ?>
+                            <?php if (in_array("2", json_decode($bu->jenis))) : ?>
+                                <p class="text-success mb-2 fw-light">
+                                    <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
+                                </p>
+                            <?php elseif (in_array("1", json_decode($bu->jenis))) : ?>
+                                <p class="text-success mb-2 fw-light">
+                                    <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
+                                </p>
+                            <?php endif; ?>
                         <?php endif; ?>
     
-                        <?php foreach($kategoriBuku as $ktgb){ 
-                            $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
-                        ?>
-                            <span class="badge text-bg-primary"><?= @$kategori ?></span>
-                        <?php } ?>
-                            
+                        <?php if(is_array($kategoriBuku)): ?>
+                            <?php foreach($kategoriBuku as $ktgb){ 
+                                $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
+                            ?>
+                                <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                            <?php } ?>
+                        <?php endif; ?>
     
                         <h5 class="fw-semibold mb-1 mt-2 text-black">
-                            <?php 
-                                $judul = $bu->judul;
-                                echo strlen($judul) > 25 ? substr($judul, 0, 25) . '..' : $judul;
-                            ?>
+                            <?= ($bu->judul) ? strlen($bu->judul) > 25 ? substr($bu->judul, 0, 25) . '..' : $bu->judul : '' ?>
                         </h5>                    
                         <p class="text-secondary mb-2 fw-light"><?= $bu->pengarang ?></p>
                     </div>
