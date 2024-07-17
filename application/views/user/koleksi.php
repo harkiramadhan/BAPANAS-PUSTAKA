@@ -68,16 +68,6 @@
     </div>
     
     <nav aria-label="Page navigation example pt-3">
-      <ul class="pagination justify-content-center">
-        <li class="page-item pill disabled">
-          <a class="page-link text-primary">Sebelumnya</a>
-        </li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">1</a></li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">2</a></li>
-        <li class="page-item circle"><a class="page-link text-primary" href="#">3</a></li>
-        <li class="page-item pill">
-          <a class="page-link text-primary" href="#">Selanjutnya</a>
-        </li>
-      </ul>
+        <?= $pagination ?>
     </nav>
 </section>

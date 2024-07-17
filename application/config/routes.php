@@ -65,6 +65,7 @@ $route['reset-password'] = 'user/auth/password';
 $route['beranda'] = 'user/beranda';
 $route['kategori'] = 'user/kategori';
 $route['koleksi'] = 'user/koleksi';
+$route['koleksi/(:num)'] = 'user/koleksi/index/$1';
 $route['lokasi'] = 'user/lokasi';
 $route['pangan'] = 'user/pangan';
 $route['publikasi'] = 'user/publikasi';
