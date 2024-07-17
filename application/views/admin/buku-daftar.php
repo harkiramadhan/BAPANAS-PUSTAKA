@@ -51,11 +51,13 @@
                                     </td>
                                     <td><?= $row->pengarang ?></td>
                                     <td class="text-center">
-                                        <?php foreach($kategoriBuku as $ktgb){ 
-                                            $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
-                                        ?>
-                                            <span class="badge text-bg-primary"><?= @$kategori ?></span>
-                                        <?php } ?>
+                                        <?php if(is_array($kategoriBuku)): ?>
+                                            <?php foreach($kategoriBuku as $ktgb){ 
+                                                $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
+                                            ?>
+                                                <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                                            <?php } ?>
+                                        <?php endif; ?>
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group">
