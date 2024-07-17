@@ -59,7 +59,7 @@
                 ?>
                     
                 <div class="col-12 col-md-3 col-lg-3 mb-3">
-                    <a href="<?= site_url('user/koleksi/detail/' . md5($bu->id)) ?>" style="text-decoration: none;">
+                    <a href="<?= site_url('koleksi/' . md5($bu->id)) ?>" style="text-decoration: none;">
                         <div class="position-relative px-2">
                             <?php if($bu->cover) : ?>
                             <img src="<?= base_url('assets/img/cover/' . $bu->cover) ?>" class="rounded-4 shadow mb-2" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">

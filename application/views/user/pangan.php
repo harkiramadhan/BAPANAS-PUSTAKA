@@ -25,7 +25,7 @@
                     foreach($bukupangan->result() as $bp){ 
                 ?>
                 <div class="col-12 col-md-3 col-lg-3 mb-3">
-                    <a href="<?= site_url('user/koleksi/detail/' . md5($bp->id)) ?>" style="text-decoration: none;">
+                    <a href="<?= site_url('koleksi/' . md5($bp->id)) ?>" style="text-decoration: none;">
                         <div class="position-relative">
                             <?php if($bp->cover): ?>
                             <img src="<?= base_url('assets/img/cover/' . $bp->cover) ?>" class="rounded-4 shadow mb-4" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">

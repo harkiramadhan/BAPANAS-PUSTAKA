@@ -80,7 +80,7 @@
                     <div class="slider-item position-relative">
                         <h4 class="text-left fw-bolder w-75"><?= $b->judul ?></h4>
                         <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
-                        <a href="<?= site_url('user/koleksi/detail/' . md5($b->id)) ?>" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
+                        <a href="<?= site_url('koleksi/' . md5($b->id)) ?>" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
                             <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
                         </a>
                         <img src="<?= base_url('assets/img/cover/' . $b->cover) ?>" class="rounded-2 shadow-lg mb-3" alt="" width="170px" style="height: auto; object-fit: cover; object-position: top;">
@@ -104,14 +104,14 @@
         <!-- Rekomendasi Buku Pangan -->
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h3 class="mb-0">Publikasi Pangan Terbaru</h3>
-            <a href="<?= site_url('user/pangan') ?>" class="text-black-50 link-underline-light">Lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="<?= site_url('pangan') ?>" class="text-black-50 link-underline-light">Lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
         </div>
         <div class="row mb-2">
             <?php 
                     foreach($bukupangan->result() as $bp){ 
                 ?>
                 <div class="col-12 col-md-3 col-lg-3 mb-3">
-                    <a href="<?= site_url('user/koleksi/detail/' . md5($bp->id)) ?>" style="text-decoration: none;">
+                    <a href="<?= site_url('koleksi/' . md5($bp->id)) ?>" style="text-decoration: none;">
                         <div class="position-relative px-2">
                             <?php if($bp->cover): ?>
                             <img src="<?= base_url('assets/img/cover/' . $bp->cover) ?>" class="rounded-4 shadow mb-3" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
@@ -152,7 +152,7 @@
         <!-- Rekomendasi Buku Lainnya -->
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h3 class="mb-0">Rekomendasi Lainnya</h3>
-            <a href="<?= site_url('user/koleksi/') ?>" class="text-black-50 link-underline-light">Lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="<?= site_url('koleksi') ?>" class="text-black-50 link-underline-light">Lebih banyak<i class="bi bi-arrow-right ms-2"></i></a>
         </div>
         <div class="row mb-2">
             <?php 
@@ -164,7 +164,7 @@
                 data-aos-offset="200"
                 data-aos-delay="<?= $delayBuku ?>"
                 data-aos-duration="800">
-                <a href="<?= site_url('user/koleksi/detail/' . md5($bu->id)) ?>" style="text-decoration: none;">
+                <a href="<?= site_url('koleksi/' . md5($bu->id)) ?>" style="text-decoration: none;">
                     <div class="position-relative px-2">
                         <?php if($bu->cover): ?>
                         <img src="<?= base_url('assets/img/cover/' . $bu->cover) ?>" class="rounded-4 shadow mb-3" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">

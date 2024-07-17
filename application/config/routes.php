@@ -67,6 +67,7 @@ $route['kategori'] = 'user/kategori';
 $route['kategori/(:num)'] = 'user/kategori/index/$1';
 $route['koleksi'] = 'user/koleksi';
 $route['koleksi/(:num)'] = 'user/koleksi/index/$1';
+$route['koleksi/(:any)'] = 'user/koleksi/detail/$1';
 $route['lokasi'] = 'user/lokasi';
 $route['pangan'] = 'user/pangan';
 $route['pangan/(:num)'] = 'user/pangan/index/$1';
