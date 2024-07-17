@@ -22,7 +22,7 @@
         
         <div class="row mb-2">
             <div class="col-12 col-md-3 col-lg-3 mb-3">
-                <a href="<?= site_url('user/publikasi/detail') ?>" style="text-decoration: none;">
+                <a href="<?= site_url('publikasi/detail') ?>" style="text-decoration: none;">
                     <div class="position-relative px-2">
                         <img src="http://localhost/BAPANAS-PUSTAKA/assets/img/cover/83249a8633ca9467c74c36c86ea7c120.jpeg" class="rounded-4 shadow mb-3" alt="" width="100%" style="height: 380px; object-fit: cover; object-position: top;">
                         <!-- <span class="position-absolute bg-warning shadow text-white py-2 px-4 start-0 mt-5 rounded-end-4 fw-semibold">Pupuler</span> -->
