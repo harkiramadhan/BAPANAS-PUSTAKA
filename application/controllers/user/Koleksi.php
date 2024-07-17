@@ -10,7 +10,7 @@ class Koleksi extends CI_Controller{
         $config = array();
         $config['base_url'] = site_url('koleksi');
         $config['total_rows'] = $this->db->select('id')->get_where('buku', ['status' => 1])->num_rows();
-        $config['per_page'] = 10;
+        $config['per_page'] = 12;
         $config['uri_segment'] = 2;
         $config['attributes'] = array('class' => 'page-link text-primary');
 
@@ -46,12 +46,14 @@ class Koleksi extends CI_Controller{
             $var = [
                 'user' => $this->M_Pustakawan->getById($userid),
                 'buku' => $buku,
-                'pagination' => $this->pagination->create_links()
+                'pagination' => $this->pagination->create_links(),
+                'page' => $page
             ];
         } else {
             $var = [
                 'buku' => $buku,
-                'pagination' => $this->pagination->create_links()
+                'pagination' => $this->pagination->create_links(),
+                'page' => $page
             ];
         }
 

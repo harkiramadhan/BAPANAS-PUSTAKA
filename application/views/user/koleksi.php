@@ -17,7 +17,8 @@
     <div class="container-xl mb-5">
         <!-- Rekomendasi Buku Lainnya -->
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h4 class="mb-0 fw-normal">Semua Buku Halaman <span class="fw-bold text-primary fst-italic">' 1 '</span> dari 10</h4>
+            <h4 class="mb-0 fw-normal">Semua Buku Halaman <span class="fw-bold text-primary fst-italic">' <?= ($page / 12) + 1 ?> '</span> dari <?= ceil($this->db->select('id')->get_where('buku', ['status' => 1])->num_rows() / 12) ?></h4>
+            
         </div>
         
         <div class="row mb-2">
