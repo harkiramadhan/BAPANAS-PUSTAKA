@@ -17,7 +17,7 @@
     <div class="container-xl mb-5">
         <!-- Rekomendasi Buku Lainnya -->
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h4 class="mb-0 fw-normal">Semua Publikasi Pangan, Halaman <span class="fw-bold text-success fst-italic">' 1 '</span> dari 10</h4>
+            <h4 class="mb-0 fw-normal">Semua Publikasi Pangan, Halaman <span class="fw-bold text-primary fst-italic">' <?= ($page / 12) + 1 ?> '</span> dari <?= ceil($this->db->select('id')->get_where('buku', ['status' => 1])->num_rows() / 12) ?></h4>
         </div>
         
         <div class="row mb-2">
@@ -58,16 +58,6 @@
     </div>
     
     <nav aria-label="Page navigation example pt-3">
-      <ul class="pagination justify-content-center">
-        <li class="page-item pill disabled">
-          <a class="page-link text-success">Sebelumnya</a>
-        </li>
-        <li class="page-item circle"><a class="page-link text-success" href="#">1</a></li>
-        <li class="page-item circle"><a class="page-link text-success" href="#">2</a></li>
-        <li class="page-item circle"><a class="page-link text-success" href="#">3</a></li>
-        <li class="page-item pill">
-          <a class="page-link text-success" href="#">Selanjutnya</a>
-        </li>
-      </ul>
+        <?= $pagination ?>
     </nav>
 </section>
