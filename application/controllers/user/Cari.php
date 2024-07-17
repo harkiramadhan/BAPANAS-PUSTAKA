@@ -20,6 +20,7 @@ class Cari extends CI_Controller{
             $var = [
                 'user' => $this->M_Pustakawan->getById($userid),
                 'buku' => $this->M_Cari->search_books($keyword, @$category_id),
+                'kategoris' => $this->db->get('kategori'),
                 'kategori' => $kategori,
                 'keyword' => $keyword,
                 'category_id' => $category_id
@@ -27,6 +28,7 @@ class Cari extends CI_Controller{
         } else {
             $var = [
                 'buku' => $this->M_Cari->search_books($keyword, @$category_id),
+                'kategoris' => $this->db->get('kategori'),
                 'kategori' => $kategori,
                 'keyword' => $keyword,
                 'category_id' => $category_id
