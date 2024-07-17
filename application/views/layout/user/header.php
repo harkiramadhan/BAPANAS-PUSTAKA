@@ -82,12 +82,11 @@
                         <form method="get" class=" " action="<?= site_url('cari') ?>" style="width: -webkit-fill-available;">
                             <div class="input-group z-1 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-none d-lg-flex' ?>" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
-                                <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;">
+                                <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;" name="category">
                                     <option selected>Pilih Kategori</option>
-                                    <option value="1">Fiksi</option>
-                                    <option value="2">Non-Fiksi</option>
-                                    <option value="3">Sains</option>
-                                    <option value="4">Sejarah</option>
+                                    <?php foreach($this->db->get('kategori')->result() as $kt){ ?>
+                                        <option <?= ($this->input->get('category', TRUE) == $kt->id) ? 'selected' : '' ?> value="<?= $kt->id ?>"><?= $kt->kategori ?></option>
+                                    <?php } ?>
                                 </select>
                                 <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
                                     <i class="bi bi-search" style="color: #A4A4A4;"></i>

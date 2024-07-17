@@ -27,10 +27,10 @@
             <form method="get" action="<?= site_url('cari') ?>">
                 <div class="input-group z-1" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                     <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
-                    <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;" id="select-kategori">
+                    <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;" id="select-kategori" name="category">
                         <option selected>Pilih Kategori</option>
                         <?php foreach($kategoris->result() as $kt){ ?>
-                        <option <?= (@$kategori->id == $kt->id) ? 'selected' : '' ?> value="<?= $kt->id ?>"><?= $kt->kategori ?></option>
+                            <option <?= (@$kategori->id == $kt->id) ? 'selected' : '' ?> value="<?= $kt->id ?>"><?= $kt->kategori ?></option>
                         <?php } ?>
                     </select>
                     <button class="btn z-0" type="submit" style="background-color: #F3F3F3; border: none;">
