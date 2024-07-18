@@ -24,7 +24,7 @@
         <hr class="my-0">
         <div class="card-content">
             <div class="card-body">
-                <form method="POST" action="<?= site_url('admin/publikasi/createPublikasi') ?>" class="form form-horizontal" enctype="multipart/form-data">
+                <form method="POST" action="<?= site_url('admin/buku/createBuku') ?>" class="form form-horizontal" enctype="multipart/form-data">
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
