@@ -73,6 +73,7 @@ $route['pangan'] = 'user/pangan';
 $route['pangan/(:num)'] = 'user/pangan/index/$1';
 $route['publikasi'] = 'user/publikasi';
 $route['publikasi/(:num)'] = 'user/publikasi/index/$1';
+$route['publikasi/(:any)'] = 'user/publikasi/detail/$1';
 
 $route['akun'] = 'user/akun';
 $route['peminjaman'] = 'user/peminjaman';

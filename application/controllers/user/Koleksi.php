@@ -63,7 +63,6 @@ class Koleksi extends CI_Controller{
     }
 
     function detail($id){
-
         if ($this->session->userdata('is_loggedin')) {
             $userid = $this->session->userdata('userid');
             $var = [
