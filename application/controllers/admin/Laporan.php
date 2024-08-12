@@ -11,6 +11,10 @@ class Laporan extends CI_Controller{
     }
     
     function index(){
+        $var = [
+            'title' => 'Laporan',
+        ];
+
         $this->load->view('layout/admin/header',);
         $this->load->view('admin/laporan');
         $this->load->view('layout/admin/footer');

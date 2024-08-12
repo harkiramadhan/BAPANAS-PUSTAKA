@@ -29,6 +29,7 @@ class Peminjaman extends CI_Controller{
                             ->get();
 
         $var = [
+            'title' => 'Daftar Peminjaman',
             'pinjaman' => $pinjaman,
             'ajax' => [
                 'peminjaman'

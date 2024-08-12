@@ -11,6 +11,10 @@ class Pengaturan extends CI_Controller{
     
     function index(){
 
+        $var = [
+            'title' => 'Pengaturan',
+        ];
+
         $this->load->view('layout/admin/header',);
         $this->load->view('admin/pengaturan');
         $this->load->view('layout/admin/footer');

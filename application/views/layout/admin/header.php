@@ -4,7 +4,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Beranda - Admin Perpustakaan BAPANAS</title>
+
+        <?php 
+            $ttl = "";
+            if(@$main_title): 
+                $ttl = @$main_title . " - " . @$title . " - ";
+            else:
+                $ttl = @$title . " - ";
+            endif;
+        ?>
+        
+        <title><?= $ttl ?> Admin Perpustakaan BAPANAS</title>
 
         <link rel="shortcut icon" href="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" type="image/x-icon">
         <link rel="shortcut icon" href="<?= base_url('assets/admin/compiled/png/logo-favicon.png') ?>" type="image/png">

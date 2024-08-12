@@ -28,6 +28,9 @@ class Landing extends CI_Controller{
     
     function banner(){
         $var = [
+            'main_title' => 'Pengaturan Landing Page',
+            'main_title_url' => site_url('landing/banner'),
+            'title' => 'Daftar Banner',
             'banner' => $this->db->get('banner'),
             'ajax' => [
                 'banner'
@@ -40,7 +43,11 @@ class Landing extends CI_Controller{
     }
 
     function footer(){
-
+        $var = [
+            'main_title' => 'Pengaturan Landing Page',
+            'main_title_url' => site_url('landing/footer'),
+            'title' => 'Footer',
+        ];
         $this->load->view('layout/admin/header',);
         $this->load->view('admin/landing-footer');
         $this->load->view('layout/admin/footer');

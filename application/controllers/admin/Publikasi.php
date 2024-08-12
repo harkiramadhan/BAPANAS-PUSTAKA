@@ -26,6 +26,7 @@ class Publikasi extends CI_Controller{
     
     function index(){
         $var = [
+            'title' => 'Publikasi',
             'publikasi' => $this->db->get('publikasi')
         ];
         $this->load->view('layout/admin/header', $var);
@@ -35,6 +36,12 @@ class Publikasi extends CI_Controller{
 
     function tambah(){
 
+        $var = [
+            'main_title' => 'Publikasi',
+            'main_title_url' => site_url('publikasi'),
+            'title' => 'Tambah'
+        ];
+
         $this->load->view('layout/admin/header',);
         $this->load->view('admin/publikasi-tambah');
         $this->load->view('layout/admin/footer');
@@ -42,6 +49,9 @@ class Publikasi extends CI_Controller{
 
     function edit($id){
         $var = [
+            'main_title' => 'Publikasi',
+            'main_title_url' => site_url('publikasi'),
+            'title' => 'Edit',
             'publikasi' => $this->db->get_where('publikasi', ['md5(id)' => $id])->row()
         ];
         $this->load->view('layout/admin/header', $var);

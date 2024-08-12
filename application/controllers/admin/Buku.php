@@ -34,6 +34,9 @@ class Buku extends CI_Controller{
 
     function tambah(){
         $var = [
+            'main_title' => 'Buku',
+            'main_title_url' => site_url('buku/daftar'),
+            'title' => 'Tambah Buku',
             'kategori' => $this->db->get('kategori'),
             'jenis' => $this->db->get('jenis'),
             'subjek' => $this->db->get('subjek'),
@@ -49,6 +52,9 @@ class Buku extends CI_Controller{
 
     function daftar(){
         $var = [
+            // 'main_title' => 'Buku',
+            // 'main_title_url' => site_url('buku/daftar'),
+            'title' => 'Daftar Buku',
             'buku' => $this->db->get_where('buku', ['status' => 1])
         ];
         $this->load->view('layout/admin/header', $var);
@@ -58,6 +64,9 @@ class Buku extends CI_Controller{
 
     function edit($id){
         $var = [
+            'main_title' => 'Buku',
+            'main_title_url' => site_url('buku/daftar'),
+            'title' => 'Edit Buku',
             'buku' => $this->db->get_where('buku', ['md5(id)' => $id])->row(),
             'kategori' => $this->db->get('kategori'),
             'jenis' => $this->db->get('jenis'),
@@ -73,6 +82,9 @@ class Buku extends CI_Controller{
 
     function kategori(){
         $var = [
+            'main_title' => 'Buku',
+            'main_title_url' => site_url('buku/daftar'),
+            'title' => 'Kategori Buku',
             'kategori' => $this->db->get('kategori'),
             'ajax' => [
                 'kategori'
@@ -86,6 +98,9 @@ class Buku extends CI_Controller{
 
     function jenis(){
         $var = [
+            'main_title' => 'Buku',
+            'main_title_url' => site_url('buku/daftar'),
+            'title' => 'Jenis Buku',
             'jenis' => $this->db->get('jenis')
         ];
 

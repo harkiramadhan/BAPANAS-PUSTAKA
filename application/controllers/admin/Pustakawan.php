@@ -11,6 +11,7 @@ class Pustakawan extends CI_Controller{
     
     function index(){
         $var = [
+            'title' => 'pustakawan',
             'pustakawan' => $this->db->get('pustakawan')
         ];
 
