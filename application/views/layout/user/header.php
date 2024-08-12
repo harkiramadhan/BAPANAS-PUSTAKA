@@ -82,7 +82,7 @@
                             <div class="input-group z-1 <?= ($this->uri->segment(2) == 'cari') ? 'd-none' : 'd-none d-lg-flex' ?>" style="background-color: #F3F3F3; padding: 12px; border-radius: 5px;">
                                 <input type="text" name="keyword" class="form-control border-0 focus-ring focus-ring-light" placeholder="Cari Nama/Pengarang buku" aria-label="Cari buku" style="background-color: #F3F3F3;" value="<?= isset($keyword) ? $keyword : '' ?>">
                                 <select class="form-select border-0 focus-ring focus-ring-light" aria-label="Kategori" style="background-color: #F3F3F3; max-width: 200px;" name="category">
-                                    <option selected>Pilih Kategori</option>
+                                    <option selected value="">Pilih Kategori</option>
                                     <?php foreach($this->db->get('kategori')->result() as $kt){ ?>
                                         <option <?= ($this->input->get('category', TRUE) == $kt->id) ? 'selected' : '' ?> value="<?= $kt->id ?>"><?= $kt->kategori ?></option>
                                     <?php } ?>
