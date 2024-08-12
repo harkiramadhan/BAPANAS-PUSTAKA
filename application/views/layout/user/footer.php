@@ -58,28 +58,18 @@
                     <div class="col-12 col-lg-4">
                         <p class="fw-bolder">Ikuti Kami</p>
                         <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <button class="btn btn-icon-follow rounded-circle">
-                                        <i class="bi bi-facebook"></i>
-                                    </button>
-                                </div>
-                                <div class="col text-center">
-                                    <button class="btn btn-icon-follow rounded-circle">
-                                        <i class="bi bi-instagram"></i>
-                                    </button>
-                                </div>
-                                <div class="col text-center">
-                                    <button class="btn btn-icon-follow rounded-circle">
-                                        <i class="bi bi-twitter"></i>
-                                    </button>
-                                </div>
-                                <div class="col text-center">
-                                    <button class="btn btn-icon-follow rounded-circle">
-                                        <i class="bi bi-youtube"></i>
-                                    </button>
-                                </div>
-                            </div>
+                            <button class="btn btn-icon-follow rounded-circle">
+                                <i class="bi bi-facebook"></i>
+                            </button>
+                            <button class="btn btn-icon-follow rounded-circle">
+                                <i class="bi bi-instagram"></i>
+                            </button>
+                            <button class="btn btn-icon-follow rounded-circle">
+                                <i class="bi bi-twitter"></i>
+                            </button>
+                            <button class="btn btn-icon-follow rounded-circle">
+                                <i class="bi bi-youtube"></i>
+                            </button>
                         </div>
                     </div>
 

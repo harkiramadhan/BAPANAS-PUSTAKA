@@ -51,6 +51,19 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="first-name-horizontal-icon">Tanggal Publikasi</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group has-icon-left">
+                                    <div class="position-relative">
+                                        <input type="date" name="tanggal" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="contact-info-horizontal-icon">Kategori</label>
                             </div>
                             <div class="col-md-8">

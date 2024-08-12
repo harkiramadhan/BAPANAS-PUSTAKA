@@ -32,8 +32,8 @@
                       </div>
                       <div class="px-2">
                           <span class="badge text-bg-primary"><?= $p->kategori ?></span>
+                          <p class="text-secondary mb-1 mt-2 fw-light"><i class="fa-solid fa-calendar me-2 text-warning"></i>Senin, 12 Agustus 2024</p>
                           <h5 class="fw-semibold mb-1 mt-2 text-black"><?= $p->judul ?></h5>                    
-                          <!-- <p class="text-secondary mb-2 fw-light">Humas Badan Pangan Nasional</p> -->
                       </div>
                   </a>
               </div>

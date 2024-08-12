@@ -24,6 +24,65 @@
     <div class="container-xl">
         <form action="<?= site_url('user/akun/update') ?>" method="POST">
             <div class="mb-3">
+                <div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin: 0 auto; border: 4px solid;">
+                    <img id="profile-preview" src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                </div>
+                <label for="profile-picture" class="form-label">Foto Profil</label>
+                <input type="file" name="profile-picture" accept="image/png, image/jpeg" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="profile-picture" aria-describedby="emailHelp" required>
+            </div>
+
+            <script>
+                document.getElementById('profile-picture').addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file && (file.type === 'image/png' || file.type === 'image/jpeg')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById('profile-preview').src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            </script>
+            
+            <div class="mb-3">
+                <label for="jk" class="form-label">Jenis Kelamin</label>
+                <select name="jk" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="jk" required>
+                    <option value="">-- Pilih Jenis Kelamin --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                <select name="pekerjaan" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="pekerjaan" required>
+                    <option value="">-- Pilih Pekerjaan --</option>
+                    <option value="Pegawai Negeri Sipil (PNS)">Pegawai Negeri Sipil (PNS)</option>
+                    <option value="Pegawai Badan Pangan Nasional">Pegawai Badan Pangan Nasional</option>
+                    <option value="Pengawas Pangan">Pengawas Pangan</option>
+                    <option value="Ahli Gizi">Ahli Gizi</option>
+                    <option value="Petugas Laboratorium Pangan">Petugas Laboratorium Pangan</option>
+                    <option value="Peneliti Pangan">Peneliti Pangan</option>
+                    <option value="Analis Kebijakan Pangan">Analis Kebijakan Pangan</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="pendidikan" class="form-label">Pendidikan</label>
+                <select name="pendidikan" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="pendidikan" required>
+                    <option value="">-- Pilih Pendidikan --</option>
+                    <option value="SD/MI">SD/MI</option>
+                    <option value="SMP/MTS">SMP/MTS</option>
+                    <option value="SMA/MA">SMA/MA</option>
+                    <option value="SMK">SMK</option>
+                    <option value="Diploma (D1-D4)">Diploma (D1-D4)</option>
+                    <option value="Sarjana (S1)">Sarjana (S1)</option>
+                    <option value="Magister (S2)">Magister (S2)</option>
+                    <option value="Doktor (S3)">Doktor (S3)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="" class="form-label">NIK</label>
                 <input type="number" name="nik" value="<?= $user->nik ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
             </div>

@@ -28,8 +28,11 @@
             <div class="col-12 col-lg-9">
                 <span class="badge text-bg-primary"><?= $publikasi->kategori ?></span>
                 <h3 class="fw-semibold mb-1 mt-2 text-black"><?= $publikasi->judul ?></h3>
-                <p class="text-secondary mb-3 fw-light"><i class="fa-solid fa-id-badge me-2 text-warning"></i>Humas Badan Pangan Nasional</p>
-                <div class="bg-light rounded mt-3">
+                <div class="d-flex flex-lg-row flex-column mb-2">
+                  <p class="text-secondary mb-0 fw-light me-3"><i class="fa-solid fa-calendar me-2 text-warning"></i>Senin, 12 Agustus 2024</p>
+                  <p class="text-secondary mb-0 fw-light"><i class="fa-solid fa-id-badge me-2 text-warning"></i>Humas Badan Pangan Nasional</p>
+                </div>
+                <div class="bg-light rounded mt-0">
                     <p class="mb-2 fw-bold px-3 pt-3">Deskripsi</p>
                     <div class="mb-0 fw-normal px-3 pb-1" style="text-align: justify;">
                       <?= $publikasi->desc ?>
