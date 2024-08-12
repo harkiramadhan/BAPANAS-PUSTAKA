@@ -75,6 +75,18 @@
                 </li>
                 <!-- MENU PERS -->
 
+                <!-- MENU LAPORAN -->
+
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'pustakawan') ? 'active' : '' ?>">
+                    <a href="<?= site_url('admin/pustakawan') ?>" class='sidebar-link'>
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Laporan</span>
+                    </a>
+                </li>
+
+                <!-- MENU LAPORAN -->
+
+
                 <!-- MENU LANDING PAGE -->
                 <li class="sidebar-item <?= ($this->uri->segment(2) == 'landing') ? 'active' : '' ?> has-sub">
                     <a href="#" class="sidebar-link">

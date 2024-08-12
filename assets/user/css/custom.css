@@ -137,3 +137,8 @@ body {
     max-width: 100%;
     object-fit: contain;
 }
+
+.page-link.active, .active > .page-link {
+    background-color: #198754 !important;
+    border: #1D7816 !important;
+}
