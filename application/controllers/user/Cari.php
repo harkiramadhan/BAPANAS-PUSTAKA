@@ -7,8 +7,8 @@ class Cari extends CI_Controller{
     }
     
     function index() {
-        $keyword = $this->input->get('keyword');
-        $category_id = $this->input->get('category');
+        $keyword = $this->input->get('keyword', TRUE);
+        $category_id = $this->input->get('category', TRUE);
     
         $kategori = NULL;
         if(@$category_id){
