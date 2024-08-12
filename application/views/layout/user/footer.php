@@ -1,4 +1,6 @@
-
+<?php
+    $footer = $this->db->get_where('footer', ['id' => 1])->row();
+?>
         <!-- Footer -->
         <section id="footer bg-white">
 
@@ -7,8 +9,8 @@
                 <div class="row">
                     <!-- Logo dan Profil -->
                     <div class="col-12 col-lg-4 mb-4">
-                        <img src="<?= base_url('assets/user/image/logo-nav.png') ?>" alt="" width="" height="80">
-                        <p class="text-black-50 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+                        <img src="<?= base_url('assets/img/' . $footer->logo) ?>" alt="" width="" height="80">
+                        <p class="text-black-50 mt-4"><?= $footer->desc ?></p>
                     </div>
                     
                     <div class="col-12 col-lg-8">
@@ -19,13 +21,13 @@
                                 <p class="fw-bolder">Alamat</p>
                                 <div class="list-group">
                                     <div class="d-flex py-2">
-                                        <i class="bi bi-geo-alt-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0">Jalan Harsono RM No.3, Ragunan, Ps. Minggu, Jakarta Selatan, DKI Jakarta 12550</a>
+                                        <i class="bi bi-geo-alt-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0"><?= $footer->alamat ?></a>
                                     </div>
                                     <div class="d-flex py-2">
-                                        <i class="bi bi-telephone-inbound-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0">(021) 7807377</a>
+                                        <i class="bi bi-telephone-inbound-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0"><?= $footer->phone ?></a>
                                     </div>
                                     <div class="d-flex py-2">
-                                        <i class="bi bi-envelope-at-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0">nfa_official@badanpangan.go.id</a>
+                                        <i class="bi bi-envelope-at-fill me-2"></i><a href="#" class="list-group-item text-secondary p-0 border-0"><?= $footer->email ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -44,11 +46,11 @@
                             <div class="col-12 col-lg-3 mb-4">
                                 <p class="fw-bolder">Pintasan</p>
                                 <div class="list-group">
-                                    <a href="#" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Koleksi</a>
-                                    <a href="#" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Kategori</a>
-                                    <a href="#" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Publikasi Pangan</a>
-                                    <a href="#" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Lokasi</a>
-                                    <a href="#" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>PPID</a>
+                                    <a href="<?= site_url('koleksi') ?>" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Koleksi</a>
+                                    <a href="<?= site_url('kategori') ?>" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Kategori</a>
+                                    <a href="<?= site_url('publikasi') ?>" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Publikasi Pangan</a>
+                                    <a href="<?= site_url('lokasi') ?>" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>Lokasi</a>
+                                    <a href="https://badanpangan.go.id/wiki/layanan-dan-akses-informasi-publik" class="list-group-item text-secondary ps-0 border-0"><i class="bi bi-arrow-right me-2"></i>PPID</a>
                                 </div>
                             </div>
 
@@ -58,18 +60,18 @@
                     <div class="col-12 col-lg-4">
                         <p class="fw-bolder">Ikuti Kami</p>
                         <div class="container">
-                            <button class="btn btn-icon-follow rounded-circle">
+                            <a href="<?= $footer->facebook ?>" class="btn btn-icon-follow rounded-circle">
                                 <i class="bi bi-facebook"></i>
-                            </button>
-                            <button class="btn btn-icon-follow rounded-circle">
+                            </a>
+                            <a href="<?= $footer->instagram ?>" class="btn btn-icon-follow rounded-circle">
                                 <i class="bi bi-instagram"></i>
-                            </button>
-                            <button class="btn btn-icon-follow rounded-circle">
+                            </a>
+                            <a href="<?= $footer->twitter ?>" class="btn btn-icon-follow rounded-circle">
                                 <i class="bi bi-twitter"></i>
-                            </button>
-                            <button class="btn btn-icon-follow rounded-circle">
+                            </a>
+                            <a href="<?= $footer->youtube ?>" class="btn btn-icon-follow rounded-circle">
                                 <i class="bi bi-youtube"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
 

@@ -46,11 +46,12 @@ class Landing extends CI_Controller{
         $var = [
             'main_title' => 'Pengaturan Landing Page',
             'main_title_url' => site_url('landing/footer'),
+            'footer' => $this->db->get_where('footer', ['id' => 1])->row(),
             'title' => 'Footer',
         ];
-        $this->load->view('layout/admin/header',);
-        $this->load->view('admin/landing-footer');
-        $this->load->view('layout/admin/footer');
+        $this->load->view('layout/admin/header', $var);
+        $this->load->view('admin/landing-footer', $var);
+        $this->load->view('layout/admin/footer', $var);
     }
 
     /* Acion Here */
@@ -122,6 +123,40 @@ class Landing extends CI_Controller{
             $this->session->set_flashdata('success', "Banner " . $this->input->post('judul', TRUE) . " Berhasil Di Hapus");
         }else{
             $this->session->set_flashdata('error', "Banner " . $this->input->post('judul', TRUE) . " Gagal Di Hapus");
+        }
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    function updateFooter(){
+        $logo = NULL;
+        $footer = $this->db->get_where('footer', ['id' => 1])->row();
+        $config['upload_path']      = './assets/img';  
+        $config['allowed_types']    = 'jpg|jpeg|png'; 
+        $config['encrypt_name']    = TRUE;
+        
+        $this->load->library('upload', $config);
+        if($this->upload->do_upload('logo')){
+            (@$footer->logo) ? @unlink('./assets/img/' . @$footer->logo) : NULL;
+            $img = $this->upload->data();
+            $logo = $img['file_name'];
+        }
+
+        $this->db->where('id', 1)->update('footer', [
+            'desc' => $this->input->post('desc', TRUE),
+            'alamat' => $this->input->post('alamat', TRUE),
+            'phone' => $this->input->post('phone', TRUE),
+            'email' => $this->input->post('email', TRUE),
+            'instagram' => $this->input->post('instagram', TRUE),
+            'facebook' => $this->input->post('facebook', TRUE),
+            'twitter' => $this->input->post('twitter', TRUE),
+            'youtube' => $this->input->post('youtube', TRUE),
+            'logo' => $logo
+        ]);
+        if($this->db->affected_rows() > 0){
+            $this->session->set_flashdata('success', "Footer Berhasil Di Tambahkan");
+        }else{
+            $this->session->set_flashdata('error', "Footer Gagal Di Tambahkan");
         }
 
         redirect($_SERVER['HTTP_REFERER']);

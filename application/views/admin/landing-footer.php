@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-content">
             <div class="card-body">
-                <form class="form form-horizontal">
+                <form class="form form-horizontal" method="POST" action="<?= site_url('admin/landing/updateFooter') ?>" enctype="multipart/form-data" >
                     <div class="form-body">
                         <div class="row">
                             <h5 class="card-title mb-4">Logo & Deskripsi</h5>
@@ -30,7 +30,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="file" class="image-preview-filepond">
+                                        <input type="file" class="image-preview-filepond" name="logo">
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon" name="desc" value="<?= $footer->desc ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-book"></i>
                                         </div>
@@ -55,7 +55,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon" name="alamat" value="<?= $footer->alamat ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person-fill-check"></i>
                                         </div>
@@ -68,7 +68,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon" name="phone" value="<?= $footer->phone ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person-fill-check"></i>
                                         </div>
@@ -81,7 +81,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon">
+                                        <input type="email" class="form-control" placeholder="Tulis disini ........." id="text-horizontal-icon" name="email" value="<?= $footer->email ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-person-fill-check"></i>
                                         </div>
@@ -330,7 +330,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon" name="instagram" value="<?= $footer->instagram ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-layout-sidebar-inset-reverse"></i>
                                         </div>
@@ -343,7 +343,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon" name="facebook" value="<?= $footer->facebook ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-layout-sidebar-inset-reverse"></i>
                                         </div>
@@ -356,7 +356,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon" name="twitter" value="<?= $footer->twitter ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-layout-sidebar-inset-reverse"></i>
                                         </div>
@@ -369,7 +369,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon">
+                                        <input type="text" class="form-control" placeholder="Link ........." id="contact-info-horizontal-icon" name="youtube" value="<?= $footer->youtube ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-layout-sidebar-inset-reverse"></i>
                                         </div>
