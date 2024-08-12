@@ -4,8 +4,9 @@ use PhpOffice\PhpWord\Writer\Word2007;
 
 class Laporan extends CI_Controller {
 
-	public function index()
-	{
+	public function generateWord()
+	
+    {
 		// Membuat objek PHPWord
 		$phpWord = new PhpWord();
 

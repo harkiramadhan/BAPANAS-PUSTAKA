@@ -77,8 +77,8 @@
 
                 <!-- MENU LAPORAN -->
 
-                <li class="sidebar-item <?= ($this->uri->segment(2) == 'pustakawan') ? 'active' : '' ?>">
-                    <a href="<?= site_url('admin/pustakawan') ?>" class='sidebar-link'>
+                <li class="sidebar-item <?= ($this->uri->segment(2) == 'laporan') ? 'active' : '' ?>">
+                    <a href="<?= site_url('admin/laporan') ?>" class='sidebar-link'>
                         <i class="fa-solid fa-folder-open"></i>
                         <span>Laporan</span>
                     </a>
