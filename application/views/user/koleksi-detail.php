@@ -35,11 +35,11 @@
             </div>
             <div class="col-12 col-lg-9">
 
-                <?php if (in_array("2", json_decode($buku->jenis))) : ?>
+                <?php if (is_array(json_decode($buku->jenis)) && in_array("2", json_decode($buku->jenis))) : ?>
                     <p class="text-success mb-2 fw-light">
                         <i class="bi bi-check-circle-fill me-1"></i>Tersedia Offline
                     </p>
-                <?php elseif (in_array("1", json_decode($buku->jenis))) : ?>
+                <?php elseif (is_array(json_decode($buku->jenis)) && in_array("1", json_decode($buku->jenis))) : ?>
                     <p class="text-success mb-2 fw-light">
                         <i class="bi bi-link-45deg me-1"></i></i>Tersedia Online
                     </p>
