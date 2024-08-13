@@ -46,14 +46,9 @@
                     </p>
                 <?php endif; ?>
 
-                <?php foreach(json_decode($buku->kategori) as $ktgb){ 
-                    $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
-                ?>
-                    <span class="badge text-bg-primary"><?= @$kategori ?></span>
-                <?php } ?>
                 <?php 
                     $kategori_array = json_decode($buku->kategori);
-                    if (is_array($kategori_array) || is_object($kategori_array)) {
+                    if (is_array($kategori_array) && !empty($kategori_array)) {
                         foreach($kategori_array as $ktgb){ 
                             $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
                     ?>
