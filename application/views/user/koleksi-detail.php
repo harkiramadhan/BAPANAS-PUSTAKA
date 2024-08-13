@@ -51,6 +51,14 @@
                 ?>
                     <span class="badge text-bg-primary"><?= @$kategori ?></span>
                 <?php } ?>
+                <?php 
+                    $kategori_array = json_decode($buku->kategori);
+                    if (is_array($kategori_array) && !empty($kategori_array)) {
+                        foreach($kategori_array as $ktgb){ 
+                            $kategori = $this->db->select('kategori')->get_where('kategori', ['id' => $ktgb])->row()->kategori;
+                    ?>
+                        <span class="badge text-bg-primary"><?= @$kategori ?></span>
+                <?php } } ?>
 
                 <h3 class="fw-semibold mb-1 mt-2 text-black"><?= $buku->judul; ?></h3>
                 <p class="text-secondary mb-3 fw-light"><i class="fa-solid fa-id-badge me-2 text-warning"></i><?= $buku->pengarang; ?></p>
