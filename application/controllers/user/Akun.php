@@ -8,6 +8,20 @@ class Akun extends CI_Controller{
             redirect('');
         }
     }
+
+    private function resizeImage($path, $filename){
+        $config['image_library'] = 'gd2';  
+        $config['source_image'] = './assets/' . $path . '/' . $filename;
+        $config['create_thumb'] = FALSE;  
+        $config['maintain_ratio'] = TRUE;  
+        $config['quality'] = '75%';  
+        $config['new_image'] = './assets/' . $path . '/' .$filename;
+        $config['width'] = 500;              
+  
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();  
+        $this->image_lib->clear();
+    }
     
     function index(){
         $userid = $this->session->userdata('userid');
@@ -33,6 +47,22 @@ class Akun extends CI_Controller{
 
     function update(){
         $userid = $this->session->userdata('userid');
+        $user = $this->M_Pustakawan->getById($userid);
+
+        $profileimg = $user->img;
+
+        $config['upload_path']      = './assets/img/pustakawan';  
+        $config['allowed_types']    = 'jpg|jpeg|png'; 
+        $config['encrypt_name']    = TRUE;
+        
+        $this->load->library('upload', $config);
+        if($this->upload->do_upload('profile-picture')){
+            $img = $this->upload->data();
+            $this->resizeImage('pustakawan', $img['file_name']);
+            $profileimg = $img['file_name'];
+        }
+
+        
         $this->db->where('id', $userid)->update('pustakawan', [
             'nik' => $this->input->post('nik', TRUE),
             'nama' => $this->input->post('nama', TRUE),
@@ -41,7 +71,8 @@ class Akun extends CI_Controller{
             'email' => $this->input->post('email', TRUE),
             'jenkel' => $this->input->post('jenkel', TRUE),
             'pekerjaan' => $this->input->post('pekerjaan', TRUE),
-            'pendidikan' => $this->input->post('pendidikan', TRUE)
+            'pendidikan' => $this->input->post('pendidikan', TRUE),
+            'img' => $profileimg
         ]);
         if($this->db->affected_rows() > 0){
             $this->session->set_flashdata('success', 'Data Berhasil Di Update');
