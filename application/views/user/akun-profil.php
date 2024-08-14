@@ -25,7 +25,11 @@
         <form action="<?= site_url('user/akun/update') ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin: 0 auto; border: 4px solid;">
-                    <img id="profile-preview" src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    <?php if(@$user->img): ?>
+                        <img id="profile-preview" src="<?= base_url('assets/img/pustakwan/' . $user->img) ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    <?php else: ?>
+                        <img id="profile-preview" src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    <?php endif; ?>
                 </div>
                 <label for="profile-picture" class="form-label">Foto Profil</label>
                 <input type="file" name="profile-picture" accept="image/png, image/jpeg" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="profile-picture">
