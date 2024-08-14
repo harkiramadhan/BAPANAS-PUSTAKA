@@ -22,13 +22,13 @@
 
 <section class="py-5" style="background: #FFF;">
     <div class="container-xl">
-        <form action="<?= site_url('user/akun/update') ?>" method="POST">
+        <form action="<?= site_url('user/akun/update') ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin: 0 auto; border: 4px solid;">
                     <img id="profile-preview" src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
                 </div>
                 <label for="profile-picture" class="form-label">Foto Profil</label>
-                <input type="file" name="profile-picture" accept="image/png, image/jpeg" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="profile-picture" aria-describedby="emailHelp" required>
+                <input type="file" name="profile-picture" accept="image/png, image/jpeg" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="profile-picture">
             </div>
 
             <script>
@@ -83,27 +83,27 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">NIK</label>
-                <input type="number" name="nik" value="<?= $user->nik ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
+                <input type="number" name="nik" value="<?= $user->nik ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" required>
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">Nama Lengkap</label>
-                <input type="text" name="nama" value="<?= $user->nama ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
+                <input type="text" name="nama" value="<?= $user->nama ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" required>
             </div>
             
             <div class="mb-3">
                 <label for="" class="form-label">Username</label>
-                <input type="text" name="username" value="<?= $user->username ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp" required>
+                <input type="text" name="username" value="<?= $user->username ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" required>
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">No Whatsapp</label>
-                <input type="number" name="whatsapp" value="<?= $user->whatsapp ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp">
+                <input type="number" name="whatsapp" value="<?= $user->whatsapp ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="">
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">Email</label>
-                <input type="email" name="email" value="<?= $user->email ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="" aria-describedby="emailHelp">
+                <input type="email" name="email" value="<?= $user->email ?>" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="">
             </div>
 
             <button type="submit" class="btn btn-warning w-100 px-5 py-3 fw-bold mt-4">Ubah dan Simpan</button>
