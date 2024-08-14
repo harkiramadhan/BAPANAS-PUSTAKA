@@ -45,11 +45,11 @@
             </script>
             
             <div class="mb-3">
-                <label for="jk" class="form-label">Jenis Kelamin</label>
-                <select name="jk" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="jk" required>
+                <label for="jenkel" class="form-label">Jenis Kelamin</label>
+                <select name="jenkel" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="jenkel" required>
                     <option value="">-- Pilih Jenis Kelamin --</option>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option <?= ($user->jenkel == 'L') ? 'selected' : '' ?>  value="L">Laki-laki</option>
+                    <option <?= ($user->jenkel == 'P') ? 'selected' : '' ?>  value="P">Perempuan</option>
                 </select>
             </div>
 
@@ -57,13 +57,13 @@
                 <label for="pekerjaan" class="form-label">Pekerjaan</label>
                 <select name="pekerjaan" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="pekerjaan" required>
                     <option value="">-- Pilih Pekerjaan --</option>
-                    <option value="Pegawai Negeri Sipil (PNS)">Pegawai Negeri Sipil (PNS)</option>
-                    <option value="Pegawai Badan Pangan Nasional">Pegawai Badan Pangan Nasional</option>
-                    <option value="Pengawas Pangan">Pengawas Pangan</option>
-                    <option value="Ahli Gizi">Ahli Gizi</option>
-                    <option value="Petugas Laboratorium Pangan">Petugas Laboratorium Pangan</option>
-                    <option value="Peneliti Pangan">Peneliti Pangan</option>
-                    <option value="Analis Kebijakan Pangan">Analis Kebijakan Pangan</option>
+                    <option <?= ($user->pekerjaan == 'Pegawai Negeri Sipil (PNS)') ? 'selected' : '' ?> value="Pegawai Negeri Sipil (PNS)">Pegawai Negeri Sipil (PNS)</option>
+                    <option <?= ($user->pekerjaan == 'Pegawai Badan Pangan Nasional') ? 'selected' : '' ?> value="Pegawai Badan Pangan Nasional">Pegawai Badan Pangan Nasional</option>
+                    <option <?= ($user->pekerjaan == 'Pengawas Pangan') ? 'selected' : '' ?> value="Pengawas Pangan">Pengawas Pangan</option>
+                    <option <?= ($user->pekerjaan == 'Petugas Laboratorium Pangan') ? 'selected' : '' ?> value="Petugas Laboratorium Pangan">Petugas Laboratorium Pangan</option>
+                    <option <?= ($user->pekerjaan == 'Peneliti Pangan') ? 'selected' : '' ?> value="Peneliti Pangan">Peneliti Pangan</option>
+                    <option <?= ($user->pekerjaan == 'Analis Kebijakan Pangan') ? 'selected' : '' ?> value="Analis Kebijakan Pangan">Analis Kebijakan Pangan</option>
+                    <option <?= ($user->pekerjaan == 'Pekerjaan lainnya') ? 'selected' : '' ?> value="Pekerjaan lainnya">Pekerjaan lainnya</option>
                 </select>
             </div>
 
@@ -71,14 +71,13 @@
                 <label for="pendidikan" class="form-label">Pendidikan</label>
                 <select name="pendidikan" class="form-control focus-ring focus-ring-primary" style="background-color: #F3F3F3; padding: 12px 20px;" id="pendidikan" required>
                     <option value="">-- Pilih Pendidikan --</option>
-                    <option value="SD/MI">SD/MI</option>
-                    <option value="SMP/MTS">SMP/MTS</option>
-                    <option value="SMA/MA">SMA/MA</option>
-                    <option value="SMK">SMK</option>
-                    <option value="Diploma (D1-D4)">Diploma (D1-D4)</option>
-                    <option value="Sarjana (S1)">Sarjana (S1)</option>
-                    <option value="Magister (S2)">Magister (S2)</option>
-                    <option value="Doktor (S3)">Doktor (S3)</option>
+                    <option <?= ($user->pendidikan == 'SD/MI') ? 'selected' : '' ?> value="SD/MI">SD/MI</option>
+                    <option <?= ($user->pendidikan == 'SMP/MTS') ? 'selected' : '' ?> value="SMP/MTS">SMP/MTS</option>
+                    <option <?= ($user->pendidikan == 'SMA/MA/SMK') ? 'selected' : '' ?> value="SMA/MA/SMK">SMA/MA/SMK</option>
+                    <option <?= ($user->pendidikan == 'Diploma (D1-D4)') ? 'selected' : '' ?> value="Diploma (D1-D4)">Diploma (D1-D4)</option>
+                    <option <?= ($user->pendidikan == 'Sarjana (S1)') ? 'selected' : '' ?> value="Sarjana (S1)">Sarjana (S1)</option>
+                    <option <?= ($user->pendidikan == 'Magister (S2)') ? 'selected' : '' ?> value="Magister (S2)">Magister (S2)</option>
+                    <option <?= ($user->pendidikan == 'Doktor (S3)') ? 'selected' : '' ?> value="Doktor (S3)">Doktor (S3)</option>
                 </select>
             </div>
 

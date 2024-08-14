@@ -39,6 +39,9 @@ class Akun extends CI_Controller{
             'username' => $this->input->post('username', TRUE),
             'whatsapp' => $this->input->post('whatsapp', TRUE),
             'email' => $this->input->post('email', TRUE),
+            'jenkel' => $this->input->post('jenkel', TRUE),
+            'pekerjaan' => $this->input->post('pekerjaan', TRUE),
+            'pendidikan' => $this->input->post('pendidikan', TRUE)
         ]);
         if($this->db->affected_rows() > 0){
             $this->session->set_flashdata('success', 'Data Berhasil Di Update');
