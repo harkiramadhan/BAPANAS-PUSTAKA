@@ -7,6 +7,23 @@ class Laporan extends CI_Controller {
 	public function generateWord()
 	
     {
+		$bulan = $this->input->post('bulan', TRUE);
+		$tahun = $this->input->post('tahun', TRUE);
+
+
+		$getAnggota = $this->db->get_where('pustakawan', [
+			'MONTH(created_at)' => $bulan,
+			'YEAR(created_at)' => $tahun
+		]);
+
+		$getPeminjamanBuku = $this->db->select('b.judul, b.subjek')
+									->from('peminjaman p')
+									->join('buku b', 'p.id_buku = b.id')
+									->where([
+										'MONTH(p.tanggal)' => $bulan,
+										'YEAR(p.tanggal)' => $tahun
+									])->get();
+
 		// Membuat objek PHPWord
 		$phpWord = new PhpWord();
 
@@ -21,7 +38,7 @@ class Laporan extends CI_Controller {
         ];
         
         // Menambahkan judul laporan
-        $section->addText('Laporan Anggota Bulan Juli 2024', ['bold' => true, 'size' => 12], ['align' => 'center']);
+        $section->addText('Laporan Anggota Bulan ' . $this->bulan($bulan) . ' ' . $tahun, ['bold' => true, 'size' => 12], ['align' => 'center']);
         $section->addTextBreak(1);
 
         // Menambahkan tabel anggota
@@ -38,12 +55,42 @@ class Laporan extends CI_Controller {
 		$table->addCell(2000)->addText('Pekerjaan', ['bold' => true], ['align' => 'center']);
 		$table->addCell(2000)->addText('Pendidikan', ['bold' => true], ['align' => 'center']);
 
-        $table->addRow();
-        $table->addCell(500)->addText('1', [], ['align' => 'center']);
-        $table->addCell(3000)->addText('Alfian Rahmatullah');
-        $table->addCell(2000)->addText('Laki - laki');
-        $table->addCell(2000)->addText('Wiraswasta');
-        $table->addCell(2000)->addText('S2');
+		$no = 1;
+		$laki_laki_count = 0;
+		$perempuan_count = 0;
+		$pekerjaan_count = [];
+		$pendidikan_count = [];
+
+		foreach($getAnggota->result() as $row){
+			if ($row->jenkel === 'L') {
+				$jenkel = 'Laki - Laki';
+				$laki_laki_count++;
+			} else {
+				$jenkel = 'Perempuan';
+				$perempuan_count++;
+			}
+
+			if (isset($pekerjaan_count[$row->pekerjaan])) {
+				$pekerjaan_count[$row->pekerjaan]++;
+			} else {
+				$pekerjaan_count[$row->pekerjaan] = 1;
+			}
+
+			if (isset($pendidikan_count[$row->pendidikan])) {
+				$pendidikan_count[$row->pendidikan]++;
+			} else {
+				$pendidikan_count[$row->pendidikan] = 1;
+			}
+
+			$table->addRow();
+			$table->addCell(500)->addText($no, [], ['align' => 'center']);
+			$table->addCell(3000)->addText($row->nama);
+			$table->addCell(2000)->addText($jenkel);
+			$table->addCell(2000)->addText($row->pekerjaan);
+			$table->addCell(2000)->addText($row->pendidikan);
+
+			$no++;
+		}
 
         $section->addTextBreak(1);
 
@@ -56,7 +103,7 @@ class Laporan extends CI_Controller {
         // TOTAL ANGGOTA
         $table->addRow();
 		$table->addCell(5500)->addText('A. Total Anggota', ['bold' => true], []);
-		$table->addCell(4000)->addText('50', ['bold' => true], ['align' => 'center']);
+		$table->addCell(4000)->addText($getAnggota->num_rows(), ['bold' => true], ['align' => 'center']);
 
         // JENIS KELAMIN
         $table->addRow();
@@ -64,81 +111,37 @@ class Laporan extends CI_Controller {
 
         $table->addRow();
 		$table->addCell(5500)->addText('Laki - laki', [], []);
-		$table->addCell(4000)->addText('30', [''], ['align' => 'center']);
+		$table->addCell(4000)->addText($laki_laki_count, [''], ['align' => 'center']);
 
         $table->addRow();
 		$table->addCell(5500)->addText('Perempuan', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
+		$table->addCell(4000)->addText($perempuan_count, [''], ['align' => 'center']);
 
         // PEKERJAAN
         $table->addRow();
         $table->addCell(9500, ['gridSpan' => 2])->addText('C. Pekerjaan', ['bold' => true], ['align' => 'left']);
 
-        $table->addRow();
-		$table->addCell(5500)->addText('Pegawai Negeri Sipil (PNS)', [], []);
-		$table->addCell(4000)->addText('30', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Pegawai Badan Pangan Nasional', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Pengawas Pangan', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Petugas Laboratorium Pangan', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Peneliti Pangan', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Analis Kebijakan Pangan', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-        
-        $table->addRow();
-		$table->addCell(5500)->addText('Pekerjaan lainnya', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
+		foreach ($pekerjaan_count as $pekerjaan => $count) {
+			$table->addRow();
+			$table->addCell(5500)->addText($pekerjaan, [], []);
+			$table->addCell(4000)->addText($count, [''], ['align' => 'center']);
+		}
 
         // PENDIDIKAN
         $table->addRow();
         $table->addCell(9500, ['gridSpan' => 2])->addText('D. Pendidikan', ['bold' => true], ['align' => 'left']);
 
-        $table->addRow();
-		$table->addCell(5500)->addText('SD/MI', [], []);
-		$table->addCell(4000)->addText('30', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('SMP/MTS', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('SMA/MA/SMK', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Diploma (D1-D4)', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Sarjana (S1)', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-
-        $table->addRow();
-		$table->addCell(5500)->addText('Magister (S2)', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
-        
-        $table->addRow();
-		$table->addCell(5500)->addText('Doktor (S3)', [], []);
-		$table->addCell(4000)->addText('20', [''], ['align' => 'center']);
+		foreach ($pendidikan_count as $pendidikan => $count) {
+			$table->addRow();
+			$table->addCell(5500)->addText($pendidikan, [], []);
+			$table->addCell(4000)->addText($count, [''], ['align' => 'center']);
+		}
 
 		// Menambahkan section
 		$section = $phpWord->addSection();
 
         // Menambahkan judul laporan
-        $section->addText('Laporan Peminjaman Bulan Juli 2024', ['bold' => true, 'size' => 12], ['align' => 'center']);
+        $section->addText('Laporan Peminjaman Bulan ' . $this->bulan($bulan) . ' ' . $tahun, ['bold' => true, 'size' => 12], ['align' => 'center']);
         $section->addTextBreak(1);
 
         // Menambahkan tabel anggota
@@ -153,10 +156,22 @@ class Laporan extends CI_Controller {
 		$table->addCell(5000)->addText('Judul Buku', ['bold' => true], ['align' => 'center']);
 		$table->addCell(4000)->addText('Subjek', ['bold' => true], ['align' => 'center']);
 		
-        $table->addRow();
-        $table->addCell(500)->addText('1', [], ['align' => 'center']);
-        $table->addCell(3000)->addText('Indeks Ketahanan Pangan Tahun 2021');
-        $table->addCell(2000)->addText('000: Ilmu Komputer, Informasi, dan Karya Umum');
+		$nos = 1;
+		$subjek_count = [];
+		foreach($getPeminjamanBuku->result() as $row){
+			$table->addRow();
+			$table->addCell(500)->addText($nos, [], ['align' => 'center']);
+			$table->addCell(3000)->addText($row->judul);
+			$table->addCell(2000)->addText($row->subjek);
+
+			if (isset($subjek_count[$row->subjek])) {
+				$subjek_count[$row->subjek]++;
+			} else {
+				$subjek_count[$row->subjek] = 1;
+			}
+
+			$nos++;
+		}
 
         $section->addTextBreak(1);
 
@@ -169,19 +184,21 @@ class Laporan extends CI_Controller {
         // TOTAL Peminjaman
         $table->addRow();
 		$table->addCell(5500)->addText('A. Total Peminjaman', ['bold' => true], []);
-		$table->addCell(4000)->addText('50', ['bold' => true], ['align' => 'center']);
+		$table->addCell(4000)->addText($getPeminjamanBuku->num_rows(), ['bold' => true], ['align' => 'center']);
 
         // JENIS KELAMIN
         $table->addRow();
         $table->addCell(9500, ['gridSpan' => 2])->addText('B. Subjek', ['bold' => true], ['align' => 'left']);
 
-        $table->addRow();
-		$table->addCell(5500)->addText('000: Ilmu Komputer, Informasi, dan Karya Umum', [], []);
-		$table->addCell(4000)->addText('30', [''], ['align' => 'center']);
+		foreach ($subjek_count as $subjek => $count) {
+			$table->addRow();
+			$table->addCell(5500)->addText($subjek, [], []);
+			$table->addCell(4000)->addText($count, [''], ['align' => 'center']);
+		}
 
 		// Menyimpan dokumen Word
 		$writer = new Word2007($phpWord);
-		$filename = 'Laporan_Anggota_Juli_2024';
+		$filename = 'Laporan_Anggota_' . $this->bulan($bulan) . '_' . $tahun;
 
 		// Header untuk mengunduh file
 		header('Content-Type: application/msword');
@@ -190,5 +207,47 @@ class Laporan extends CI_Controller {
 
 		// Menyimpan file ke output
 		$writer->save('php://output');
+	}
+
+	function bulan($bln){
+		switch ($bln)
+		{
+			case 1:
+				return "Januari";
+				break;
+			case 2:
+				return "Februari";
+				break;
+			case 3:
+				return "Maret";
+				break;
+			case 4:
+				return "April";
+				break;
+			case 5:
+				return "Mei";
+				break;
+			case 6:
+				return "Juni";
+				break;
+			case 7:
+				return "Juli";
+				break;
+			case 8:
+				return "Agustus";
+				break;
+			case 9:
+				return "September";
+				break;
+			case 10:
+				return "Oktober";
+				break;
+			case 11:
+				return "November";
+				break;
+			case 12:
+				return "Desember";
+				break;
+		}
 	}
 }
