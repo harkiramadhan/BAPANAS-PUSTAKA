@@ -62,7 +62,6 @@ class Akun extends CI_Controller{
             $profileimg = $img['file_name'];
         }
 
-        
         $this->db->where('id', $userid)->update('pustakawan', [
             'nik' => $this->input->post('nik', TRUE),
             'nama' => $this->input->post('nama', TRUE),

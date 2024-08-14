@@ -100,7 +100,12 @@
                             <a href="<?= site_url('peminjaman') ?>" class="btn btn-light ms-4 px-2 py-1 d-none d-lg-block"><i class="bi bi-bookmark-plus-fill" style="font-size: 1.5rem;"></i></a>
                             <div class="dropdown ms-2 d-none d-lg-block z-3">
                                 <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <?php if(@$user->img): ?>
+                                        <img class="rounded-circle border" src="<?= base_url('assets/img/pustakawan/' . $user->img) ?>" alt="User Avatar" width="48" height="48">
+                                    <?php else: ?>
+                                        <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <?php endif; ?>
+
                                     <div class="ms-2">
                                         <span class="fw-bold text-black">Hai, <?= @$user->nama ?></span>
                                     </div>
@@ -113,7 +118,12 @@
                             </div>
                             <ul class="navbar-nav d-block d-lg-none me-auto mt-3 mb-0 mb-lg-0 px-3 py-2 border rounded">
                                 <div class="d-flex align-items-center mb-3">
-                                    <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <?php if(@$user->img): ?>
+                                        <img class="rounded-circle border" src="<?= base_url('assets/img/pustakawan/' . $user->img) ?>" alt="User Avatar" width="48" height="48">
+                                    <?php else: ?>
+                                        <img class="rounded-circle border" src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg" alt="User Avatar" width="48" height="48">
+                                    <?php endif; ?>
+
                                     <div class="ms-2">
                                         <span class="fw-bold text-black">Hai, <?= @$user->nama ?></span>
                                     </div>
