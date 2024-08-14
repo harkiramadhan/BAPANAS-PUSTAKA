@@ -66,6 +66,11 @@ class Auth extends CI_Controller{
         $email = $this->input->post('email', TRUE);
         $username = $this->input->post('username', TRUE);
         $password = $this->input->post('password', TRUE);
+        
+        $jenkel = $this->input->post('jenkel', TRUE);
+        $pekerjaan = $this->input->post('pekerjaan', TRUE);
+        $pendidikan = $this->input->post('pendidikan', TRUE);
+
         $ok = $this->input->post('ok', TRUE);
 
         $cekPeminjam = $this->M_Pustakawan->checkUser($username, $nik, $whatsapp, $email);
@@ -94,6 +99,10 @@ class Auth extends CI_Controller{
             $this->session->set_flashdata('username', $username);
             $this->session->set_flashdata('password', $password);
             $this->session->set_flashdata('ok', $ok);
+
+            $this->session->set_flashdata('jenkel', $jenkel);
+            $this->session->set_flashdata('pekerjaan', $pekerjaan);
+            $this->session->set_flashdata('pendidikan', $pendidikan);
 
             redirect($_SERVER['HTTP_REFERER']);
         }else{
