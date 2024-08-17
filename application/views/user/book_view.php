@@ -63,7 +63,6 @@
         <iframe id="pdfIframe" src="<?php echo site_url('assets/pdf/' . $buku->pdf); ?>"></iframe>
     </div>
     <script>
-        document.getElementById('pdfIframe').src = base64PDF;
         function zoomIn() {
             const iframe = document.getElementById('pdfIframe');
             iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) + 0.1})`;
