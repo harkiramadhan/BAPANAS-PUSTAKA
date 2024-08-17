@@ -92,14 +92,15 @@ class Koleksi extends CI_Controller{
                 redirect($_SERVER['HTTP_REFERER']);
             }
 
-            $data['pdf_file'] = site_url('user/koleksi/proxy/' . urlencode(base_url('assets/pdf/' . $buku->pdf)));
+            $data['pdf_file'] = site_url('user/koleksi/proxy/' . $buku->pdf);
             $data['buku'] = $buku;
             $this->load->view('user/book_view', $data);
         }
     }
 
-    public function proxy($encoded_url) {
-        $url = urldecode($encoded_url);
+    public function proxy($filename) {
+        // $url = urldecode($encoded_url);
+        $filepath =  'assets/pdf/' . $filename;
         // $context = stream_context_create(['http' => ['header' => 'User-Agent: Mozilla/5.0']]);
         // $pdfContent = file_get_contents($url, false, $context);
     
@@ -110,6 +111,27 @@ class Koleksi extends CI_Controller{
         // header('Content-Type: application/pdf');
         // echo $pdfContent;
 
-        $this->output->set_content_type('application/pdf')->set_output(file_get_contents($url));
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+        header('Content-Length: ' . filesize($filepath));
+        
+        readfile($filepath);
+
+        // $ch = curl_init();
+        // curl_setopt($ch, CURLOPT_URL, $url);
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  // Follow redirects
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);  // Disable SSL verification (not recommended for production)
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);  // Disable SSL verification (not recommended for production)
+        // $output = curl_exec($ch);
+
+        // if (curl_errno($ch)) {
+        //     echo 'Error:' . curl_error($ch);
+        // } else {
+        //     header('Content-Type: application/pdf');
+        //     echo $output;
+        // }
+
+        // curl_close($ch);
     }
 }
