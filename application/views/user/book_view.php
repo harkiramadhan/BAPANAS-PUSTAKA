@@ -47,6 +47,11 @@
         .toolbar button:hover {
             text-decoration: underline;
         }
+        #end{ 
+            display:none !important;
+            visibility: hidden;
+
+        }
     </style>
 </head>
 <body>
@@ -70,21 +75,25 @@
             iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) - 0.1})`;
             iframe.style.transformOrigin = '0 0';
         }
-
         // Deteksi apakah pengguna menggunakan Mac atau perangkat mobile
         const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+        // Fungsi untuk menampilkan peringatan dan mencegah tindakan inspect element
+        function preventInspectElement(e) {
+            e.preventDefault();
+            alert("Inspect Element is disabled on this page.");
+        }
+
+        // Deteksi F12, Ctrl+Shift+I, Ctrl+Shift+J, dan Ctrl+U (untuk Windows/Linux)
         document.addEventListener('keydown', function(e) {
-            // Deteksi F12, Ctrl+Shift+I, Ctrl+Shift+J, dan Ctrl+U (untuk Windows/Linux)
             if (
                 e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||
                 (e.ctrlKey && e.shiftKey && e.key === 'J') ||
                 (e.ctrlKey && e.key === 'U') 
             ) {
-                e.preventDefault();
-                alert("Inspect Element is disabled on this page.");
+                preventInspectElement(e);
             }
 
             // Deteksi Cmd+Option+I dan Cmd+Option+J (untuk Mac)
@@ -92,15 +101,13 @@
                 (e.metaKey && e.altKey && e.key === 'I') ||
                 (e.metaKey && e.altKey && e.key === 'J')
             )) {
-                e.preventDefault();
-                alert("Inspect Element is disabled on this page.");
+                preventInspectElement(e);
             }
         });
 
+        // Mencegah klik kanan pada desktop dan perangkat mobile
         document.addEventListener('contextmenu', function(e) {
-            // Mencegah akses klik kanan pada desktop dan perangkat mobile
-            e.preventDefault();
-            alert("Right-click is disabled.");
+            preventInspectElement(e);
         });
 
         // Tambahkan iframe untuk mendeteksi DevTools
@@ -120,8 +127,7 @@
         if (isMobile) {
             document.addEventListener('touchstart', function(e) {
                 if (e.touches.length > 2) {
-                    e.preventDefault();
-                    alert("Inspect Element is disabled on mobile.");
+                    preventInspectElement(e);
                 }
             });
         }
