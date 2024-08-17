@@ -118,7 +118,7 @@
             if (devtoolsDetector.contentWindow.outerWidth !== devtoolsDetector.contentWindow.innerWidth) {
                 alert("Inspect Element is disabled on this page.");
                 // Anda bisa menambahkan tindakan lain di sini, misalnya redirect
-                window.location.href = "https://example.com";
+                window.location.href = "<?= site_url('') ?>";
             }
         }, 1000);
 
