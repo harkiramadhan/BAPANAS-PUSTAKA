@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="viewerContainer" class="pdfViewer">
-            <iframe src="<?php echo site_url('user/koleksi/proxy/' . $buku->pdf); ?>" width="100%" height="100%" style="border:none;"></iframe>
+            <iframe src="<?php echo site_url('assets/pdf/' . $buku->pdf); ?>" width="100%" height="100%" style="border:none;"></iframe>
         </div>
     </body>
 </html>
