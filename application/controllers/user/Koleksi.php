@@ -110,21 +110,6 @@ class Koleksi extends CI_Controller{
         // header('Content-Type: application/pdf');
         // echo $pdfContent;
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  // Follow redirects
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);  // Disable SSL verification (not recommended for production)
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);  // Disable SSL verification (not recommended for production)
-        $output = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
-        } else {
-            header('Content-Type: application/pdf');
-            echo $output;
-        }
-
-        curl_close($ch);
+        $this->output->set_content_type('application/pdf')->set_output(file_get_contents($url));
     }
 }
