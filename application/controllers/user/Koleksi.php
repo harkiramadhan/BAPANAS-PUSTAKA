@@ -99,6 +99,7 @@ class Koleksi extends CI_Controller{
     }
 
     public function proxy($encoded_url) {
+        $url = urldecode($encoded_url);
         $context = stream_context_create(['http' => ['header' => 'User-Agent: Mozilla/5.0']]);
         $pdfContent = file_get_contents($url, false, $context);
     
