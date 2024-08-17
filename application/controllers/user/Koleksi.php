@@ -100,14 +100,31 @@ class Koleksi extends CI_Controller{
 
     public function proxy($encoded_url) {
         $url = urldecode($encoded_url);
-        $context = stream_context_create(['http' => ['header' => 'User-Agent: Mozilla/5.0']]);
-        $pdfContent = file_get_contents($url, false, $context);
+        // $context = stream_context_create(['http' => ['header' => 'User-Agent: Mozilla/5.0']]);
+        // $pdfContent = file_get_contents($url, false, $context);
     
-        if ($pdfContent === FALSE) {
-            show_404();
+        // if ($pdfContent === FALSE) {
+        //     show_404();
+        // }
+    
+        // header('Content-Type: application/pdf');
+        // echo $pdfContent;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  // Follow redirects
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);  // Disable SSL verification (not recommended for production)
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);  // Disable SSL verification (not recommended for production)
+        $output = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        } else {
+            header('Content-Type: application/pdf');
+            echo $output;
         }
-    
-        header('Content-Type: application/pdf');
-        echo $pdfContent;
+
+        curl_close($ch);
     }
 }
