@@ -31,7 +31,7 @@
                         <a href="<?= site_url('login') ?>" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Pinjam Buku</a>
                     <?php endif; ?>
                 <?php elseif (is_array($jenis_array) && in_array("1", $jenis_array)) : ?>
-                    <a href="" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Baca Online</a>
+                    <a href="<?= site_url('user/koleksi/read/' . md5($buku->id)) ?>" class="btn btn-warning w-100 px-5 py-3 fw-medium shadow-lg"><i class="bi bi-bookmark-plus-fill me-2"></i>Baca Online</a>
                 <?php endif; ?>
             </div>
             <div class="col-12 col-lg-9">
