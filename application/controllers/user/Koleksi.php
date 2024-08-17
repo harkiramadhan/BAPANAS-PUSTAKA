@@ -112,7 +112,7 @@ class Koleksi extends CI_Controller{
         // echo $pdfContent;
 
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+        header('Content-Disposition: inline; filename="' . basename($filepath) . '"');
         header('Content-Length: ' . filesize($filepath));
         
         readfile($filepath);
