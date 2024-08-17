@@ -92,7 +92,7 @@ class Koleksi extends CI_Controller{
                 redirect($_SERVER['HTTP_REFERER']);
             }
 
-            $data['pdf_file'] = base_url('assets/pdf/' . $buku->pdf);
+            $data['pdf_file'] = site_url('user/koleksi/proxy/' . urlencode(base_url('assets/pdf/' . $buku->pdf)));
             $data['buku'] = $buku;
             $this->load->view('user/book_view', $data);
         }
