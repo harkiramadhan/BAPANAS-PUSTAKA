@@ -42,7 +42,9 @@
                 <div class="slider slider-1 mb-2">
                     <?php foreach($publikasi_pers->result() as $pr){ ?>
                         <div class="slider-item position-relative">
-                            <h4 class="text-left fw-bolder w-75"><?= $pr->judul ?></h4>
+                            <h4 class="text-left fw-bolder w-75">
+                                <?php  echo strlen($pr->judul) > 45 ? substr($pr->judul, 0, 45) . '..' : $pr->judul; ?>
+                            </h4>
                             <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
                             <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
                                 <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
@@ -60,7 +62,9 @@
                 <div class="slider slider-2 mb-2">
                     <?php foreach($media_nva->result() as $nv){ ?>
                         <div class="slider-item position-relative">
-                            <h4 class="text-left fw-bolder w-75"><?= $nv->judul ?></h4>
+                            <h4 class="text-left fw-bolder w-75">
+                                <?php  echo strlen($nv->judul) > 45 ? substr($nv->judul, 0, 45) . '..' : $nv->judul; ?>
+                            </h4>
                             <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
                             <a href="#" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
                                 <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya
@@ -78,7 +82,9 @@
                 <div class="slider slider-3 mb-2">
                     <?php foreach($bukuBuku->result() as $b){ ?>
                     <div class="slider-item position-relative">
-                        <h4 class="text-left fw-bolder w-75"><?= $b->judul ?></h4>
+                        <h4 class="text-left fw-bolder w-75">
+                            <?php  echo strlen($b->judul) > 45 ? substr($b->judul, 0, 45) . '..' : $b->judul; ?>
+                        </h4>
                         <p><i class="fas fa-calendar me-2 text-warning"></i> 12 Juli 2024</p>
                         <a href="<?= site_url('koleksi/' . md5($b->id)) ?>" class="d-flex text-white mt-auto position-absolute align-items-center z-2 bottom-0 mb-4" style="text-decoration: none;">
                             <button class="btn btn-light rounded-pill me-3" style="width: 40px; height: 40px;"><i class="bi bi-arrow-right"></i></button> Selengkapnya

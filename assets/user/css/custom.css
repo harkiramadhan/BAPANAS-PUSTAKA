@@ -125,12 +125,32 @@ body {
 .carousel-foreground {
     position: relative;
     z-index: 1;
-    min-height: 500px;
-    max-height: 500px;
+    height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* Untuk layar dengan lebar maksimum 768px (ukuran tablet) */
+@media screen and (max-width: 768px) {
+    .carousel-background {
+        height: 400px;
+    }
+    .carousel-foreground {
+        height: 400px;
+    }
+}
+
+/* Untuk layar dengan lebar maksimum 480px (ukuran mobile) */
+@media screen and (max-width: 380px) {
+    .carousel-foreground {
+        height: 100px !important; 
+    }
+    .carousel-background {
+        height: 100px;
+    }
+}
+
 
 .foreground-img {
     max-height: 100%;
