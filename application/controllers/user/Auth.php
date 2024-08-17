@@ -112,7 +112,8 @@ class Auth extends CI_Controller{
                 'whatsapp' => $whatsapp,
                 'email' => $email,
                 'username' => $username,
-                'password' => md5($password)
+                'password' => md5($password),
+                'created_at' => date('Y-m-d')
             ]);
             if($this->db->affected_rows() > 0){
                 $this->session->set_flashdata('success', "Berhasil Registrasi!");
