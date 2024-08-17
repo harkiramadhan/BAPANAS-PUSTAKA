@@ -84,4 +84,17 @@ class Koleksi extends CI_Controller{
         $this->load->view('layout/user/footer', $var);
     }
     
+    function read($id){
+        if ($this->session->userdata('is_loggedin')) {
+            $buku = $this->db->get_where('buku', ['md5(id)' => $id])->row();
+            $pdf_path = FCPATH . 'assets/pdf/' . $buku->pdf;
+            if (!file_exists($pdf_path)) {
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+            $data['pdf_file'] = base_url('assets/pdf/' . $buku->pdf);
+            $data['buku'] = $buku;
+            $this->load->view('user/book_view', $data);
+        }
+    }
 }
