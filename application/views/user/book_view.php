@@ -53,29 +53,21 @@
     <div class="toolbar">
         <button onclick="zoomOut()">-</button>
         <button onclick="zoomIn()">+</button>
-        <button onclick="printPDF()">Print</button>
     </div>
     <div id="viewerContainer">
         <iframe id="pdfIframe" src="<?php echo site_url('assets/pdf/' . $buku->pdf); ?>"></iframe>
     </div>
     <script>
         function zoomIn() {
-            // Adjust zoom level - note that this will affect iframe scaling, may not be perfect
             const iframe = document.getElementById('pdfIframe');
             iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) + 0.1})`;
             iframe.style.transformOrigin = '0 0';
         }
 
         function zoomOut() {
-            // Adjust zoom level - note that this will affect iframe scaling, may not be perfect
             const iframe = document.getElementById('pdfIframe');
             iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) - 0.1})`;
             iframe.style.transformOrigin = '0 0';
-        }
-
-        function printPDF() {
-            const iframe = document.getElementById('pdfIframe');
-            iframe.contentWindow.print();
         }
     </script>
 </body>
