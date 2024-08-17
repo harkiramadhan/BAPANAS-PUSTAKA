@@ -15,32 +15,32 @@
         <div id="pdf-container"></div>
 
         <script>
-        const url = '<?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js';
+            const url = '<?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>';
+            // Load the PDF
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                // Fetch the first page
+                pdf.getPage(1).then(page => {
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale });
 
-        // Load the PDF
-        pdfjsLib.getDocument(url).promise.then(pdf => {
-            // Fetch the first page
-            pdf.getPage(1).then(page => {
-            const scale = 1.5;
-            const viewport = page.getViewport({ scale });
+                // Prepare canvas using PDF page dimensions
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
-            // Prepare canvas using PDF page dimensions
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+                // Append canvas to container
+                document.getElementById('pdf-container').appendChild(canvas);
 
-            // Append canvas to container
-            document.getElementById('pdf-container').appendChild(canvas);
-
-            // Render PDF page into canvas context
-            const renderContext = {
-                canvasContext: context,
-                viewport: viewport
-            };
-            page.render(renderContext);
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+                });
             });
-        });
         </script>
     </body>
 </html>
