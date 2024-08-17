@@ -29,7 +29,7 @@
                 <span class="badge text-bg-primary"><?= $publikasi->kategori ?></span>
                 <h3 class="fw-semibold mb-1 mt-2 text-black"><?= $publikasi->judul ?></h3>
                 <div class="d-flex flex-lg-row flex-column mb-2">
-                  <p class="text-secondary mb-0 fw-light me-3"><i class="fa-solid fa-calendar me-2 text-warning"></i>Senin, 12 Agustus 2024</p>
+                  <p class="text-secondary mb-0 fw-light me-3"><i class="fa-solid fa-calendar me-2 text-warning"></i><?= longdate_indo($publikasi->tanggal) ?></p>
                   <p class="text-secondary mb-0 fw-light"><i class="fa-solid fa-id-badge me-2 text-warning"></i>Humas Badan Pangan Nasional</p>
                 </div>
                 <div class="bg-light rounded mt-0">

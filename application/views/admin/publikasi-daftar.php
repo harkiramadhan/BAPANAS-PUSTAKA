@@ -16,7 +16,7 @@
         <h3 class="mb-2">Daftar Publikasi</h3>
     </div>
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 d-flex align-items-center justify-content-center justify-content-lg-end mb-4 mb-lg-0">
-        <a href="<?= site_url('admin/pers/tambah') ?>" class="btn icon btn-primary float-end">Tambah Publikasi <i class="bi bi-plus-circle-fill float-end ms-2" style="margin-top: -2px;"></i></a>
+        <a href="<?= site_url('admin/publikasi/tambah') ?>" class="btn icon btn-primary float-end">Tambah Publikasi <i class="bi bi-plus-circle-fill float-end ms-2" style="margin-top: -2px;"></i></a>
     </div>
 </div>
 <div class="page-content"> 
@@ -30,6 +30,7 @@
                                 <th class="text-center" width="1">No</th>
                                 <th class="text-center">Judul Publikasi</th>
                                 <th class="text-center">Katagori</th>
+                                <th class="text-center" width="1">Tanggal</th>
                                 <th class="text-center" width="1">Aksi</th>
                             </tr>
                         </thead>
@@ -43,6 +44,9 @@
                                     </td>
                                     <td class="text-center">
                                         <span class="badge text-bg-primary"><?= $row->kategori ?></span>
+                                    </td>
+                                    <td class="text-center">
+                                        <?= date('d/m/Y', strtotime($row->tanggal)) ?>
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group">

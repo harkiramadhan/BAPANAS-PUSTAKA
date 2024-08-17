@@ -59,7 +59,7 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
-                                        <input type="date" name="tanggal" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
+                                        <input type="date" name="tanggal" class="form-control" value="<?= $publikasi->tanggal ?>" placeholder="Tulis disini ........." id="first-name-horizontal-icon">
                                         <div class="form-control-icon">
                                             <i class="bi bi-calendar"></i>
                                         </div>

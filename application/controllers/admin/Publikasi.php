@@ -79,6 +79,7 @@ class Publikasi extends CI_Controller{
             'cover' => $cover,
             'judul' => $this->input->post('judul', TRUE),
             'kategori' => $this->input->post('kategori', TRUE),
+            'tanggal' => $this->input->post('tanggal', TRUE),
             'desc' => $this->input->post('desc', TRUE)
         ]);
 
@@ -112,6 +113,7 @@ class Publikasi extends CI_Controller{
             'cover' => $cover,
             'judul' => $this->input->post('judul', TRUE),
             'kategori' => $this->input->post('kategori', TRUE),
+            'tanggal' => $this->input->post('tanggal', TRUE),
             'desc' => $this->input->post('desc', TRUE)
         ]);
 
