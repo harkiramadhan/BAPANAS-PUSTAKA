@@ -10,8 +10,8 @@
     </head>
     <body>
         <?php echo base_url('assets/pdfjs/web/viewer.html?file=' . urlencode(site_url('user/koleksi/proxy/' . $buku->pdf))); ?>
-        <div id="viewerContainer" class="pdfViewer">
+        <!-- <div id="viewerContainer" class="pdfViewer">
             <iframe src="<?php echo base_url('assets/pdfjs/web/viewer.html?file=' . urlencode(site_url('user/koleksi/proxy/' . $buku->pdf))); ?>" width="100%" height="100%" style="border:none;"></iframe>
-        </div>
+        </div> -->
     </body>
 </html>
