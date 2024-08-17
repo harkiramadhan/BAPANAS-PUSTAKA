@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?= $buku->judul ?></title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/pdfjs/web/viewer.css'); ?>">
-        <!-- <script src="<?php echo base_url('assets/pdfjs/src/pdf.js'); ?>"></script> -->
-        <!-- <script src="<?php echo base_url('assets/pdfjs/web/viewer.js'); ?>"></script> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF.js Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf_viewer.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf_viewer.min.js"></script>
+</head>
+<body>
+    <div id="viewer" class="pdfViewer"></div>
+    <script>
+        // Set path to worker script
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js';
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js"></script>
-    </head>
-    <body>
-        <div id="pdf-container"></div>
+        // Initialize the PDF viewer
+        const url = '<?= htmlspecialchars(site_url('user/koleksi/proxy/' . $buku->pdf), ENT_QUOTES, 'UTF-8') ?>';
+        
+        const pdfViewer = new pdfjsViewer.PDFViewer({
+            container: document.getElementById('viewer')
+        });
 
-        <script>
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js';
-            const url = '<?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>';
-            // Load the PDF
-            pdfjsLib.getDocument(url).promise.then(pdf => {
-                // Load and render the first page
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale });
-
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-
-                    document.getElementById('pdf-container').appendChild(canvas);
-
-                    page.render({
-                    canvasContext: context,
-                    viewport: viewport
-                    });
-                });
-            });
-        </script>
-    </body>
+        pdfjsLib.getDocument(url).promise.then(pdfDocument => {
+            pdfViewer.setDocument(pdfDocument);
+        }).catch(error => {
+            console.error('Error loading PDF:', error);
+        });
+    </script>
+</body>
 </html>
