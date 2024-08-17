@@ -19,26 +19,22 @@
             const url = '<?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>';
             // Load the PDF
             pdfjsLib.getDocument(url).promise.then(pdf => {
-                // Fetch the first page
+                // Load and render the first page
                 pdf.getPage(1).then(page => {
-                const scale = 1.5;
-                const viewport = page.getViewport({ scale });
+                    const scale = 1.5;
+                    const viewport = page.getViewport({ scale });
 
-                // Prepare canvas using PDF page dimensions
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
 
-                // Append canvas to container
-                document.getElementById('pdf-container').appendChild(canvas);
+                    document.getElementById('pdf-container').appendChild(canvas);
 
-                // Render PDF page into canvas context
-                const renderContext = {
+                    page.render({
                     canvasContext: context,
                     viewport: viewport
-                };
-                page.render(renderContext);
+                    });
                 });
             });
         </script>
