@@ -15,7 +15,7 @@
         <div id="pdf-container"></div>
 
         <script>
-        const url = <?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>;
+        const url = '<?= site_url('user/koleksi/proxy/' . $buku->pdf) ?>';
 
         // Load the PDF
         pdfjsLib.getDocument(url).promise.then(pdf => {
