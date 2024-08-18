@@ -42,7 +42,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 <script>
-    const url = 'http://localhost/BAPANAS-PUSTAKA/assets/pdf/5e3ae8acefaae89b051d9084a2b92a05.pdf'; // URL file PDF Anda
+    const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
     let pdfDoc = null,
         pageNum = 1,
         pageIsRendering = false,
