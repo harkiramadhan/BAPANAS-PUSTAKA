@@ -6,10 +6,13 @@
     <title>PDF Viewer</title>
     <style>
         #pdf-viewer {
-            width: 100%;
+            width: 50%;
             /* height: 600px; */
             border: 1px solid #000;
             overflow: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
         }
         #controls {
             margin-top: 10px;
@@ -26,14 +29,15 @@
 </head>
 <body>
 
-<div id="pdf-viewer">
-    <canvas id="pdf-canvas"></canvas>
-</div>
-
+    
 <div id="controls">
     <button id="prev">Prev</button>
     <span id="page-num"></span> / <span id="page-count"></span>
     <button id="next">Next</button>
+</div>
+
+<div id="pdf-viewer">
+    <canvas id="pdf-canvas"></canvas>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
