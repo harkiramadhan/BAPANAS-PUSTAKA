@@ -3,77 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($buku->judul, ENT_QUOTES, 'UTF-8') ?></title>
+    <title>PDF Viewer</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        #viewerContainer {
-            position: relative;
+        #pdf-viewer {
             width: 100%;
-            height: 100vh;
-            background: #fff;
-            overflow: hidden;
+            /* height: 600px; */
+            border: 1px solid #000;
+            overflow: auto;
         }
-        iframe {
+        #controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+        #pdf-canvas {
             width: 100%;
-            height: calc(100% - 40px);
-            border: none;
         }
-        .toolbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .toolbar button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-        .toolbar button:hover {
-            text-decoration: underline;
-        }
-        #end{ 
-            display:none !important;
-            visibility: hidden;
-
+        button {
+            margin: 5px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="toolbar">
-        <button onclick="zoomOut()">-</button>
-        <button onclick="zoomIn()">+</button>
-    </div>
-    <div id="viewerContainer">
-        <iframe id="pdfIframe" src="<?php echo site_url('assets/pdf/' . $buku->pdf); ?>"></iframe>
-    </div>
-    <script>
-        function zoomIn() {
-            const iframe = document.getElementById('pdfIframe');
-            iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) + 0.1})`;
-            iframe.style.transformOrigin = '0 0';
-        }
 
-        function zoomOut() {
-            const iframe = document.getElementById('pdfIframe');
-            iframe.style.transform = `scale(${(parseFloat(getComputedStyle(iframe).transform.split(',')[3]) || 1) - 0.1})`;
-            iframe.style.transformOrigin = '0 0';
+<div id="pdf-viewer">
+    <canvas id="pdf-canvas"></canvas>
+</div>
+
+<div id="controls">
+    <button id="prev">Prev</button>
+    <span id="page-num"></span> / <span id="page-count"></span>
+    <button id="next">Next</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script>
+    const url = 'http://localhost/BAPANAS-PUSTAKA/assets/pdf/5e3ae8acefaae89b051d9084a2b92a05.pdf'; // URL file PDF Anda
+    let pdfDoc = null,
+        pageNum = 1,
+        pageIsRendering = false,
+        pageNumIsPending = null;
+
+    const scale = 1.5,
+          canvas = document.querySelector('#pdf-canvas'),
+          ctx = canvas.getContext('2d');
+
+    // Render halaman
+    const renderPage = num => {
+        pageIsRendering = true;
+
+        // Get page
+        pdfDoc.getPage(num).then(page => {
+            // Set scale
+            const viewport = page.getViewport({ scale });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport
+            };
+
+            page.render(renderCtx).promise.then(() => {
+                pageIsRendering = false;
+
+                if (pageNumIsPending !== null) {
+                    renderPage(pageNumIsPending);
+                    pageNumIsPending = null;
+                }
+            });
+
+            // Output current page
+            document.querySelector('#page-num').textContent = num;
+        });
+    };
+
+    // Check for pages rendering
+    const queueRenderPage = num => {
+        if (pageIsRendering) {
+            pageNumIsPending = num;
+        } else {
+            renderPage(num);
         }
-    </script>
+    };
+
+    // Show Prev Page
+    const showPrevPage = () => {
+        if (pageNum <= 1) {
+            return;
+        }
+        pageNum--;
+        queueRenderPage(pageNum);
+    };
+
+    // Show Next Page
+    const showNextPage = () => {
+        if (pageNum >= pdfDoc.numPages) {
+            return;
+        }
+        pageNum++;
+        queueRenderPage(pageNum);
+    };
+
+    // Get Document
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+    });
+
+    // Button Events
+    document.querySelector('#prev').addEventListener('click', showPrevPage);
+    document.querySelector('#next').addEventListener('click', showNextPage);
+</script>
+
 </body>
 </html>
