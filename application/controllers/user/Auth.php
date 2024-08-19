@@ -113,6 +113,9 @@ class Auth extends CI_Controller{
                 'email' => $email,
                 'username' => $username,
                 'password' => md5($password),
+                'jenkel'  => $jenkel,
+                'pekerjaan' => $pekerjaan,
+                'pendidikan' => $pendidikan,
                 'created_at' => date('Y-m-d')
             ]);
             if($this->db->affected_rows() > 0){

@@ -35,13 +35,13 @@
                 <label for="" class="form-label">Pekerjaan <?= (@$this->session->flashdata('error_pekerjaan')) ? '<strong class="text-danger">*) ' . @$this->session->flashdata('error_pekerjaan') . '</strong>' : '' ?></label>
                 <select name="pekerjaan" id="" class="form-control focus-ring focus-ring-primary <?= (@$this->session->flashdata('error_pekerjaan')) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" required>
                     <option value="">PILIH PEKERJAAN</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Pegawai Negeri Sipil (PNS)') ? 'selected' : '' ?> value="Pegawai Negeri Sipil (PNS)">Pegawai Negeri Sipil (PNS)</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Pegawai Badan Pangan Nasional') ? 'selected' : '' ?> value="Pegawai Badan Pangan Nasional">Pegawai Badan Pangan Nasional</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Pengawas Pangan') ? 'selected' : '' ?> value="Pengawas Pangan">Pengawas Pangan</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Petugas Laboratorium Pangan') ? 'selected' : '' ?> value="Petugas Laboratorium Pangan">Petugas Laboratorium Pangan</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Peneliti Pangan') ? 'selected' : '' ?> value="Peneliti Pangan">Peneliti Pangan</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Analis Kebijakan Pangan') ? 'selected' : '' ?> value="Analis Kebijakan Pangan">Analis Kebijakan Pangan</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Pekerjaan lainnya') ? 'selected' : '' ?> value="Pekerjaan lainnya">Pekerjaan lainnya</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Pegawai Negeri Sipil (PNS)') ? 'selected' : '' ?> value="Pegawai Negeri Sipil (PNS)">Pegawai Negeri Sipil (PNS)</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Pegawai Badan Pangan Nasional') ? 'selected' : '' ?> value="Pegawai Badan Pangan Nasional">Pegawai Badan Pangan Nasional</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Pengawas Pangan') ? 'selected' : '' ?> value="Pengawas Pangan">Pengawas Pangan</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Petugas Laboratorium Pangan') ? 'selected' : '' ?> value="Petugas Laboratorium Pangan">Petugas Laboratorium Pangan</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Peneliti Pangan') ? 'selected' : '' ?> value="Peneliti Pangan">Peneliti Pangan</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Analis Kebijakan Pangan') ? 'selected' : '' ?> value="Analis Kebijakan Pangan">Analis Kebijakan Pangan</option>
+                    <option <?= (@$this->session->flashdata('pekerjaan') == 'Pekerjaan lainnya') ? 'selected' : '' ?> value="Pekerjaan lainnya">Pekerjaan lainnya</option>
                 </select>
             </div>
 
@@ -49,13 +49,13 @@
                 <label for="" class="form-label">Pendidikan <?= (@$this->session->flashdata('error_pendidikan')) ? '<strong class="text-danger">*) ' . @$this->session->flashdata('error_pendidikan') . '</strong>' : '' ?></label>
                 <select name="pendidikan" id="" class="form-control focus-ring focus-ring-primary <?= (@$this->session->flashdata('error_pendidikan')) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" required>
                     <option value="">PILIH PENDIDIKAN</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'SD/MI') ? 'selected' : '' ?> value="SD/MI">SD/MI</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'SMP/MTS') ? 'selected' : '' ?> value="SMP/MTS">SMP/MTS</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'SMA/MA/SMK') ? 'selected' : '' ?> value="SMA/MA/SMK">SMA/MA/SMK</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Diploma (D1-D4)') ? 'selected' : '' ?> value="Diploma (D1-D4)">Diploma (D1-D4)</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Sarjana (S1)') ? 'selected' : '' ?> value="Sarjana (S1)">Sarjana (S1)</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Magister (S2)') ? 'selected' : '' ?> value="Magister (S2)">Magister (S2)</option>
-                    <option <?= (@$this->session->flashdata('jenkel') == 'Doktor (S3)') ? 'selected' : '' ?> value="Doktor (S3)">Doktor (S3)</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'SD/MI') ? 'selected' : '' ?> value="SD/MI">SD/MI</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'SMP/MTS') ? 'selected' : '' ?> value="SMP/MTS">SMP/MTS</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'SMA/MA/SMK') ? 'selected' : '' ?> value="SMA/MA/SMK">SMA/MA/SMK</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'Diploma (D1-D4)') ? 'selected' : '' ?> value="Diploma (D1-D4)">Diploma (D1-D4)</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'Sarjana (S1)') ? 'selected' : '' ?> value="Sarjana (S1)">Sarjana (S1)</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'Magister (S2)') ? 'selected' : '' ?> value="Magister (S2)">Magister (S2)</option>
+                    <option <?= (@$this->session->flashdata('pendidikan') == 'Doktor (S3)') ? 'selected' : '' ?> value="Doktor (S3)">Doktor (S3)</option>
                 </select>
             </div>
 
