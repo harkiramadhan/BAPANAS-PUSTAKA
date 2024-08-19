@@ -29,7 +29,7 @@ class Beranda extends CI_Controller{
                 'kategori' => $this->db->get('kategori'),
                 'buku' => $this->db->order_by('id', 'DESC')->limit(8)->get_where('buku', ['status' => 1]),
                 'bukuBuku' => $this->db->order_by('id', 'DESC')->limit(3)->get_where('buku', ['status' => 1]),
-                'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', ['kategori LIKE' => '%"Pangan"%']),
+                'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', 'kategori LIKE \'%"7"%\''),
 
                 'publikasi_pers' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Publikasi Pers']),
                 'media_nva' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Media NVA']),
