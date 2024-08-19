@@ -46,7 +46,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label">Pekerjaan <?= (@$this->session->flashdata('error_pendidikan')) ? '<strong class="text-danger">*) ' . @$this->session->flashdata('error_pendidikan') . '</strong>' : '' ?></label>
+                <label for="" class="form-label">Pendidikan <?= (@$this->session->flashdata('error_pendidikan')) ? '<strong class="text-danger">*) ' . @$this->session->flashdata('error_pendidikan') . '</strong>' : '' ?></label>
                 <select name="pendidikan" id="" class="form-control focus-ring focus-ring-primary <?= (@$this->session->flashdata('error_pendidikan')) ? 'is-invalid' : '' ?>" style="background-color: #F3F3F3; padding: 12px 20px;" required>
                     <option value="">PILIH PENDIDIKAN</option>
                     <option <?= (@$this->session->flashdata('jenkel') == 'SD/MI') ? 'selected' : '' ?> value="SD/MI">SD/MI</option>
