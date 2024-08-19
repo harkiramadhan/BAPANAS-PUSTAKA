@@ -1,6 +1,7 @@
 <?php
 class Akun extends CI_Controller{
     function __construct(){
+        $this->load->library('image_lib');
         parent::__construct();
         $this->load->model('M_Pustakawan');
 
