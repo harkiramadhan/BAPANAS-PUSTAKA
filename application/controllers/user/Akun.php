@@ -1,8 +1,8 @@
 <?php
 class Akun extends CI_Controller{
     function __construct(){
-        $this->load->library('image_lib');
         parent::__construct();
+        $this->load->library('image_lib');
         $this->load->model('M_Pustakawan');
 
         if(!$this->session->userdata('is_loggedin')){
