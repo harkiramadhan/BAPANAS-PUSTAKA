@@ -63,7 +63,7 @@
                                                 data-pengembalian="<?= $row->pengembalian ?>"
                                                 data-status="<?= $row->status ?>"
                                             ><i class="fa-solid fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                            <!-- <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button> -->
                                         </div>
                                     </td>
                                 </tr>
