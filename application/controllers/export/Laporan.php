@@ -203,8 +203,10 @@ class Laporan extends CI_Controller {
 		$writer = new Word2007($phpWord);
 		$filename = 'Laporan_Anggota_' . $this->bulan($bulan) . '_' . $tahun;
 
+		ob_end_clean();
 		// Header untuk mengunduh file
-		header('Content-Type: application/msword');
+		// header('Content-Type: application/msword');
+		header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
 		header('Content-Disposition: attachment;filename="' . $filename . '.docx"'); 
 		header('Cache-Control: max-age=0');
 
