@@ -200,17 +200,20 @@ class Laporan extends CI_Controller {
 		}
 
 		// Menyimpan dokumen Word
-		$writer = new Word2007($phpWord);
+
+		// $writer = new Word2007($phpWord);
 		$filename = 'Laporan_Anggota_' . $this->bulan($bulan) . '_' . $tahun;
 
-		ob_end_clean();
-		// Header untuk mengunduh file
-		// header('Content-Type: application/msword');
-		header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+		$writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+		// $writer->save($filename . '.docx');
+
+		// ob_end_clean();
+		// // Header untuk mengunduh file
+		header('Content-Type: application/msword');
 		header('Content-Disposition: attachment;filename="' . $filename . '.docx"'); 
 		header('Cache-Control: max-age=0');
 
-		// Clear any previous output
+		// // Clear any previous output
 		ob_clean();
 		flush();
 
