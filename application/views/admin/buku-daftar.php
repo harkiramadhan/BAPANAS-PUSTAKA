@@ -62,7 +62,7 @@
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <a href="<?= site_url('admin/buku/edit/' . md5($row->id)) ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
-                                            <button class="btn btn-secondary btn-sm mx-1"><i class="fa-solid fa-eye"></i></button>
+                                            <a href="<?= site_url('koleksi/' . md5($row->id)) ?>" target="__BLANK" class="btn btn-secondary btn-sm mx-1"><i class="fa-solid fa-eye"></i></a>
                                             <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#remove-<?= md5($row->id) ?>"><i class="fa-solid fa-trash"></i></button>
                                         </div>
                                     </td>

@@ -15,9 +15,9 @@
     <div class="col-12 col-lg-6 order-md-1 order-last mb-1 text-center text-lg-start">
         <h3 class="mb-0">Daftar Jenis Buku</h3>
     </div>
-    <div class="col-12 col-lg-6 order-md-1 order-last mb-1 d-flex align-items-center justify-content-center justify-content-lg-end mb-4 mb-lg-0">
+    <!-- <div class="col-12 col-lg-6 order-md-1 order-last mb-1 d-flex align-items-center justify-content-center justify-content-lg-end mb-4 mb-lg-0">
         <button class="btn icon btn-primary float-end"  data-bs-toggle="modal" data-bs-target="#tambahJenis">Tambah Jenis Buku <i class="bi bi-plus-circle-fill float-end ms-2" style="margin-top: -2px;"></i></button>
-    </div>
+    </div> -->
 </div>
 
 <div class="page-content"> 
@@ -39,13 +39,13 @@
                                     <td class="text-center"><?= $no ?>.</td>
                                     <td ><span class="badge text-bg-primary ms-3"><?= $row->jenis ?></span></td>
                                     <td class="text-center">
-                                        <div class="btn-group">
+                                        <!-- <div class="btn-group">
                                             <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#edit-<?= md5($row->id) ?>"><i class="fa-solid fa-pencil"></i></button>
                                             <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#remove-<?= md5($row->id) ?>"><i class="fa-solid fa-trash"></i></button>
-                                        </div>
+                                        </div> -->
                                     </td>
                                 </tr>
-                                <div class="modal fade text-left" id="edit-<?= md5($row->id) ?>" tabindex="-1" role="dialog" aria-labelledby="edit-<?= md5($row->id) ?>" aria-hidden="true">
+                                <!-- <div class="modal fade text-left" id="edit-<?= md5($row->id) ?>" tabindex="-1" role="dialog" aria-labelledby="edit-<?= md5($row->id) ?>" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -84,9 +84,9 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="modal fade text-left" id="remove-<?= md5($row->id) ?>" tabindex="-1" aria-labelledby="remove-<?= md5($row->id) ?>" aria-modal="true" role="dialog">
+                                <!-- <div class="modal fade text-left" id="remove-<?= md5($row->id) ?>" tabindex="-1" aria-labelledby="remove-<?= md5($row->id) ?>" aria-modal="true" role="dialog">
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header bg-danger">
@@ -109,7 +109,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             <?php $no++; } ?>
                         </tbody>
                     </table>
