@@ -1,4 +1,7 @@
 <?php
+
+ini_set('memory_limit', '256M');
+
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Writer\Word2007;
 
