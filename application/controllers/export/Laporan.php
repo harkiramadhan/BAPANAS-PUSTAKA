@@ -205,8 +205,13 @@ class Laporan extends CI_Controller {
 		header('Content-Disposition: attachment;filename="' . $filename . '.docx"'); 
 		header('Cache-Control: max-age=0');
 
+		// Clear any previous output
+		ob_clean();
+		flush();
+
 		// Menyimpan file ke output
 		$writer->save('php://output');
+		exit;
 	}
 
 	function bulan($bln){
