@@ -33,20 +33,149 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach($pustakawan->result() as $row){ ?>
+                            <?php 
+                                $no=1; 
+                                foreach($pustakawan->result() as $row){ 
+                                    $getPeminjaman = $this->db->select('id')->get_where('peminjaman', ['id_pustakawan' => $row->id])->num_rows();
+                            ?>
                                 <tr>
                                     <td class="text-center"><?= $no ?>.</td>
                                     <td><?= $row->nama ?></td>
                                     <td><?= $row->email ?></td>
-                                    <td class="text-center"><span class="badge text-bg-primary">2x</span></td>
+                                    <td class="text-center"><span class="badge text-bg-primary"><?= $getPeminjaman ?>x</span></td>
                                     <td class="text-center"><?= @$row->created_at ?></td>
                                     <td class="text-center"><span class="badge <?= (@$row->status == 1) ? 'text-bg-success' : 'text-bg-danger' ?>"><?= (@$row->status == 1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman"><i class="fa-solid fa-pencil"></i></button>
+                                            <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editPeminjaman<?= $row->id ?>"><i class="fa-solid fa-eye"></i></button>
                                         </div>
                                     </td>
                                 </tr>
+
+                                <div class="modal fade text-left" id="editPeminjaman<?= $row->id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Ubah Data Peminjaman</h5>
+                                                <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="form form-horizontal">
+                                                    <div class="form-body">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">NIK</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="number" class="form-control" value="<?= $row->nik ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">Nama</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="text" class="form-control" value="<?= $row->nama ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">Jenis Kelamin</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="text" class="form-control" value="<?= ($row->jenkel === 'L') ? 'Laki Laki' : 'Perempuan' ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">WhatsApp</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="number" class="form-control" value="<?= $row->whatsapp ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">Email</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="email" class="form-control" value="<?= $row->email ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">Pekerjaan</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="text" class="form-control" value="<?= $row->pekerjaan ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <label class="mb-0" for="contact-info-horizontal-icon">Pendidikan</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group has-icon-left">
+                                                                    <div class="position-relative">
+                                                                        <input type="text" class="form-control" value="<?= $row->pendidikan ?>" disabled>
+                                                                        <div class="form-control-icon">
+                                                                            <i class="fa-solid fa-user-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="d-flex">
+                                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
+                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Simpan Perubahan</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <?php $no++; } ?>
                             <!-- Tambahkan lebih banyak peminjaman sesuai kebutuhan -->
                         </tbody>
@@ -56,103 +185,3 @@
         </div>
     </section>
 </div>
-
-<div class="modal fade text-left" id="editPeminjaman" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Ubah Data Peminjaman</h5>
-                <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="form form-horizontal">
-                    <div class="form-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label class="mb-0" for="contact-info-horizontal-icon">Peminjam</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="contact-info-horizontal-icon" value="Alfian Rahmatullah" disabled>
-                                        <div class="form-control-icon">
-                                            <i class="fa-solid fa-user-check"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="mb-0" for="first-name-horizontal-icon">Judul Buku</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control" placeholder="Tulis disini ........." id="first-name-horizontal-icon" value="Mikrobiologi Pangan Edisi 5" disabled>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-book"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="mb-0" for="first-name-horizontal-icon">Tgl. Peminjaman</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                    <input type="date" class="form-control flatpickr-no-config" placeholder="Select date..">
-                                        <div class="form-control-icon">
-                                            <i class="fa-solid fa-clock"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="mb-0" for="first-name-horizontal-icon">Tgl. Pengembalian</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                    <input type="date" class="form-control flatpickr-no-config" placeholder="Select date..">
-                                        <div class="form-control-icon">
-                                            <i class="fa-solid fa-clock"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="mb-0" for="first-name-horizontal-icon">Status</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <select class="form-control form-select">
-                                            <option value="dalamPeminjaman">Dalam Peminjaman</option>
-                                            <option value="pengembalianTerlambat">Pengembalian Terlambat</option>
-                                            <option value="peminjamanselesai">Peminjaman Selesai</option>
-                                        </select>
-                                        <div class="form-control-icon">
-                                            <i class="fa-solid fa-clock"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="d-flex">
-                    <button type="reset" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">Batalkan</button>
-                    <button type="submit" class="btn btn-primary me-1 mb-1">Simpan Perubahan</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
