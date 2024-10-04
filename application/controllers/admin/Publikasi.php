@@ -125,4 +125,16 @@ class Publikasi extends CI_Controller{
 
         redirect('admin/publikasi');
     }
+
+    function removePublikasi($id){
+        $publikasi = $this->db->get_where('publikasi', ['md5(id)' => $id])->row();
+        (@$publikasi->cover) ? @unlink('./assets/img/cover/' . @$publikasi->cover) : NULL;
+        $this->db->where('md5(id)', $id)->delete('publikasi');
+        if ($this->db->affected_rows() > 0) {
+            $this->session->set_flashdata('success', "Publikasi " . $this->input->post('judul', TRUE) . " berhasil Di Hapus");
+        } else {
+            $this->session->set_flashdata('error', "Publikasi " . $this->input->post('judul', TRUE) . " gagal Di Hapus");
+        }
+        redirect('admin/publikasi');
+    }
 }
