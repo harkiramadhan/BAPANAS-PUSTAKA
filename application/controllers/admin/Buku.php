@@ -55,7 +55,7 @@ class Buku extends CI_Controller{
             // 'main_title' => 'Buku',
             // 'main_title_url' => site_url('buku/daftar'),
             'title' => 'Daftar Buku',
-            'buku' => $this->db->get_where('buku', ['status' => 1])
+            'buku' => $this->db->order_by('id', 'DESC')->get_where('buku', ['status' => 1])
         ];
         $this->load->view('layout/admin/header', $var);
         $this->load->view('admin/buku-daftar', $var);

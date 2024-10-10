@@ -27,7 +27,7 @@ class Publikasi extends CI_Controller{
     function index(){
         $var = [
             'title' => 'Publikasi',
-            'publikasi' => $this->db->get('publikasi')
+            'publikasi' => $this->db->order_by('id', 'DESC')->get('publikasi')
         ];
         $this->load->view('layout/admin/header', $var);
         $this->load->view('admin/publikasi-daftar', $var);

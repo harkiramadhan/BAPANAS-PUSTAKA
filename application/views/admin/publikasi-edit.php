@@ -74,7 +74,7 @@
                                     <div class="position-relative">
                                         <select class="form-select" name="kategori">
                                             <option <?= ($publikasi->kategori == 'Publikasi Pers') ? 'selected' : '' ?> value="Publikasi Pers">Publikasi Pers</option>
-                                            <option <?= ($publikasi->kategori == 'Media NVA') ? 'selected' : '' ?> value="Media NVA">Media NVA</option>
+                                            <option <?= ($publikasi->kategori == 'Media NFA') ? 'selected' : '' ?> value="Media NFA">Media NFA</option>
                                         </select>
                                     </div>
                                 </div>

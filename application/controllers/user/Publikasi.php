@@ -38,7 +38,8 @@ class Publikasi extends CI_Controller{
         $page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
         $publikasi = $this->db->select('*')
                             ->from('publikasi')
-                            ->limit($config['per_page'], $page)->get();
+                            ->limit($config['per_page'], $page)
+                            ->order_by('tanggal', 'DESC')->get();
 
         if ($this->session->userdata('is_loggedin')) {
             $userid = $this->session->userdata('userid');

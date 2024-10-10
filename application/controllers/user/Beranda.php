@@ -17,7 +17,7 @@ class Beranda extends CI_Controller{
                 'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', 'kategori LIKE \'%"7"%\''),
 
                 'publikasi_pers' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Publikasi Pers']),
-                'media_nva' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Media NVA']),
+                'media_nva' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Media NFA']),
 
                 'sum_publikasi' => $this->db->select('COUNT(id) total')->get('publikasi')->row(),
                 'sum_buku' => $this->db->select('COUNT(id) total')->get('buku')->row(),
@@ -32,7 +32,7 @@ class Beranda extends CI_Controller{
                 'bukupangan' => $this->db->order_by('id', 'DESC')->limit(4)->get_where('buku', 'kategori LIKE \'%"7"%\''),
 
                 'publikasi_pers' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Publikasi Pers']),
-                'media_nva' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Media NVA']),
+                'media_nva' => $this->db->limit(3)->get_where('publikasi', ['kategori' => 'Media NFA']),
 
                 'sum_publikasi' => $this->db->select('COUNT(id) total')->get('publikasi')->row(),
                 'sum_buku' => $this->db->select('COUNT(id) total')->get('buku')->row(),

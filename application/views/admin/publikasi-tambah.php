@@ -71,7 +71,7 @@
                                     <div class="position-relative">
                                         <select class="form-select" name="kategori">
                                             <option value="Publikasi Pers">Publikasi Pers</option>
-                                            <option value="Media NVA">Media NVA</option>
+                                            <option value="Media NFA">Media NFA</option>
                                         </select>
                                     </div>
                                 </div>
