@@ -7,12 +7,12 @@
     <style>
         #pdf-viewer {
             width: 50%;
-            /* height: 600px; */
             border: 1px solid #000;
             overflow: auto;
             margin-left: auto;
             margin-right: auto;
             margin-top: 15px;
+            margin-bottom: 45px;
         }
         #controls {
             margin-top: 10px;
@@ -31,16 +31,20 @@
 
     
 <div id="controls">
-    <button id="prev">Prev</button>
+    <button id="prev" class="btn btn-outline-secondary rounded-pill">Sebelumnya</button>
     <span id="page-num"></span> / <span id="page-count"></span>
-    <button id="next">Next</button>
+    <button id="next" class="btn btn-outline-secondary rounded-pill">Selanjutnya</button>
 </div>
 
-<div id="pdf-viewer">
-    <canvas id="pdf-canvas"></canvas>
-</div>
+<section class="">
+    <div class="container-xl">
+        <div id="pdf-viewer" class="rounded rounded-lg">
+            <canvas id="pdf-canvas"></canvas>
+        </div>
+    </div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 <script>
     const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
     let pdfDoc = null,
@@ -121,6 +125,82 @@
     // Button Events
     document.querySelector('#prev').addEventListener('click', showPrevPage);
     document.querySelector('#next').addEventListener('click', showNextPage);
+</script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script>
+    const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
+    let pdfDoc = null,
+        pageNum = 1,
+        pageIsRendering = false,
+        pageNumIsPending = null;
+
+    const scale = 1.5,
+          canvas = document.querySelector('#pdf-canvas'),
+          ctx = canvas.getContext('2d');
+
+    // Render halaman
+    const renderPage = num => {
+        pageIsRendering = true;
+
+        pdfDoc.getPage(num).then(page => {
+            const viewport = page.getViewport({ scale });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport
+            };
+
+            page.render(renderCtx).promise.then(() => {
+                pageIsRendering = false;
+
+                if (pageNumIsPending !== null) {
+                    renderPage(pageNumIsPending);
+                    pageNumIsPending = null;
+                }
+            });
+
+            document.querySelector('#page-num').textContent = num;
+        });
+    };
+
+    // Pemuatan halaman selanjutnya secara asinkron
+    const loadNextPage = (num) => {
+        if (num <= pdfDoc.numPages) {
+            pdfDoc.getPage(num).then(page => {
+                const viewport = page.getViewport({ scale });
+                // Anda dapat menyimpan page atau canvas image di cache sini
+            });
+        }
+    };
+
+    // Get Document
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum); // Render halaman pertama saja
+        // Mulai pre-load halaman berikutnya
+        loadNextPage(pageNum + 1);
+    });
+
+    // Button Events untuk navigasi halaman
+    document.querySelector('#prev').addEventListener('click', () => {
+        if (pageNum > 1) {
+            pageNum--;
+            renderPage(pageNum);
+        }
+    });
+
+    document.querySelector('#next').addEventListener('click', () => {
+        if (pageNum < pdfDoc.numPages) {
+            pageNum++;
+            renderPage(pageNum);
+            loadNextPage(pageNum + 1); // Pre-load halaman berikutnya
+        }
+    });
 </script>
 
 </body>

@@ -253,24 +253,24 @@
         </div>
         <div class="row mb-5">
             <div class="col-12 col-md-3 col-lg-4 mb-3">
-                <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_buku->total ?></h1>
+                <div class="d-flex flex-column align-items-center justify-content-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
+                    <h1 class="display-1 fw-semibold mb-0 text-white"><?= $sum_buku->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">BUKU</p>
-                    <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <!-- <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p> -->
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-4 mb-3">
-                <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_kategori->total ?></h1>
+                <div class="d-flex flex-column align-items-center justify-content-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
+                    <h1 class="display-1 fw-semibold mb-0 text-white"><?= $sum_kategori->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">KATEGORI BUKU</p>
-                    <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <!-- <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p> -->
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-4 mb-3">
-                <div class="d-flex flex-column align-items-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
-                    <h1 class="display-1 fw-semibold mt-auto mb-0 text-white"><?= $sum_publikasi->total ?></h1>
+                <div class="d-flex flex-column align-items-center justify-content-center rounded-3 p-3 shadow-sm" style="height: 250px; background: linear-gradient(180deg, #1d781610 0%, #1d7816 60%), url('<?= base_url('assets/img/kategori/' . $kt->cover)?>'); background-size: cover; background-position: center;">
+                    <h1 class="display-1 fw-semibold mb-0 text-white"><?= $sum_publikasi->total ?></h1>
                     <p class="text-white text-center mb-2 fw-bolder">PUBLIKASI</p>
-                    <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <!-- <p class="text-white text-center mb-3 fw-light" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p> -->
                 </div>
             </div>
         </div>
