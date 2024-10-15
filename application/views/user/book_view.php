@@ -13,6 +13,7 @@
             margin-right: auto;
             margin-top: 15px;
             margin-bottom: 45px;
+            text-align: center;
         }
         #controls {
             margin-top: 10px;
@@ -25,6 +26,10 @@
             margin: 5px;
             padding: 10px;
         }
+        #loader {
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +41,11 @@
     <button id="next" class="btn btn-outline-secondary rounded-pill">Selanjutnya</button>
 </div>
 
+<div id="loader">
+    <img src="<?= base_url('assets/img/loading.gif') ?>" alt="Loading..." />
+    <h4 class="fw-bold mb-5 mt-2">Buku sedang dimuat, <br> mohon tunggu sebentar.</h4>
+</div>
+
 <section class="">
     <div class="container-xl">
         <div id="pdf-viewer" class="rounded rounded-lg">
@@ -44,92 +54,9 @@
     </div>
 </section>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-<script>
-    const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
-    let pdfDoc = null,
-        pageNum = 1,
-        pageIsRendering = false,
-        pageNumIsPending = null;
-
-    const scale = 1.5,
-          canvas = document.querySelector('#pdf-canvas'),
-          ctx = canvas.getContext('2d');
-
-    // Render halaman
-    const renderPage = num => {
-        pageIsRendering = true;
-
-        // Get page
-        pdfDoc.getPage(num).then(page => {
-            // Set scale
-            const viewport = page.getViewport({ scale });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-
-            const renderCtx = {
-                canvasContext: ctx,
-                viewport
-            };
-
-            page.render(renderCtx).promise.then(() => {
-                pageIsRendering = false;
-
-                if (pageNumIsPending !== null) {
-                    renderPage(pageNumIsPending);
-                    pageNumIsPending = null;
-                }
-            });
-
-            // Output current page
-            document.querySelector('#page-num').textContent = num;
-        });
-    };
-
-    // Check for pages rendering
-    const queueRenderPage = num => {
-        if (pageIsRendering) {
-            pageNumIsPending = num;
-        } else {
-            renderPage(num);
-        }
-    };
-
-    // Show Prev Page
-    const showPrevPage = () => {
-        if (pageNum <= 1) {
-            return;
-        }
-        pageNum--;
-        queueRenderPage(pageNum);
-    };
-
-    // Show Next Page
-    const showNextPage = () => {
-        if (pageNum >= pdfDoc.numPages) {
-            return;
-        }
-        pageNum++;
-        queueRenderPage(pageNum);
-    };
-
-    // Get Document
-    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-        pdfDoc = pdfDoc_;
-
-        document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-        renderPage(pageNum);
-    });
-
-    // Button Events
-    document.querySelector('#prev').addEventListener('click', showPrevPage);
-    document.querySelector('#next').addEventListener('click', showNextPage);
-</script> -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 <script>
-    const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
+    const url = '<?= base_url('assets/pdf/188-media-nfa--pangan-kuat-indonesia-berdaulat---volume-1-nomor-6--agustus-2022.pdf') ?>';
     let pdfDoc = null,
         pageNum = 1,
         pageIsRendering = false,
@@ -139,8 +66,23 @@
           canvas = document.querySelector('#pdf-canvas'),
           ctx = canvas.getContext('2d');
 
+    const loader = document.getElementById('loader'); // Ambil elemen loader
+
+    // Fungsi untuk menampilkan loader
+    const showLoader = () => {
+        loader.style.display = 'block';
+        canvas.style.display = 'none';
+    };
+
+    // Fungsi untuk menyembunyikan loader
+    const hideLoader = () => {
+        loader.style.display = 'none';
+        canvas.style.display = 'block';
+    };
+
     // Render halaman
     const renderPage = num => {
+        showLoader(); // Tampilkan loader sebelum mulai rendering
         pageIsRendering = true;
 
         pdfDoc.getPage(num).then(page => {
@@ -155,6 +97,7 @@
 
             page.render(renderCtx).promise.then(() => {
                 pageIsRendering = false;
+                hideLoader(); // Sembunyikan loader setelah halaman selesai dirender
 
                 if (pageNumIsPending !== null) {
                     renderPage(pageNumIsPending);
@@ -166,12 +109,12 @@
         });
     };
 
-    // Pemuatan halaman selanjutnya secara asinkron
+    // Pemuatan halaman berikutnya secara asinkron
     const loadNextPage = (num) => {
         if (num <= pdfDoc.numPages) {
             pdfDoc.getPage(num).then(page => {
                 const viewport = page.getViewport({ scale });
-                // Anda dapat menyimpan page atau canvas image di cache sini
+                // Cache halaman selanjutnya jika diperlukan
             });
         }
     };
@@ -181,12 +124,11 @@
         pdfDoc = pdfDoc_;
         document.querySelector('#page-count').textContent = pdfDoc.numPages;
 
-        renderPage(pageNum); // Render halaman pertama saja
-        // Mulai pre-load halaman berikutnya
-        loadNextPage(pageNum + 1);
+        renderPage(pageNum); // Render halaman pertama dan sembunyikan loader setelah selesai
+        loadNextPage(pageNum + 1); // Preload halaman selanjutnya
     });
 
-    // Button Events untuk navigasi halaman
+    // Button events untuk navigasi halaman
     document.querySelector('#prev').addEventListener('click', () => {
         if (pageNum > 1) {
             pageNum--;
@@ -198,7 +140,7 @@
         if (pageNum < pdfDoc.numPages) {
             pageNum++;
             renderPage(pageNum);
-            loadNextPage(pageNum + 1); // Pre-load halaman berikutnya
+            loadNextPage(pageNum + 1); // Preload halaman selanjutnya
         }
     });
 </script>
