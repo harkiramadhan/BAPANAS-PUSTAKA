@@ -34,7 +34,7 @@
     <!-- Hero Section for 404 -->
     <div class="container-xl justify-content-center">
         <a class="navbar-brand d-flex justify-content-center" href="#">
-            <img src="https://pustaka.badanpangan.go.id/assets/user/image/logo-nav.png" alt="Logo" height="48">
+            <img src="<?= base_url('assets/user/image/logo-nav.png') ?>" alt="Logo" height="48">
         </a>
     </div>
     <section class="hero-section text-center h-100">
@@ -42,7 +42,7 @@
             <h1 class="fw-bold text-warning" style="font-size: 100px !important;">404</h1>
             <p class="error-text">Maaf, halaman yang Anda cari tidak ditemukan.</p>
             <br>
-            <a href="https://pustaka.badanpangan.go.id/beranda" class="btn btn-warning px-5 py-3 fw-bold text-white">Kembali ke Beranda</a>
+            <a href="<?= site_url('') ?>" class="btn btn-warning px-5 py-3 fw-bold text-white">Kembali ke Beranda</a>
         </div>
     </section>
     <div class="container-xl text-center">
@@ -53,6 +53,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://pustaka.badanpangan.go.id/assets/user/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('assets/user/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 </html>
