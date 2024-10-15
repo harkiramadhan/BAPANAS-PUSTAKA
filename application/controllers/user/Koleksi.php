@@ -86,6 +86,15 @@ class Koleksi extends CI_Controller{
     
     function read($id){
         if ($this->session->userdata('is_loggedin')) {
+            
+            $userid = $this->session->userdata('userid');
+            $var = [
+                'user' => $this->M_Pustakawan->getById($userid),
+                'buku' => $this->db->get_where('buku', ['md5(id)' => $id])->row(),
+                'kategori' => $this->db->get('kategori'),
+                'jenis' => $this->db->get('jenis')
+            ];
+
             $buku = $this->db->get_where('buku', ['md5(id)' => $id])->row();
             $pdf_path = FCPATH . 'assets/pdf/' . $buku->pdf;
             if (!file_exists($pdf_path)) {
@@ -94,7 +103,10 @@ class Koleksi extends CI_Controller{
 
             $data['pdf_file'] = site_url('user/koleksi/proxy/' . $buku->pdf);
             $data['buku'] = $buku;
+
+            $this->load->view('layout/user/header', $var);
             $this->load->view('user/book_view', $data);
+            $this->load->view('layout/user/footer', $var);
         }
     }
 
