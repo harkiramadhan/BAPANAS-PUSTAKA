@@ -56,7 +56,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 <script>
-    const url = '<?= base_url('assets/pdf/188-media-nfa--pangan-kuat-indonesia-berdaulat---volume-1-nomor-6--agustus-2022.pdf') ?>';
+    // const url = '<?= base_url('assets/pdf/188-media-nfa--pangan-kuat-indonesia-berdaulat---volume-1-nomor-6--agustus-2022.pdf') ?>';
+    const url = '<?= base_url('assets/pdf/' . $buku->pdf) ?>'; // URL file PDF Anda
     let pdfDoc = null,
         pageNum = 1,
         pageIsRendering = false,
